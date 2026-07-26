@@ -1,0 +1,6 @@
+*.o
+*.library
+*.uaem
+output.txt
+*.map
+*.debug

@@ -1,3 +1,3 @@
-#define CATVERS 46
-#define PREFSVERS 46
-#define VERSTAG "\0$VER: ClassActionPrefs 4.6 (30.05.2004)\0"
+#define CATVERS 47
+#define PREFSVERS 47
+#define VERSTAG "\0$VER: ClassActionPrefs 4.7 (26.7.2026)\0"
