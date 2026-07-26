@@ -1,0 +1,713 @@
+; *** catalog description file of "ClassActionPrefs.res"
+;
+TXT_CLASSNAME (259//)
+Class name
+;
+TXT_MATCHNAME (260//)
+Pattern
+;
+TXT_OFFSET1 (261//)
+Offset #1
+;
+TXT_OFFSET2 (262//)
+Offset #2
+;
+TXT_OFFSET3 (263//)
+Offset #3
+;
+TXT_OFFSET4 (264//)
+Offset #4
+;
+TXT_OFFSET5 (265//)
+Offset #5
+;
+TXT_BUTTLST1 (301//)
+List of defined classes
+;
+TXT_BUTTCLASS (302//)
+Name of the class
+;
+TXT_BUTTMATCH (303//)
+Pattern that must be matched
+;
+TXT_BUTTCHOFF (304//)
+Select one of 6 Offsets
+;
+TXT_BUTTOFFSET (305//)
+Enter the matching text
+;
+TXT_BUTTADD (306//)
+Add a new class
+;
+TXT_BUTTREMOVE (307//)
+Remove this class
+;
+TXT_BUTTLST2 (309//)
+List of defined actions
+;
+TXT_BUTTANAME (310//)
+The name of the action
+;
+TXT_BUTTUP (314//)
+Move this action up
+;
+TXT_BUTTDOWN (315//)
+Move this action down
+;
+TXT_BUTTADD2 (318//)
+Add a new action
+;
+TXT_BUTTREMOVE2 (319//)
+Remove this action
+;
+TXT_ABOUT (323//)
+About
+;
+TXT_PROJECT (324//)
+Project
+;
+MEN_QUIT (325//)
+Q_Quit
+;
+ERR_GENERAL (327//)
+An unspecified error has occured.
+;
+ERR_NOCONFIG (328//)
+Config file not found.
+;
+ERR_NOICON (329//)
+There is no icon!
+;
+ERR_NOLIB (330//)
+Library not found. Perhaps wrong OS.
+;
+TXT_DELACTION (331//)
+Delete this action ?
+;
+TXT_DELCLASS (332//)
+Delete this class ?
+;
+TXT_NEWACTION (333//)
+<New action #%d>
+;
+TXT_NEWCLASS (334//)
+<New class #%d>
+;
+TXT_NOACT (335//)
+No action
+;
+TXT_INFORMATION (336//)
+Information
+;
+TXT_OK (337//)
+Ok
+;
+TXT_YESNO (338//)
+Yes|No
+;
+ERR_CONFIGNOTVALID (339//)
+Your config file\n\nis not a valid\n\nClassAction config file
+;
+ERR_GENERICNOTVALID (340//)
+The generic file is not valid.
+;
+TXT_GENERIC (341//)
+Generic actions
+;
+TXT_UNKNOWN (342//)
+Unknown class
+;
+TXT_DIRECTORY (343//)
+Directory
+;
+ERR_DIRNOTVALID (344//)
+The dir file is not valid.
+;
+ERR_CONFIGCORRUPT (345//)
+Your config file\n\nis corrupted.
+;
+TXT_LCHOOSE (346//)
+Choose files to learn from.
+;
+TXT_LCOMP (347//)
+Analysis complete.
+;
+TXT_LPREP (348//)
+Preprocessing ... please wait
+;
+TXT_LPROG (349//)
+Analysis in progress ...
+;
+TXT_LEARN (350//)
+Learn
+;
+TXT_ACCEPT (351//)
+Accept
+;
+TXT_BUTTLACCEPT (352//)
+Accept these offsets and strings
+;
+TXT_BUTTLCANCEL (353//)
+Cancel the learning process
+;
+TXT_PROG (354//)
+ClassActionPrefs
+;
+TXT_LMEMORY (355//)
+Not enough memory for learning.
+;
+TXT_LNEED (356//)
+I need at leat 2 files for learning.
+;
+TXT_LNOTHING (357//)
+Nothing found.
+;
+TXT_COPYRIGHT (360//)
+   %s\n\n© 2002 by Martin R. Elsner & Salim Gasmi\n\nYou can contact me at :\n\nMartin R. Elsner\nMuesener Strasse 46\n57223 Kreuztal\nGermany\n\nEmail: email@martin-elsner.de\nWeb: http://www.martin-elsner.de
+;
+TXT_OPTIONS (362//)
+Options
+;
+TXT_COMMANDS (363//)
+Commands
+;
+TXT_CLASSES (364//)
+Classes
+;
+TXT_SAVE (365//)
+Save
+;
+TXT_BUTTSAVE (366//)
+Save the changes
+;
+TXT_USE (367//)
+Use
+;
+TXT_BUTTUSE (368//)
+Use the changes without saving
+;
+TXT_CANCEL (369//)
+Cancel
+;
+TXT_BUTTCANCEL (370//)
+Quit without saving
+;
+TXT_ISSURE (371//)
+Are you sure ?
+;
+TXT_ACTIKEY (398//)
+Activation key
+;
+TXT_SELRAWKEY (399//)
+Select RAW key
+;
+TXT_NAMEE (404//)
+Name:
+;
+TXT_ICON (405//)
+Icon
+;
+TXT_ADD (406//)
+Add
+;
+TXT_REMOVE (407//)
+Remove
+;
+TXT_NAME (424//)
+Name
+;
+TXT_BUTTCOMM (426//)
+Choose a variable
+;
+TXT_REQPF2 (427//)
+[F] Path+Filename
+;
+TXT_REQS2 (428//)
+[S] Path+Filename without suffix
+;
+TXT_REQB2 (429//)
+[B] Filename
+;
+TXT_REQX2 (430//)
+[X] Filename without suffix
+;
+TXT_SRC (431//)
+[SRC] Path of source lister
+;
+TXT_SRCS (432//)
+[SRCS] Path of source lister + '/'
+;
+TXT_DST (433//)
+[DST] Path of destination lister
+;
+TXT_DSTS (434//)
+[DSTS] Path of destination lister + '/'
+;
+TXT_REQF (435//)
+[REQF:...] Request a file
+;
+TXT_REQD (436//)
+[REQD:...] Request a directory
+;
+TXT_REQT (437//)
+[REQT:...] Request a text
+;
+TXT_SURE (438//)
+[SURE:...] Confirm a command
+;
+TXT_COMMAND (443//)
+Command
+;
+TXT_CLI (444//)
+CLI
+;
+TXT_WB (445//)
+WB
+;
+TXT_NOCLI (446//)
+No CLI
+;
+TXT_AREXX (447//)
+ARexx
+;
+TXT_INTERNAL (448//)
+Internal
+;
+TXT_SPACE (449//)
+Space
+;
+TXT_BUTTMODE (450//)
+Choose the starting mode
+;
+TXT_MODE (451//)
+Mode
+;
+TXT_INTCOMMANDS (452//)
+Internal commands
+;
+TXT_VARIABLES (453//)
+Variables
+;
+TXT_HELPE (454//)
+Help:
+;
+TXT_BUTTSTACK (456//)
+Enter the required stack
+;
+TXT_STACK (457//)
+Stack
+;
+TXT_BUTTDELAY (458//)
+Choose the wanted delay
+;
+TXT_DELAY (459//)
+Delay
+;
+MSG_READSOURCE (460//)
+Read source
+;
+TXT_CHOOSEICON (474//)
+Choose icon
+;
+TXT_PRESSKEY (475//)
+Press key
+;
+TXT_BUTTCOMMAND (488//)
+Command line
+;
+TXT_BUTTLOAD (489//)
+Insert a filename
+;
+TXT_BUTTLCOM (493//)
+List of Commands
+;
+TXT_BUTTCUP (494//)
+Move command up
+;
+TXT_BUTTCDOWN (495//)
+Move command down
+;
+TXT_BUTTCADD (496//)
+Add command
+;
+TXT_BUTTCREM (497//)
+Remove command
+;
+TXT_BUTTCNAME (498//)
+Name of command
+;
+TXT_BUTTCHELP (499//)
+Help text for the command
+;
+TXT_BUTTINT (500//)
+Choose internal command
+;
+TXT_BUTTOPTIONS (502//)
+List of options
+;
+TXT_ICONS (503//)
+Icons
+;
+TXT_BUTTONS (505//)
+Buttons
+;
+TXT_LISTERS (506//)
+Listers
+;
+TXT_BUTTGTICON (507//)
+The icon for the command
+;
+TXT_BUTTPREVIEW (508//)
+Preview of icon(s)
+;
+TXT_BUTTKEY (509//)
+Get the raw code of a key
+;
+TXT_BUTTSTRKEY (510//)
+Activation key for the command
+;
+TXT_BUTTCHKEY (511//)
+The type of the key
+;
+TXT_SHOWHELP (512//)
+Show Help
+;
+TXT_WINDOW (515//)
+Window
+;
+TXT_ACTIONS (517//)
+Actions
+;
+TXT_DISPINFO (524//)
+Display icons
+;
+TXT_DISPTIME (525//)
+Display also time
+;
+TXT_PARENT (529//)
+Parent
+;
+TXT_PATHS (530//)
+Paths
+;
+TXT_HEIGHT (531//)
+Height
+;
+TXT_ICONSTART (532//)
+Start as icon
+;
+TXT_LEFTEDGE (533//)
+Left edge
+;
+TXT_MUIQUIT (534//)
+Iconify by close gadget
+;
+TXT_TOPEDGE (535//)
+Top edge
+;
+TXT_WIDTH (536//)
+Width
+;
+TXT_CONFIRMREPLACE (537//)
+Confirm replace
+;
+TXT_COPYICONS (538//)
+Copy icons
+;
+TXT_CREATEICONS (539//)
+Create icons
+;
+TXT_DATESTRING (540//)
+Show date as text
+;
+TXT_DRAWERSFIRST (541//)
+Show drawers first
+;
+TXT_GENERAL (542//)
+General
+;
+TXT_CLISIZE (543//)
+Cli size
+;
+TXT_CHOOSEFILE (545//)
+Choose file
+;
+TXT_PATH (547//)
+Path
+;
+TXT_NOTAVAIL (548//)
+This function is not yet available.
+;
+TXT_OPENPREFS (549//)
+Open ClassAction preference file
+;
+TXT_SAVEPREFS (552//)
+Save ClassAction preference file
+;
+TXT_SMALLIM (555//)
+Use small images
+;
+TXT_EDIT (556//)
+Edit
+;
+MEN_LASTSAVED (557//)
+L_Last saved
+;
+MEN_OPEN (558//)
+O_Open...
+;
+MEN_RESET (559//)
+D_Reset to defaults
+;
+MEN_RESTORE (560//)
+R_Restore
+;
+TXT_BOTTOMICONS (562//)
+Bottom icons
+;
+TXT_CHECKFIT (564//)
+Check space before copying
+;
+ERR_SAVEPREFS (565//)
+Couldn't save prefs!
+;
+TXT_HIGHDIRS (566//)
+Highlight directories
+;
+TXT_KEYCOM (568//)
+Tool menu
+;
+TXT_REPLACETOOLTYPES (569//)
+Now your old tooltypes will be loaded and saved in the new format.
+;
+TXT_SHOWIM (570//)
+Show images
+;
+TXT_TOPICONS (571//)
+Top icons
+;
+MEN_SAVEAS (573//)
+S_Save as ...
+;
+TXT_WHEREISCA (574//)
+Where is your old ClassAction program file?
+;
+TXT_APPX (575//)
+AppIcon left edge
+;
+TXT_APPY (576//)
+AppIcon top edge
+;
+TXT_DSTSTARTPATH (577//)
+Destination start path
+;
+TXT_PUBLICSCREEN (578//)
+Public screen
+;
+TXT_SRCSTARTPATH (579//)
+Source start path
+;
+TXT_SHOWDEVS (580//)
+Show devices
+;
+TXT_DELETEICONS (581//)
+Delete icons
+;
+TXT_MAXPATHS (583//)
+Cached paths
+;
+TXT_MAXTABS (584//)
+Path buttons
+;
+TXT_PATHNOTIFY (585//)
+Update on change
+;
+TXT_REFRESH (586//)
+Refresh
+;
+TXT_LISTERFONT (587//)
+Lister font
+;
+TXT_MENUFONT (588//)
+Menu font
+;
+TXT_BACKGROUND (589//)
+Background
+;
+MSG_DELETEPROTECTED (590//)
+Delete protected files
+;
+TXT_PATHMENU (591//)
+Path menu
+;
+MSG_VERTICAL (592//)
+Vertically arranged
+;
+MEN_HELP (593//)
+H_Help
+;
+MSG_SUPPORTEDARCHIVES (594//)
+Supported archives
+;
+MSG_BUTTOPENICONS (595//)
+Open MRE:Icons
+;
+MSG_ASYNC (599//)
+Async
+;
+MSG_READDEST (600//)
+Read dest
+;
+MSG_BUFFERSIZE (602//)
+Buffer size in KB
+;
+MSG_COPYANDDELETE (603//)
+Copy and delete
+;
+MSG_COUNTFILES (604//)
+Count files before copy
+;
+MSG_HIDEKEY (605//)
+Hide key
+;
+MEN_SHOWHELP (606//)
+?_Show help
+;
+MSG_POPUPKEY (607//)
+Popup key
+;
+MSG_PULLDOWNMENU (608//)
+Menu is pulldown menu
+;
+MSG_REPLACEVERSION (609//)
+Replace older versions when copying
+;
+MSG_SHOWVERSION (610//)
+Show version when replacing
+;
+MSG_NAME (611//)
+Name
+;
+MSG_PATH (612//)
+Path
+;
+TXT_BUTTLPATHS (613//)
+List of Paths
+;
+MSG_OPENWITH (614//)
+Open with
+;
+MSG_PATHLIST (615//)
+Path list
+;
+TXT_BUTTPUP (616//)
+Move path up
+;
+TXT_BUTTPDOWN (617//)
+Move path down
+;
+TXT_BUTTPADD (618//)
+Add path
+;
+TXT_BUTTPREM (619//)
+Remove path
+;
+MSG_ENTERPATH (620//)
+Please specify the path
+;
+MSG_ENTERPATHTITLE (621//)
+Please enter the title for the path:
+;
+MSG_TABBUTTONSTRANSPARENT (622//)
+Path buttons transparent
+;
+MSG_VOLUME (623//)
+Volume
+;
+ERR_DELCLASS (624//)
+This class cannot be deleted.
+;
+MSG_BUTTCLASSIMAGE (625//)
+Image for this class
+;
+MSG_IMAGE (626//)
+Image
+;
+MSG_BUTTLOADIMAGE (627//)
+Choose an image file
+;
+MSG_CLASSIMAGES (628//)
+Use class images
+;
+MSG_OWNSCREEN (629//)
+Own screen
+;
+MSG_ARCHIVE (630//)
+Archive
+;
+MSG_ONLYPATTERNS (631//)
+Check only patterns
+;
+MSG_DUPLICATE (634//)
+Duplicate
+;
+MSG_PASTE (635//)
+Paste
+;
+MSG_LEARN (636//)
+Learn
+;
+MSG_IMPORT (637//)
+Import
+;
+MSG_EXPORT (638//)
+Export
+;
+MSG_COPY (639//)
+Copy
+;
+MSG_BLUE (640//)
+Blue
+;
+MSG_DATEFORMAT (641//)
+Date format
+;
+MSG_EXPORTCLASS (642//)
+Export class
+;
+MSG_GREEN (643//)
+Green
+;
+MSG_IMPORTCLASS (644//)
+Import class
+;
+MSG_RED (645//)
+Red
+;
+MSG_USEEXALL (646//)
+Use ExAll()
+;
+MSG_USEREACTIONREQUEST (647//)
+Reaction requesters
+;
+MSG_BUTTDIR (648//)
+Work directory
+;
+MSG_SOURCE (649//)
+source
+;
+MSG_DESTINATION (650//)
+destination
+;
+MSG_PROGDIR (651//)
+program dir
+;
+MSG_CD (652//)
+CD
+;
+MSG_CONFIRMDELETE (653//)
+Confirm delete
+;
+MSG_EXALLFILES (654//)
+Files per ExAll() call
+;

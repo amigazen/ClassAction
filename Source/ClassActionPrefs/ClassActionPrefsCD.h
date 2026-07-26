@@ -1,0 +1,1307 @@
+#ifndef CLASSACTIONPREFSCD_H
+#define CLASSACTIONPREFSCD_H
+
+
+/****************************************************************************/
+
+
+/* This file was created automatically by CatComp.
+ * Do NOT edit by hand!
+ */
+
+
+#ifndef EXEC_TYPES_H
+#include <exec/types.h>
+#endif
+
+#ifdef CATCOMP_ARRAY
+#undef CATCOMP_NUMBERS
+#undef CATCOMP_STRINGS
+#define CATCOMP_NUMBERS
+#define CATCOMP_STRINGS
+#endif
+
+#ifdef CATCOMP_BLOCK
+#undef CATCOMP_STRINGS
+#define CATCOMP_STRINGS
+#endif
+
+
+/****************************************************************************/
+
+
+#ifdef CATCOMP_NUMBERS
+
+#define TXT_CLASSNAME 259
+#define TXT_MATCHNAME 260
+#define TXT_OFFSET1 261
+#define TXT_OFFSET2 262
+#define TXT_OFFSET3 263
+#define TXT_OFFSET4 264
+#define TXT_OFFSET5 265
+#define TXT_BUTTLST1 301
+#define TXT_BUTTCLASS 302
+#define TXT_BUTTMATCH 303
+#define TXT_BUTTCHOFF 304
+#define TXT_BUTTOFFSET 305
+#define TXT_BUTTADD 306
+#define TXT_BUTTREMOVE 307
+#define TXT_BUTTLST2 309
+#define TXT_BUTTANAME 310
+#define TXT_BUTTUP 314
+#define TXT_BUTTDOWN 315
+#define TXT_BUTTADD2 318
+#define TXT_BUTTREMOVE2 319
+#define TXT_ABOUT 323
+#define TXT_PROJECT 324
+#define MEN_QUIT 325
+#define ERR_GENERAL 327
+#define ERR_NOCONFIG 328
+#define ERR_NOICON 329
+#define ERR_NOLIB 330
+#define TXT_DELACTION 331
+#define TXT_DELCLASS 332
+#define TXT_NEWACTION 333
+#define TXT_NEWCLASS 334
+#define TXT_NOACT 335
+#define TXT_INFORMATION 336
+#define TXT_OK 337
+#define TXT_YESNO 338
+#define ERR_CONFIGNOTVALID 339
+#define ERR_GENERICNOTVALID 340
+#define TXT_GENERIC 341
+#define TXT_UNKNOWN 342
+#define TXT_DIRECTORY 343
+#define ERR_DIRNOTVALID 344
+#define ERR_CONFIGCORRUPT 345
+#define TXT_LCHOOSE 346
+#define TXT_LCOMP 347
+#define TXT_LPREP 348
+#define TXT_LPROG 349
+#define TXT_LEARN 350
+#define TXT_ACCEPT 351
+#define TXT_BUTTLACCEPT 352
+#define TXT_BUTTLCANCEL 353
+#define TXT_PROG 354
+#define TXT_LMEMORY 355
+#define TXT_LNEED 356
+#define TXT_LNOTHING 357
+#define TXT_COPYRIGHT 360
+#define TXT_OPTIONS 362
+#define TXT_COMMANDS 363
+#define TXT_CLASSES 364
+#define TXT_SAVE 365
+#define TXT_BUTTSAVE 366
+#define TXT_USE 367
+#define TXT_BUTTUSE 368
+#define TXT_CANCEL 369
+#define TXT_BUTTCANCEL 370
+#define TXT_ISSURE 371
+#define TXT_ACTIKEY 398
+#define TXT_SELRAWKEY 399
+#define TXT_NAMEE 404
+#define TXT_ICON 405
+#define TXT_ADD 406
+#define TXT_REMOVE 407
+#define TXT_NAME 424
+#define TXT_BUTTCOMM 426
+#define TXT_REQPF2 427
+#define TXT_REQS2 428
+#define TXT_REQB2 429
+#define TXT_REQX2 430
+#define TXT_SRC 431
+#define TXT_SRCS 432
+#define TXT_DST 433
+#define TXT_DSTS 434
+#define TXT_REQF 435
+#define TXT_REQD 436
+#define TXT_REQT 437
+#define TXT_SURE 438
+#define TXT_COMMAND 443
+#define TXT_CLI 444
+#define TXT_WB 445
+#define TXT_NOCLI 446
+#define TXT_AREXX 447
+#define TXT_INTERNAL 448
+#define TXT_SPACE 449
+#define TXT_BUTTMODE 450
+#define TXT_MODE 451
+#define TXT_INTCOMMANDS 452
+#define TXT_VARIABLES 453
+#define TXT_HELPE 454
+#define TXT_BUTTSTACK 456
+#define TXT_STACK 457
+#define TXT_BUTTDELAY 458
+#define TXT_DELAY 459
+#define MSG_READSOURCE 460
+#define TXT_CHOOSEICON 474
+#define TXT_PRESSKEY 475
+#define TXT_BUTTCOMMAND 488
+#define TXT_BUTTLOAD 489
+#define TXT_BUTTLCOM 493
+#define TXT_BUTTCUP 494
+#define TXT_BUTTCDOWN 495
+#define TXT_BUTTCADD 496
+#define TXT_BUTTCREM 497
+#define TXT_BUTTCNAME 498
+#define TXT_BUTTCHELP 499
+#define TXT_BUTTINT 500
+#define TXT_BUTTOPTIONS 502
+#define TXT_ICONS 503
+#define TXT_BUTTONS 505
+#define TXT_LISTERS 506
+#define TXT_BUTTGTICON 507
+#define TXT_BUTTPREVIEW 508
+#define TXT_BUTTKEY 509
+#define TXT_BUTTSTRKEY 510
+#define TXT_BUTTCHKEY 511
+#define TXT_SHOWHELP 512
+#define TXT_WINDOW 515
+#define TXT_ACTIONS 517
+#define TXT_DISPINFO 524
+#define TXT_DISPTIME 525
+#define TXT_PARENT 529
+#define TXT_PATHS 530
+#define TXT_HEIGHT 531
+#define TXT_ICONSTART 532
+#define TXT_LEFTEDGE 533
+#define TXT_MUIQUIT 534
+#define TXT_TOPEDGE 535
+#define TXT_WIDTH 536
+#define TXT_CONFIRMREPLACE 537
+#define TXT_COPYICONS 538
+#define TXT_CREATEICONS 539
+#define TXT_DATESTRING 540
+#define TXT_DRAWERSFIRST 541
+#define TXT_GENERAL 542
+#define TXT_CLISIZE 543
+#define TXT_CHOOSEFILE 545
+#define TXT_PATH 547
+#define TXT_NOTAVAIL 548
+#define TXT_OPENPREFS 549
+#define TXT_SAVEPREFS 552
+#define TXT_SMALLIM 555
+#define TXT_EDIT 556
+#define MEN_LASTSAVED 557
+#define MEN_OPEN 558
+#define MEN_RESET 559
+#define MEN_RESTORE 560
+#define TXT_BOTTOMICONS 562
+#define TXT_CHECKFIT 564
+#define ERR_SAVEPREFS 565
+#define TXT_HIGHDIRS 566
+#define TXT_KEYCOM 568
+#define TXT_REPLACETOOLTYPES 569
+#define TXT_SHOWIM 570
+#define TXT_TOPICONS 571
+#define MEN_SAVEAS 573
+#define TXT_WHEREISCA 574
+#define TXT_APPX 575
+#define TXT_APPY 576
+#define TXT_DSTSTARTPATH 577
+#define TXT_PUBLICSCREEN 578
+#define TXT_SRCSTARTPATH 579
+#define TXT_SHOWDEVS 580
+#define TXT_DELETEICONS 581
+#define TXT_MAXPATHS 583
+#define TXT_MAXTABS 584
+#define TXT_PATHNOTIFY 585
+#define TXT_REFRESH 586
+#define TXT_LISTERFONT 587
+#define TXT_MENUFONT 588
+#define TXT_BACKGROUND 589
+#define MSG_DELETEPROTECTED 590
+#define TXT_PATHMENU 591
+#define MSG_VERTICAL 592
+#define MEN_HELP 593
+#define MSG_SUPPORTEDARCHIVES 594
+#define MSG_BUTTOPENICONS 595
+#define MSG_ASYNC 599
+#define MSG_READDEST 600
+#define MSG_BUFFERSIZE 602
+#define MSG_COPYANDDELETE 603
+#define MSG_COUNTFILES 604
+#define MSG_HIDEKEY 605
+#define MEN_SHOWHELP 606
+#define MSG_POPUPKEY 607
+#define MSG_PULLDOWNMENU 608
+#define MSG_REPLACEVERSION 609
+#define MSG_SHOWVERSION 610
+#define MSG_NAME 611
+#define MSG_PATH 612
+#define TXT_BUTTLPATHS 613
+#define MSG_OPENWITH 614
+#define MSG_PATHLIST 615
+#define TXT_BUTTPUP 616
+#define TXT_BUTTPDOWN 617
+#define TXT_BUTTPADD 618
+#define TXT_BUTTPREM 619
+#define MSG_ENTERPATH 620
+#define MSG_ENTERPATHTITLE 621
+#define MSG_TABBUTTONSTRANSPARENT 622
+#define MSG_VOLUME 623
+#define ERR_DELCLASS 624
+#define MSG_BUTTCLASSIMAGE 625
+#define MSG_IMAGE 626
+#define MSG_BUTTLOADIMAGE 627
+#define MSG_CLASSIMAGES 628
+#define MSG_OWNSCREEN 629
+#define MSG_ARCHIVE 630
+#define MSG_ONLYPATTERNS 631
+#define MSG_DUPLICATE 634
+#define MSG_PASTE 635
+#define MSG_LEARN 636
+#define MSG_IMPORT 637
+#define MSG_EXPORT 638
+#define MSG_COPY 639
+#define MSG_BLUE 640
+#define MSG_DATEFORMAT 641
+#define MSG_EXPORTCLASS 642
+#define MSG_GREEN 643
+#define MSG_IMPORTCLASS 644
+#define MSG_RED 645
+#define MSG_USEEXALL 646
+#define MSG_USEREACTIONREQUEST 647
+#define MSG_BUTTDIR 648
+#define MSG_SOURCE 649
+#define MSG_DESTINATION 650
+#define MSG_PROGDIR 651
+#define MSG_CD 652
+#define MSG_CONFIRMDELETE 653
+#define MSG_EXALLFILES 654
+
+#endif /* CATCOMP_NUMBERS */
+
+
+/****************************************************************************/
+
+
+#ifdef CATCOMP_STRINGS
+
+#define TXT_CLASSNAME_STR "Class name"
+#define TXT_MATCHNAME_STR "Pattern"
+#define TXT_OFFSET1_STR "Offset #1"
+#define TXT_OFFSET2_STR "Offset #2"
+#define TXT_OFFSET3_STR "Offset #3"
+#define TXT_OFFSET4_STR "Offset #4"
+#define TXT_OFFSET5_STR "Offset #5"
+#define TXT_BUTTLST1_STR "List of defined classes"
+#define TXT_BUTTCLASS_STR "Name of the class"
+#define TXT_BUTTMATCH_STR "Pattern that must be matched"
+#define TXT_BUTTCHOFF_STR "Select one of 6 Offsets"
+#define TXT_BUTTOFFSET_STR "Enter the matching text"
+#define TXT_BUTTADD_STR "Add a new class"
+#define TXT_BUTTREMOVE_STR "Remove this class"
+#define TXT_BUTTLST2_STR "List of defined actions"
+#define TXT_BUTTANAME_STR "The name of the action"
+#define TXT_BUTTUP_STR "Move this action up"
+#define TXT_BUTTDOWN_STR "Move this action down"
+#define TXT_BUTTADD2_STR "Add a new action"
+#define TXT_BUTTREMOVE2_STR "Remove this action"
+#define TXT_ABOUT_STR "About"
+#define TXT_PROJECT_STR "Project"
+#define MEN_QUIT_STR "Q_Quit"
+#define ERR_GENERAL_STR "An unspecified error has occured."
+#define ERR_NOCONFIG_STR "Config file not found."
+#define ERR_NOICON_STR "There is no icon!"
+#define ERR_NOLIB_STR "Library not found. Perhaps wrong OS."
+#define TXT_DELACTION_STR "Delete this action ?"
+#define TXT_DELCLASS_STR "Delete this class ?"
+#define TXT_NEWACTION_STR "<New action #%d>"
+#define TXT_NEWCLASS_STR "<New class #%d>"
+#define TXT_NOACT_STR "No action"
+#define TXT_INFORMATION_STR "Information"
+#define TXT_OK_STR "Ok"
+#define TXT_YESNO_STR "Yes|No"
+#define ERR_CONFIGNOTVALID_STR "Your config file\n\nis not a valid\n\nClassAction config file"
+#define ERR_GENERICNOTVALID_STR "The generic file is not valid."
+#define TXT_GENERIC_STR "Generic actions"
+#define TXT_UNKNOWN_STR "Unknown class"
+#define TXT_DIRECTORY_STR "Directory"
+#define ERR_DIRNOTVALID_STR "The dir file is not valid."
+#define ERR_CONFIGCORRUPT_STR "Your config file\n\nis corrupted."
+#define TXT_LCHOOSE_STR "Choose files to learn from."
+#define TXT_LCOMP_STR "Analysis complete."
+#define TXT_LPREP_STR "Preprocessing ... please wait"
+#define TXT_LPROG_STR "Analysis in progress ..."
+#define TXT_LEARN_STR "Learn"
+#define TXT_ACCEPT_STR "Accept"
+#define TXT_BUTTLACCEPT_STR "Accept these offsets and strings"
+#define TXT_BUTTLCANCEL_STR "Cancel the learning process"
+#define TXT_PROG_STR "ClassActionPrefs"
+#define TXT_LMEMORY_STR "Not enough memory for learning."
+#define TXT_LNEED_STR "I need at leat 2 files for learning."
+#define TXT_LNOTHING_STR "Nothing found."
+#define TXT_COPYRIGHT_STR "   %s\n\n© 2002 by Martin R. Elsner & Salim Gasmi\n\nYou can contact me at :\n\nMartin R. Elsner\nMuesener Strasse 46\n57223 Kreuztal\nGermany\n\nEmail: email@martin-elsner.de\nWeb: http://www.martin-elsner.de"
+#define TXT_OPTIONS_STR "Options"
+#define TXT_COMMANDS_STR "Commands"
+#define TXT_CLASSES_STR "Classes"
+#define TXT_SAVE_STR "Save"
+#define TXT_BUTTSAVE_STR "Save the changes"
+#define TXT_USE_STR "Use"
+#define TXT_BUTTUSE_STR "Use the changes without saving"
+#define TXT_CANCEL_STR "Cancel"
+#define TXT_BUTTCANCEL_STR "Quit without saving"
+#define TXT_ISSURE_STR "Are you sure ?"
+#define TXT_ACTIKEY_STR "Activation key"
+#define TXT_SELRAWKEY_STR "Select RAW key"
+#define TXT_NAMEE_STR "Name:"
+#define TXT_ICON_STR "Icon"
+#define TXT_ADD_STR "Add"
+#define TXT_REMOVE_STR "Remove"
+#define TXT_NAME_STR "Name"
+#define TXT_BUTTCOMM_STR "Choose a variable"
+#define TXT_REQPF2_STR "[F] Path+Filename"
+#define TXT_REQS2_STR "[S] Path+Filename without suffix"
+#define TXT_REQB2_STR "[B] Filename"
+#define TXT_REQX2_STR "[X] Filename without suffix"
+#define TXT_SRC_STR "[SRC] Path of source lister"
+#define TXT_SRCS_STR "[SRCS] Path of source lister + '/'"
+#define TXT_DST_STR "[DST] Path of destination lister"
+#define TXT_DSTS_STR "[DSTS] Path of destination lister + '/'"
+#define TXT_REQF_STR "[REQF:...] Request a file"
+#define TXT_REQD_STR "[REQD:...] Request a directory"
+#define TXT_REQT_STR "[REQT:...] Request a text"
+#define TXT_SURE_STR "[SURE:...] Confirm a command"
+#define TXT_COMMAND_STR "Command"
+#define TXT_CLI_STR "CLI"
+#define TXT_WB_STR "WB"
+#define TXT_NOCLI_STR "No CLI"
+#define TXT_AREXX_STR "ARexx"
+#define TXT_INTERNAL_STR "Internal"
+#define TXT_SPACE_STR "Space"
+#define TXT_BUTTMODE_STR "Choose the starting mode"
+#define TXT_MODE_STR "Mode"
+#define TXT_INTCOMMANDS_STR "Internal commands"
+#define TXT_VARIABLES_STR "Variables"
+#define TXT_HELPE_STR "Help:"
+#define TXT_BUTTSTACK_STR "Enter the required stack"
+#define TXT_STACK_STR "Stack"
+#define TXT_BUTTDELAY_STR "Choose the wanted delay"
+#define TXT_DELAY_STR "Delay"
+#define MSG_READSOURCE_STR "Read source"
+#define TXT_CHOOSEICON_STR "Choose icon"
+#define TXT_PRESSKEY_STR "Press key"
+#define TXT_BUTTCOMMAND_STR "Command line"
+#define TXT_BUTTLOAD_STR "Insert a filename"
+#define TXT_BUTTLCOM_STR "List of Commands"
+#define TXT_BUTTCUP_STR "Move command up"
+#define TXT_BUTTCDOWN_STR "Move command down"
+#define TXT_BUTTCADD_STR "Add command"
+#define TXT_BUTTCREM_STR "Remove command"
+#define TXT_BUTTCNAME_STR "Name of command"
+#define TXT_BUTTCHELP_STR "Help text for the command"
+#define TXT_BUTTINT_STR "Choose internal command"
+#define TXT_BUTTOPTIONS_STR "List of options"
+#define TXT_ICONS_STR "Icons"
+#define TXT_BUTTONS_STR "Buttons"
+#define TXT_LISTERS_STR "Listers"
+#define TXT_BUTTGTICON_STR "The icon for the command"
+#define TXT_BUTTPREVIEW_STR "Preview of icon(s)"
+#define TXT_BUTTKEY_STR "Get the raw code of a key"
+#define TXT_BUTTSTRKEY_STR "Activation key for the command"
+#define TXT_BUTTCHKEY_STR "The type of the key"
+#define TXT_SHOWHELP_STR "Show Help"
+#define TXT_WINDOW_STR "Window"
+#define TXT_ACTIONS_STR "Actions"
+#define TXT_DISPINFO_STR "Display icons"
+#define TXT_DISPTIME_STR "Display also time"
+#define TXT_PARENT_STR "Parent"
+#define TXT_PATHS_STR "Paths"
+#define TXT_HEIGHT_STR "Height"
+#define TXT_ICONSTART_STR "Start as icon"
+#define TXT_LEFTEDGE_STR "Left edge"
+#define TXT_MUIQUIT_STR "Iconify by close gadget"
+#define TXT_TOPEDGE_STR "Top edge"
+#define TXT_WIDTH_STR "Width"
+#define TXT_CONFIRMREPLACE_STR "Confirm replace"
+#define TXT_COPYICONS_STR "Copy icons"
+#define TXT_CREATEICONS_STR "Create icons"
+#define TXT_DATESTRING_STR "Show date as text"
+#define TXT_DRAWERSFIRST_STR "Show drawers first"
+#define TXT_GENERAL_STR "General"
+#define TXT_CLISIZE_STR "Cli size"
+#define TXT_CHOOSEFILE_STR "Choose file"
+#define TXT_PATH_STR "Path"
+#define TXT_NOTAVAIL_STR "This function is not yet available."
+#define TXT_OPENPREFS_STR "Open ClassAction preference file"
+#define TXT_SAVEPREFS_STR "Save ClassAction preference file"
+#define TXT_SMALLIM_STR "Use small images"
+#define TXT_EDIT_STR "Edit"
+#define MEN_LASTSAVED_STR "L_Last saved"
+#define MEN_OPEN_STR "O_Open..."
+#define MEN_RESET_STR "D_Reset to defaults"
+#define MEN_RESTORE_STR "R_Restore"
+#define TXT_BOTTOMICONS_STR "Bottom icons"
+#define TXT_CHECKFIT_STR "Check space before copying"
+#define ERR_SAVEPREFS_STR "Couldn't save prefs!"
+#define TXT_HIGHDIRS_STR "Highlight directories"
+#define TXT_KEYCOM_STR "Tool menu"
+#define TXT_REPLACETOOLTYPES_STR "Now your old tooltypes will be loaded and saved in the new format."
+#define TXT_SHOWIM_STR "Show images"
+#define TXT_TOPICONS_STR "Top icons"
+#define MEN_SAVEAS_STR "S_Save as ..."
+#define TXT_WHEREISCA_STR "Where is your old ClassAction program file?"
+#define TXT_APPX_STR "AppIcon left edge"
+#define TXT_APPY_STR "AppIcon top edge"
+#define TXT_DSTSTARTPATH_STR "Destination start path"
+#define TXT_PUBLICSCREEN_STR "Public screen"
+#define TXT_SRCSTARTPATH_STR "Source start path"
+#define TXT_SHOWDEVS_STR "Show devices"
+#define TXT_DELETEICONS_STR "Delete icons"
+#define TXT_MAXPATHS_STR "Cached paths"
+#define TXT_MAXTABS_STR "Path buttons"
+#define TXT_PATHNOTIFY_STR "Update on change"
+#define TXT_REFRESH_STR "Refresh"
+#define TXT_LISTERFONT_STR "Lister font"
+#define TXT_MENUFONT_STR "Menu font"
+#define TXT_BACKGROUND_STR "Background"
+#define MSG_DELETEPROTECTED_STR "Delete protected files"
+#define TXT_PATHMENU_STR "Path menu"
+#define MSG_VERTICAL_STR "Vertically arranged"
+#define MEN_HELP_STR "H_Help"
+#define MSG_SUPPORTEDARCHIVES_STR "Supported archives"
+#define MSG_BUTTOPENICONS_STR "Open MRE:Icons"
+#define MSG_ASYNC_STR "Async"
+#define MSG_READDEST_STR "Read dest"
+#define MSG_BUFFERSIZE_STR "Buffer size in KB"
+#define MSG_COPYANDDELETE_STR "Copy and delete"
+#define MSG_COUNTFILES_STR "Count files before copy"
+#define MSG_HIDEKEY_STR "Hide key"
+#define MEN_SHOWHELP_STR "?_Show help"
+#define MSG_POPUPKEY_STR "Popup key"
+#define MSG_PULLDOWNMENU_STR "Menu is pulldown menu"
+#define MSG_REPLACEVERSION_STR "Replace older versions when copying"
+#define MSG_SHOWVERSION_STR "Show version when replacing"
+#define MSG_NAME_STR "Name"
+#define MSG_PATH_STR "Path"
+#define TXT_BUTTLPATHS_STR "List of Paths"
+#define MSG_OPENWITH_STR "Open with"
+#define MSG_PATHLIST_STR "Path list"
+#define TXT_BUTTPUP_STR "Move path up"
+#define TXT_BUTTPDOWN_STR "Move path down"
+#define TXT_BUTTPADD_STR "Add path"
+#define TXT_BUTTPREM_STR "Remove path"
+#define MSG_ENTERPATH_STR "Please specify the path"
+#define MSG_ENTERPATHTITLE_STR "Please enter the title for the path:"
+#define MSG_TABBUTTONSTRANSPARENT_STR "Path buttons transparent"
+#define MSG_VOLUME_STR "Volume"
+#define ERR_DELCLASS_STR "This class cannot be deleted."
+#define MSG_BUTTCLASSIMAGE_STR "Image for this class"
+#define MSG_IMAGE_STR "Image"
+#define MSG_BUTTLOADIMAGE_STR "Choose an image file"
+#define MSG_CLASSIMAGES_STR "Use class images"
+#define MSG_OWNSCREEN_STR "Own screen"
+#define MSG_ARCHIVE_STR "Archive"
+#define MSG_ONLYPATTERNS_STR "Check only patterns"
+#define MSG_DUPLICATE_STR "Duplicate"
+#define MSG_PASTE_STR "Paste"
+#define MSG_LEARN_STR "Learn"
+#define MSG_IMPORT_STR "Import"
+#define MSG_EXPORT_STR "Export"
+#define MSG_COPY_STR "Copy"
+#define MSG_BLUE_STR "Blue"
+#define MSG_DATEFORMAT_STR "Date format"
+#define MSG_EXPORTCLASS_STR "Export class"
+#define MSG_GREEN_STR "Green"
+#define MSG_IMPORTCLASS_STR "Import class"
+#define MSG_RED_STR "Red"
+#define MSG_USEEXALL_STR "Use ExAll()"
+#define MSG_USEREACTIONREQUEST_STR "Reaction requesters"
+#define MSG_BUTTDIR_STR "Work directory"
+#define MSG_SOURCE_STR "source"
+#define MSG_DESTINATION_STR "destination"
+#define MSG_PROGDIR_STR "program dir"
+#define MSG_CD_STR "CD"
+#define MSG_CONFIRMDELETE_STR "Confirm delete"
+#define MSG_EXALLFILES_STR "Files per ExAll() call"
+
+#endif /* CATCOMP_STRINGS */
+
+
+/****************************************************************************/
+
+
+#ifdef CATCOMP_ARRAY
+
+struct CatCompArrayType
+{
+    LONG   cca_ID;
+    STRPTR cca_Str;
+};
+
+static const struct CatCompArrayType CatCompArray[] =
+{
+    {TXT_CLASSNAME,(STRPTR)TXT_CLASSNAME_STR},
+    {TXT_MATCHNAME,(STRPTR)TXT_MATCHNAME_STR},
+    {TXT_OFFSET1,(STRPTR)TXT_OFFSET1_STR},
+    {TXT_OFFSET2,(STRPTR)TXT_OFFSET2_STR},
+    {TXT_OFFSET3,(STRPTR)TXT_OFFSET3_STR},
+    {TXT_OFFSET4,(STRPTR)TXT_OFFSET4_STR},
+    {TXT_OFFSET5,(STRPTR)TXT_OFFSET5_STR},
+    {TXT_BUTTLST1,(STRPTR)TXT_BUTTLST1_STR},
+    {TXT_BUTTCLASS,(STRPTR)TXT_BUTTCLASS_STR},
+    {TXT_BUTTMATCH,(STRPTR)TXT_BUTTMATCH_STR},
+    {TXT_BUTTCHOFF,(STRPTR)TXT_BUTTCHOFF_STR},
+    {TXT_BUTTOFFSET,(STRPTR)TXT_BUTTOFFSET_STR},
+    {TXT_BUTTADD,(STRPTR)TXT_BUTTADD_STR},
+    {TXT_BUTTREMOVE,(STRPTR)TXT_BUTTREMOVE_STR},
+    {TXT_BUTTLST2,(STRPTR)TXT_BUTTLST2_STR},
+    {TXT_BUTTANAME,(STRPTR)TXT_BUTTANAME_STR},
+    {TXT_BUTTUP,(STRPTR)TXT_BUTTUP_STR},
+    {TXT_BUTTDOWN,(STRPTR)TXT_BUTTDOWN_STR},
+    {TXT_BUTTADD2,(STRPTR)TXT_BUTTADD2_STR},
+    {TXT_BUTTREMOVE2,(STRPTR)TXT_BUTTREMOVE2_STR},
+    {TXT_ABOUT,(STRPTR)TXT_ABOUT_STR},
+    {TXT_PROJECT,(STRPTR)TXT_PROJECT_STR},
+    {MEN_QUIT,(STRPTR)MEN_QUIT_STR},
+    {ERR_GENERAL,(STRPTR)ERR_GENERAL_STR},
+    {ERR_NOCONFIG,(STRPTR)ERR_NOCONFIG_STR},
+    {ERR_NOICON,(STRPTR)ERR_NOICON_STR},
+    {ERR_NOLIB,(STRPTR)ERR_NOLIB_STR},
+    {TXT_DELACTION,(STRPTR)TXT_DELACTION_STR},
+    {TXT_DELCLASS,(STRPTR)TXT_DELCLASS_STR},
+    {TXT_NEWACTION,(STRPTR)TXT_NEWACTION_STR},
+    {TXT_NEWCLASS,(STRPTR)TXT_NEWCLASS_STR},
+    {TXT_NOACT,(STRPTR)TXT_NOACT_STR},
+    {TXT_INFORMATION,(STRPTR)TXT_INFORMATION_STR},
+    {TXT_OK,(STRPTR)TXT_OK_STR},
+    {TXT_YESNO,(STRPTR)TXT_YESNO_STR},
+    {ERR_CONFIGNOTVALID,(STRPTR)ERR_CONFIGNOTVALID_STR},
+    {ERR_GENERICNOTVALID,(STRPTR)ERR_GENERICNOTVALID_STR},
+    {TXT_GENERIC,(STRPTR)TXT_GENERIC_STR},
+    {TXT_UNKNOWN,(STRPTR)TXT_UNKNOWN_STR},
+    {TXT_DIRECTORY,(STRPTR)TXT_DIRECTORY_STR},
+    {ERR_DIRNOTVALID,(STRPTR)ERR_DIRNOTVALID_STR},
+    {ERR_CONFIGCORRUPT,(STRPTR)ERR_CONFIGCORRUPT_STR},
+    {TXT_LCHOOSE,(STRPTR)TXT_LCHOOSE_STR},
+    {TXT_LCOMP,(STRPTR)TXT_LCOMP_STR},
+    {TXT_LPREP,(STRPTR)TXT_LPREP_STR},
+    {TXT_LPROG,(STRPTR)TXT_LPROG_STR},
+    {TXT_LEARN,(STRPTR)TXT_LEARN_STR},
+    {TXT_ACCEPT,(STRPTR)TXT_ACCEPT_STR},
+    {TXT_BUTTLACCEPT,(STRPTR)TXT_BUTTLACCEPT_STR},
+    {TXT_BUTTLCANCEL,(STRPTR)TXT_BUTTLCANCEL_STR},
+    {TXT_PROG,(STRPTR)TXT_PROG_STR},
+    {TXT_LMEMORY,(STRPTR)TXT_LMEMORY_STR},
+    {TXT_LNEED,(STRPTR)TXT_LNEED_STR},
+    {TXT_LNOTHING,(STRPTR)TXT_LNOTHING_STR},
+    {TXT_COPYRIGHT,(STRPTR)TXT_COPYRIGHT_STR},
+    {TXT_OPTIONS,(STRPTR)TXT_OPTIONS_STR},
+    {TXT_COMMANDS,(STRPTR)TXT_COMMANDS_STR},
+    {TXT_CLASSES,(STRPTR)TXT_CLASSES_STR},
+    {TXT_SAVE,(STRPTR)TXT_SAVE_STR},
+    {TXT_BUTTSAVE,(STRPTR)TXT_BUTTSAVE_STR},
+    {TXT_USE,(STRPTR)TXT_USE_STR},
+    {TXT_BUTTUSE,(STRPTR)TXT_BUTTUSE_STR},
+    {TXT_CANCEL,(STRPTR)TXT_CANCEL_STR},
+    {TXT_BUTTCANCEL,(STRPTR)TXT_BUTTCANCEL_STR},
+    {TXT_ISSURE,(STRPTR)TXT_ISSURE_STR},
+    {TXT_ACTIKEY,(STRPTR)TXT_ACTIKEY_STR},
+    {TXT_SELRAWKEY,(STRPTR)TXT_SELRAWKEY_STR},
+    {TXT_NAMEE,(STRPTR)TXT_NAMEE_STR},
+    {TXT_ICON,(STRPTR)TXT_ICON_STR},
+    {TXT_ADD,(STRPTR)TXT_ADD_STR},
+    {TXT_REMOVE,(STRPTR)TXT_REMOVE_STR},
+    {TXT_NAME,(STRPTR)TXT_NAME_STR},
+    {TXT_BUTTCOMM,(STRPTR)TXT_BUTTCOMM_STR},
+    {TXT_REQPF2,(STRPTR)TXT_REQPF2_STR},
+    {TXT_REQS2,(STRPTR)TXT_REQS2_STR},
+    {TXT_REQB2,(STRPTR)TXT_REQB2_STR},
+    {TXT_REQX2,(STRPTR)TXT_REQX2_STR},
+    {TXT_SRC,(STRPTR)TXT_SRC_STR},
+    {TXT_SRCS,(STRPTR)TXT_SRCS_STR},
+    {TXT_DST,(STRPTR)TXT_DST_STR},
+    {TXT_DSTS,(STRPTR)TXT_DSTS_STR},
+    {TXT_REQF,(STRPTR)TXT_REQF_STR},
+    {TXT_REQD,(STRPTR)TXT_REQD_STR},
+    {TXT_REQT,(STRPTR)TXT_REQT_STR},
+    {TXT_SURE,(STRPTR)TXT_SURE_STR},
+    {TXT_COMMAND,(STRPTR)TXT_COMMAND_STR},
+    {TXT_CLI,(STRPTR)TXT_CLI_STR},
+    {TXT_WB,(STRPTR)TXT_WB_STR},
+    {TXT_NOCLI,(STRPTR)TXT_NOCLI_STR},
+    {TXT_AREXX,(STRPTR)TXT_AREXX_STR},
+    {TXT_INTERNAL,(STRPTR)TXT_INTERNAL_STR},
+    {TXT_SPACE,(STRPTR)TXT_SPACE_STR},
+    {TXT_BUTTMODE,(STRPTR)TXT_BUTTMODE_STR},
+    {TXT_MODE,(STRPTR)TXT_MODE_STR},
+    {TXT_INTCOMMANDS,(STRPTR)TXT_INTCOMMANDS_STR},
+    {TXT_VARIABLES,(STRPTR)TXT_VARIABLES_STR},
+    {TXT_HELPE,(STRPTR)TXT_HELPE_STR},
+    {TXT_BUTTSTACK,(STRPTR)TXT_BUTTSTACK_STR},
+    {TXT_STACK,(STRPTR)TXT_STACK_STR},
+    {TXT_BUTTDELAY,(STRPTR)TXT_BUTTDELAY_STR},
+    {TXT_DELAY,(STRPTR)TXT_DELAY_STR},
+    {MSG_READSOURCE,(STRPTR)MSG_READSOURCE_STR},
+    {TXT_CHOOSEICON,(STRPTR)TXT_CHOOSEICON_STR},
+    {TXT_PRESSKEY,(STRPTR)TXT_PRESSKEY_STR},
+    {TXT_BUTTCOMMAND,(STRPTR)TXT_BUTTCOMMAND_STR},
+    {TXT_BUTTLOAD,(STRPTR)TXT_BUTTLOAD_STR},
+    {TXT_BUTTLCOM,(STRPTR)TXT_BUTTLCOM_STR},
+    {TXT_BUTTCUP,(STRPTR)TXT_BUTTCUP_STR},
+    {TXT_BUTTCDOWN,(STRPTR)TXT_BUTTCDOWN_STR},
+    {TXT_BUTTCADD,(STRPTR)TXT_BUTTCADD_STR},
+    {TXT_BUTTCREM,(STRPTR)TXT_BUTTCREM_STR},
+    {TXT_BUTTCNAME,(STRPTR)TXT_BUTTCNAME_STR},
+    {TXT_BUTTCHELP,(STRPTR)TXT_BUTTCHELP_STR},
+    {TXT_BUTTINT,(STRPTR)TXT_BUTTINT_STR},
+    {TXT_BUTTOPTIONS,(STRPTR)TXT_BUTTOPTIONS_STR},
+    {TXT_ICONS,(STRPTR)TXT_ICONS_STR},
+    {TXT_BUTTONS,(STRPTR)TXT_BUTTONS_STR},
+    {TXT_LISTERS,(STRPTR)TXT_LISTERS_STR},
+    {TXT_BUTTGTICON,(STRPTR)TXT_BUTTGTICON_STR},
+    {TXT_BUTTPREVIEW,(STRPTR)TXT_BUTTPREVIEW_STR},
+    {TXT_BUTTKEY,(STRPTR)TXT_BUTTKEY_STR},
+    {TXT_BUTTSTRKEY,(STRPTR)TXT_BUTTSTRKEY_STR},
+    {TXT_BUTTCHKEY,(STRPTR)TXT_BUTTCHKEY_STR},
+    {TXT_SHOWHELP,(STRPTR)TXT_SHOWHELP_STR},
+    {TXT_WINDOW,(STRPTR)TXT_WINDOW_STR},
+    {TXT_ACTIONS,(STRPTR)TXT_ACTIONS_STR},
+    {TXT_DISPINFO,(STRPTR)TXT_DISPINFO_STR},
+    {TXT_DISPTIME,(STRPTR)TXT_DISPTIME_STR},
+    {TXT_PARENT,(STRPTR)TXT_PARENT_STR},
+    {TXT_PATHS,(STRPTR)TXT_PATHS_STR},
+    {TXT_HEIGHT,(STRPTR)TXT_HEIGHT_STR},
+    {TXT_ICONSTART,(STRPTR)TXT_ICONSTART_STR},
+    {TXT_LEFTEDGE,(STRPTR)TXT_LEFTEDGE_STR},
+    {TXT_MUIQUIT,(STRPTR)TXT_MUIQUIT_STR},
+    {TXT_TOPEDGE,(STRPTR)TXT_TOPEDGE_STR},
+    {TXT_WIDTH,(STRPTR)TXT_WIDTH_STR},
+    {TXT_CONFIRMREPLACE,(STRPTR)TXT_CONFIRMREPLACE_STR},
+    {TXT_COPYICONS,(STRPTR)TXT_COPYICONS_STR},
+    {TXT_CREATEICONS,(STRPTR)TXT_CREATEICONS_STR},
+    {TXT_DATESTRING,(STRPTR)TXT_DATESTRING_STR},
+    {TXT_DRAWERSFIRST,(STRPTR)TXT_DRAWERSFIRST_STR},
+    {TXT_GENERAL,(STRPTR)TXT_GENERAL_STR},
+    {TXT_CLISIZE,(STRPTR)TXT_CLISIZE_STR},
+    {TXT_CHOOSEFILE,(STRPTR)TXT_CHOOSEFILE_STR},
+    {TXT_PATH,(STRPTR)TXT_PATH_STR},
+    {TXT_NOTAVAIL,(STRPTR)TXT_NOTAVAIL_STR},
+    {TXT_OPENPREFS,(STRPTR)TXT_OPENPREFS_STR},
+    {TXT_SAVEPREFS,(STRPTR)TXT_SAVEPREFS_STR},
+    {TXT_SMALLIM,(STRPTR)TXT_SMALLIM_STR},
+    {TXT_EDIT,(STRPTR)TXT_EDIT_STR},
+    {MEN_LASTSAVED,(STRPTR)MEN_LASTSAVED_STR},
+    {MEN_OPEN,(STRPTR)MEN_OPEN_STR},
+    {MEN_RESET,(STRPTR)MEN_RESET_STR},
+    {MEN_RESTORE,(STRPTR)MEN_RESTORE_STR},
+    {TXT_BOTTOMICONS,(STRPTR)TXT_BOTTOMICONS_STR},
+    {TXT_CHECKFIT,(STRPTR)TXT_CHECKFIT_STR},
+    {ERR_SAVEPREFS,(STRPTR)ERR_SAVEPREFS_STR},
+    {TXT_HIGHDIRS,(STRPTR)TXT_HIGHDIRS_STR},
+    {TXT_KEYCOM,(STRPTR)TXT_KEYCOM_STR},
+    {TXT_REPLACETOOLTYPES,(STRPTR)TXT_REPLACETOOLTYPES_STR},
+    {TXT_SHOWIM,(STRPTR)TXT_SHOWIM_STR},
+    {TXT_TOPICONS,(STRPTR)TXT_TOPICONS_STR},
+    {MEN_SAVEAS,(STRPTR)MEN_SAVEAS_STR},
+    {TXT_WHEREISCA,(STRPTR)TXT_WHEREISCA_STR},
+    {TXT_APPX,(STRPTR)TXT_APPX_STR},
+    {TXT_APPY,(STRPTR)TXT_APPY_STR},
+    {TXT_DSTSTARTPATH,(STRPTR)TXT_DSTSTARTPATH_STR},
+    {TXT_PUBLICSCREEN,(STRPTR)TXT_PUBLICSCREEN_STR},
+    {TXT_SRCSTARTPATH,(STRPTR)TXT_SRCSTARTPATH_STR},
+    {TXT_SHOWDEVS,(STRPTR)TXT_SHOWDEVS_STR},
+    {TXT_DELETEICONS,(STRPTR)TXT_DELETEICONS_STR},
+    {TXT_MAXPATHS,(STRPTR)TXT_MAXPATHS_STR},
+    {TXT_MAXTABS,(STRPTR)TXT_MAXTABS_STR},
+    {TXT_PATHNOTIFY,(STRPTR)TXT_PATHNOTIFY_STR},
+    {TXT_REFRESH,(STRPTR)TXT_REFRESH_STR},
+    {TXT_LISTERFONT,(STRPTR)TXT_LISTERFONT_STR},
+    {TXT_MENUFONT,(STRPTR)TXT_MENUFONT_STR},
+    {TXT_BACKGROUND,(STRPTR)TXT_BACKGROUND_STR},
+    {MSG_DELETEPROTECTED,(STRPTR)MSG_DELETEPROTECTED_STR},
+    {TXT_PATHMENU,(STRPTR)TXT_PATHMENU_STR},
+    {MSG_VERTICAL,(STRPTR)MSG_VERTICAL_STR},
+    {MEN_HELP,(STRPTR)MEN_HELP_STR},
+    {MSG_SUPPORTEDARCHIVES,(STRPTR)MSG_SUPPORTEDARCHIVES_STR},
+    {MSG_BUTTOPENICONS,(STRPTR)MSG_BUTTOPENICONS_STR},
+    {MSG_ASYNC,(STRPTR)MSG_ASYNC_STR},
+    {MSG_READDEST,(STRPTR)MSG_READDEST_STR},
+    {MSG_BUFFERSIZE,(STRPTR)MSG_BUFFERSIZE_STR},
+    {MSG_COPYANDDELETE,(STRPTR)MSG_COPYANDDELETE_STR},
+    {MSG_COUNTFILES,(STRPTR)MSG_COUNTFILES_STR},
+    {MSG_HIDEKEY,(STRPTR)MSG_HIDEKEY_STR},
+    {MEN_SHOWHELP,(STRPTR)MEN_SHOWHELP_STR},
+    {MSG_POPUPKEY,(STRPTR)MSG_POPUPKEY_STR},
+    {MSG_PULLDOWNMENU,(STRPTR)MSG_PULLDOWNMENU_STR},
+    {MSG_REPLACEVERSION,(STRPTR)MSG_REPLACEVERSION_STR},
+    {MSG_SHOWVERSION,(STRPTR)MSG_SHOWVERSION_STR},
+    {MSG_NAME,(STRPTR)MSG_NAME_STR},
+    {MSG_PATH,(STRPTR)MSG_PATH_STR},
+    {TXT_BUTTLPATHS,(STRPTR)TXT_BUTTLPATHS_STR},
+    {MSG_OPENWITH,(STRPTR)MSG_OPENWITH_STR},
+    {MSG_PATHLIST,(STRPTR)MSG_PATHLIST_STR},
+    {TXT_BUTTPUP,(STRPTR)TXT_BUTTPUP_STR},
+    {TXT_BUTTPDOWN,(STRPTR)TXT_BUTTPDOWN_STR},
+    {TXT_BUTTPADD,(STRPTR)TXT_BUTTPADD_STR},
+    {TXT_BUTTPREM,(STRPTR)TXT_BUTTPREM_STR},
+    {MSG_ENTERPATH,(STRPTR)MSG_ENTERPATH_STR},
+    {MSG_ENTERPATHTITLE,(STRPTR)MSG_ENTERPATHTITLE_STR},
+    {MSG_TABBUTTONSTRANSPARENT,(STRPTR)MSG_TABBUTTONSTRANSPARENT_STR},
+    {MSG_VOLUME,(STRPTR)MSG_VOLUME_STR},
+    {ERR_DELCLASS,(STRPTR)ERR_DELCLASS_STR},
+    {MSG_BUTTCLASSIMAGE,(STRPTR)MSG_BUTTCLASSIMAGE_STR},
+    {MSG_IMAGE,(STRPTR)MSG_IMAGE_STR},
+    {MSG_BUTTLOADIMAGE,(STRPTR)MSG_BUTTLOADIMAGE_STR},
+    {MSG_CLASSIMAGES,(STRPTR)MSG_CLASSIMAGES_STR},
+    {MSG_OWNSCREEN,(STRPTR)MSG_OWNSCREEN_STR},
+    {MSG_ARCHIVE,(STRPTR)MSG_ARCHIVE_STR},
+    {MSG_ONLYPATTERNS,(STRPTR)MSG_ONLYPATTERNS_STR},
+    {MSG_DUPLICATE,(STRPTR)MSG_DUPLICATE_STR},
+    {MSG_PASTE,(STRPTR)MSG_PASTE_STR},
+    {MSG_LEARN,(STRPTR)MSG_LEARN_STR},
+    {MSG_IMPORT,(STRPTR)MSG_IMPORT_STR},
+    {MSG_EXPORT,(STRPTR)MSG_EXPORT_STR},
+    {MSG_COPY,(STRPTR)MSG_COPY_STR},
+    {MSG_BLUE,(STRPTR)MSG_BLUE_STR},
+    {MSG_DATEFORMAT,(STRPTR)MSG_DATEFORMAT_STR},
+    {MSG_EXPORTCLASS,(STRPTR)MSG_EXPORTCLASS_STR},
+    {MSG_GREEN,(STRPTR)MSG_GREEN_STR},
+    {MSG_IMPORTCLASS,(STRPTR)MSG_IMPORTCLASS_STR},
+    {MSG_RED,(STRPTR)MSG_RED_STR},
+    {MSG_USEEXALL,(STRPTR)MSG_USEEXALL_STR},
+    {MSG_USEREACTIONREQUEST,(STRPTR)MSG_USEREACTIONREQUEST_STR},
+    {MSG_BUTTDIR,(STRPTR)MSG_BUTTDIR_STR},
+    {MSG_SOURCE,(STRPTR)MSG_SOURCE_STR},
+    {MSG_DESTINATION,(STRPTR)MSG_DESTINATION_STR},
+    {MSG_PROGDIR,(STRPTR)MSG_PROGDIR_STR},
+    {MSG_CD,(STRPTR)MSG_CD_STR},
+    {MSG_CONFIRMDELETE,(STRPTR)MSG_CONFIRMDELETE_STR},
+    {MSG_EXALLFILES,(STRPTR)MSG_EXALLFILES_STR},
+};
+
+#endif /* CATCOMP_ARRAY */
+
+
+/****************************************************************************/
+
+
+#ifdef CATCOMP_BLOCK
+
+static const char CatCompBlock[] =
+{
+    "\x00\x00\x01\x03\x00\x0C"
+    TXT_CLASSNAME_STR "\x00\x00"
+    "\x00\x00\x01\x04\x00\x08"
+    TXT_MATCHNAME_STR "\x00"
+    "\x00\x00\x01\x05\x00\x0A"
+    TXT_OFFSET1_STR "\x00"
+    "\x00\x00\x01\x06\x00\x0A"
+    TXT_OFFSET2_STR "\x00"
+    "\x00\x00\x01\x07\x00\x0A"
+    TXT_OFFSET3_STR "\x00"
+    "\x00\x00\x01\x08\x00\x0A"
+    TXT_OFFSET4_STR "\x00"
+    "\x00\x00\x01\x09\x00\x0A"
+    TXT_OFFSET5_STR "\x00"
+    "\x00\x00\x01\x2D\x00\x18"
+    TXT_BUTTLST1_STR "\x00"
+    "\x00\x00\x01\x2E\x00\x12"
+    TXT_BUTTCLASS_STR "\x00"
+    "\x00\x00\x01\x2F\x00\x1E"
+    TXT_BUTTMATCH_STR "\x00\x00"
+    "\x00\x00\x01\x30\x00\x18"
+    TXT_BUTTCHOFF_STR "\x00"
+    "\x00\x00\x01\x31\x00\x18"
+    TXT_BUTTOFFSET_STR "\x00"
+    "\x00\x00\x01\x32\x00\x10"
+    TXT_BUTTADD_STR "\x00"
+    "\x00\x00\x01\x33\x00\x12"
+    TXT_BUTTREMOVE_STR "\x00"
+    "\x00\x00\x01\x35\x00\x18"
+    TXT_BUTTLST2_STR "\x00"
+    "\x00\x00\x01\x36\x00\x18"
+    TXT_BUTTANAME_STR "\x00\x00"
+    "\x00\x00\x01\x3A\x00\x14"
+    TXT_BUTTUP_STR "\x00"
+    "\x00\x00\x01\x3B\x00\x16"
+    TXT_BUTTDOWN_STR "\x00"
+    "\x00\x00\x01\x3E\x00\x12"
+    TXT_BUTTADD2_STR "\x00\x00"
+    "\x00\x00\x01\x3F\x00\x14"
+    TXT_BUTTREMOVE2_STR "\x00\x00"
+    "\x00\x00\x01\x43\x00\x06"
+    TXT_ABOUT_STR "\x00"
+    "\x00\x00\x01\x44\x00\x08"
+    TXT_PROJECT_STR "\x00"
+    "\x00\x00\x01\x45\x00\x08"
+    MEN_QUIT_STR "\x00\x00"
+    "\x00\x00\x01\x47\x00\x22"
+    ERR_GENERAL_STR "\x00"
+    "\x00\x00\x01\x48\x00\x18"
+    ERR_NOCONFIG_STR "\x00\x00"
+    "\x00\x00\x01\x49\x00\x12"
+    ERR_NOICON_STR "\x00"
+    "\x00\x00\x01\x4A\x00\x26"
+    ERR_NOLIB_STR "\x00\x00"
+    "\x00\x00\x01\x4B\x00\x16"
+    TXT_DELACTION_STR "\x00\x00"
+    "\x00\x00\x01\x4C\x00\x14"
+    TXT_DELCLASS_STR "\x00"
+    "\x00\x00\x01\x4D\x00\x12"
+    TXT_NEWACTION_STR "\x00\x00"
+    "\x00\x00\x01\x4E\x00\x10"
+    TXT_NEWCLASS_STR "\x00"
+    "\x00\x00\x01\x4F\x00\x0A"
+    TXT_NOACT_STR "\x00"
+    "\x00\x00\x01\x50\x00\x0C"
+    TXT_INFORMATION_STR "\x00"
+    "\x00\x00\x01\x51\x00\x04"
+    TXT_OK_STR "\x00\x00"
+    "\x00\x00\x01\x52\x00\x08"
+    TXT_YESNO_STR "\x00\x00"
+    "\x00\x00\x01\x53\x00\x3A"
+    ERR_CONFIGNOTVALID_STR "\x00"
+    "\x00\x00\x01\x54\x00\x20"
+    ERR_GENERICNOTVALID_STR "\x00\x00"
+    "\x00\x00\x01\x55\x00\x10"
+    TXT_GENERIC_STR "\x00"
+    "\x00\x00\x01\x56\x00\x0E"
+    TXT_UNKNOWN_STR "\x00"
+    "\x00\x00\x01\x57\x00\x0A"
+    TXT_DIRECTORY_STR "\x00"
+    "\x00\x00\x01\x58\x00\x1C"
+    ERR_DIRNOTVALID_STR "\x00\x00"
+    "\x00\x00\x01\x59\x00\x20"
+    ERR_CONFIGCORRUPT_STR "\x00"
+    "\x00\x00\x01\x5A\x00\x1C"
+    TXT_LCHOOSE_STR "\x00"
+    "\x00\x00\x01\x5B\x00\x14"
+    TXT_LCOMP_STR "\x00\x00"
+    "\x00\x00\x01\x5C\x00\x1E"
+    TXT_LPREP_STR "\x00"
+    "\x00\x00\x01\x5D\x00\x1A"
+    TXT_LPROG_STR "\x00\x00"
+    "\x00\x00\x01\x5E\x00\x06"
+    TXT_LEARN_STR "\x00"
+    "\x00\x00\x01\x5F\x00\x08"
+    TXT_ACCEPT_STR "\x00\x00"
+    "\x00\x00\x01\x60\x00\x22"
+    TXT_BUTTLACCEPT_STR "\x00\x00"
+    "\x00\x00\x01\x61\x00\x1C"
+    TXT_BUTTLCANCEL_STR "\x00"
+    "\x00\x00\x01\x62\x00\x12"
+    TXT_PROG_STR "\x00\x00"
+    "\x00\x00\x01\x63\x00\x20"
+    TXT_LMEMORY_STR "\x00"
+    "\x00\x00\x01\x64\x00\x26"
+    TXT_LNEED_STR "\x00\x00"
+    "\x00\x00\x01\x65\x00\x10"
+    TXT_LNOTHING_STR "\x00\x00"
+    "\x00\x00\x01\x68\x00\xC6"
+    TXT_COPYRIGHT_STR "\x00"
+    "\x00\x00\x01\x6A\x00\x08"
+    TXT_OPTIONS_STR "\x00"
+    "\x00\x00\x01\x6B\x00\x0A"
+    TXT_COMMANDS_STR "\x00\x00"
+    "\x00\x00\x01\x6C\x00\x08"
+    TXT_CLASSES_STR "\x00"
+    "\x00\x00\x01\x6D\x00\x06"
+    TXT_SAVE_STR "\x00\x00"
+    "\x00\x00\x01\x6E\x00\x12"
+    TXT_BUTTSAVE_STR "\x00\x00"
+    "\x00\x00\x01\x6F\x00\x04"
+    TXT_USE_STR "\x00"
+    "\x00\x00\x01\x70\x00\x20"
+    TXT_BUTTUSE_STR "\x00\x00"
+    "\x00\x00\x01\x71\x00\x08"
+    TXT_CANCEL_STR "\x00\x00"
+    "\x00\x00\x01\x72\x00\x14"
+    TXT_BUTTCANCEL_STR "\x00"
+    "\x00\x00\x01\x73\x00\x10"
+    TXT_ISSURE_STR "\x00\x00"
+    "\x00\x00\x01\x8E\x00\x10"
+    TXT_ACTIKEY_STR "\x00\x00"
+    "\x00\x00\x01\x8F\x00\x10"
+    TXT_SELRAWKEY_STR "\x00\x00"
+    "\x00\x00\x01\x94\x00\x06"
+    TXT_NAMEE_STR "\x00"
+    "\x00\x00\x01\x95\x00\x06"
+    TXT_ICON_STR "\x00\x00"
+    "\x00\x00\x01\x96\x00\x04"
+    TXT_ADD_STR "\x00"
+    "\x00\x00\x01\x97\x00\x08"
+    TXT_REMOVE_STR "\x00\x00"
+    "\x00\x00\x01\xA8\x00\x06"
+    TXT_NAME_STR "\x00\x00"
+    "\x00\x00\x01\xAA\x00\x12"
+    TXT_BUTTCOMM_STR "\x00"
+    "\x00\x00\x01\xAB\x00\x12"
+    TXT_REQPF2_STR "\x00"
+    "\x00\x00\x01\xAC\x00\x22"
+    TXT_REQS2_STR "\x00\x00"
+    "\x00\x00\x01\xAD\x00\x0E"
+    TXT_REQB2_STR "\x00\x00"
+    "\x00\x00\x01\xAE\x00\x1C"
+    TXT_REQX2_STR "\x00"
+    "\x00\x00\x01\xAF\x00\x1C"
+    TXT_SRC_STR "\x00"
+    "\x00\x00\x01\xB0\x00\x24"
+    TXT_SRCS_STR "\x00\x00"
+    "\x00\x00\x01\xB1\x00\x22"
+    TXT_DST_STR "\x00\x00"
+    "\x00\x00\x01\xB2\x00\x28"
+    TXT_DSTS_STR "\x00"
+    "\x00\x00\x01\xB3\x00\x1A"
+    TXT_REQF_STR "\x00"
+    "\x00\x00\x01\xB4\x00\x20"
+    TXT_REQD_STR "\x00\x00"
+    "\x00\x00\x01\xB5\x00\x1A"
+    TXT_REQT_STR "\x00"
+    "\x00\x00\x01\xB6\x00\x1E"
+    TXT_SURE_STR "\x00\x00"
+    "\x00\x00\x01\xBB\x00\x08"
+    TXT_COMMAND_STR "\x00"
+    "\x00\x00\x01\xBC\x00\x04"
+    TXT_CLI_STR "\x00"
+    "\x00\x00\x01\xBD\x00\x04"
+    TXT_WB_STR "\x00\x00"
+    "\x00\x00\x01\xBE\x00\x08"
+    TXT_NOCLI_STR "\x00\x00"
+    "\x00\x00\x01\xBF\x00\x06"
+    TXT_AREXX_STR "\x00"
+    "\x00\x00\x01\xC0\x00\x0A"
+    TXT_INTERNAL_STR "\x00\x00"
+    "\x00\x00\x01\xC1\x00\x06"
+    TXT_SPACE_STR "\x00"
+    "\x00\x00\x01\xC2\x00\x1A"
+    TXT_BUTTMODE_STR "\x00\x00"
+    "\x00\x00\x01\xC3\x00\x06"
+    TXT_MODE_STR "\x00\x00"
+    "\x00\x00\x01\xC4\x00\x12"
+    TXT_INTCOMMANDS_STR "\x00"
+    "\x00\x00\x01\xC5\x00\x0A"
+    TXT_VARIABLES_STR "\x00"
+    "\x00\x00\x01\xC6\x00\x06"
+    TXT_HELPE_STR "\x00"
+    "\x00\x00\x01\xC8\x00\x1A"
+    TXT_BUTTSTACK_STR "\x00\x00"
+    "\x00\x00\x01\xC9\x00\x06"
+    TXT_STACK_STR "\x00"
+    "\x00\x00\x01\xCA\x00\x18"
+    TXT_BUTTDELAY_STR "\x00"
+    "\x00\x00\x01\xCB\x00\x06"
+    TXT_DELAY_STR "\x00"
+    "\x00\x00\x01\xCC\x00\x0C"
+    MSG_READSOURCE_STR "\x00"
+    "\x00\x00\x01\xDA\x00\x0C"
+    TXT_CHOOSEICON_STR "\x00"
+    "\x00\x00\x01\xDB\x00\x0A"
+    TXT_PRESSKEY_STR "\x00"
+    "\x00\x00\x01\xE8\x00\x0E"
+    TXT_BUTTCOMMAND_STR "\x00\x00"
+    "\x00\x00\x01\xE9\x00\x12"
+    TXT_BUTTLOAD_STR "\x00"
+    "\x00\x00\x01\xED\x00\x12"
+    TXT_BUTTLCOM_STR "\x00\x00"
+    "\x00\x00\x01\xEE\x00\x10"
+    TXT_BUTTCUP_STR "\x00"
+    "\x00\x00\x01\xEF\x00\x12"
+    TXT_BUTTCDOWN_STR "\x00"
+    "\x00\x00\x01\xF0\x00\x0C"
+    TXT_BUTTCADD_STR "\x00"
+    "\x00\x00\x01\xF1\x00\x10"
+    TXT_BUTTCREM_STR "\x00\x00"
+    "\x00\x00\x01\xF2\x00\x10"
+    TXT_BUTTCNAME_STR "\x00"
+    "\x00\x00\x01\xF3\x00\x1A"
+    TXT_BUTTCHELP_STR "\x00"
+    "\x00\x00\x01\xF4\x00\x18"
+    TXT_BUTTINT_STR "\x00"
+    "\x00\x00\x01\xF6\x00\x10"
+    TXT_BUTTOPTIONS_STR "\x00"
+    "\x00\x00\x01\xF7\x00\x06"
+    TXT_ICONS_STR "\x00"
+    "\x00\x00\x01\xF9\x00\x08"
+    TXT_BUTTONS_STR "\x00"
+    "\x00\x00\x01\xFA\x00\x08"
+    TXT_LISTERS_STR "\x00"
+    "\x00\x00\x01\xFB\x00\x1A"
+    TXT_BUTTGTICON_STR "\x00\x00"
+    "\x00\x00\x01\xFC\x00\x14"
+    TXT_BUTTPREVIEW_STR "\x00\x00"
+    "\x00\x00\x01\xFD\x00\x1A"
+    TXT_BUTTKEY_STR "\x00"
+    "\x00\x00\x01\xFE\x00\x20"
+    TXT_BUTTSTRKEY_STR "\x00\x00"
+    "\x00\x00\x01\xFF\x00\x14"
+    TXT_BUTTCHKEY_STR "\x00"
+    "\x00\x00\x02\x00\x00\x0A"
+    TXT_SHOWHELP_STR "\x00"
+    "\x00\x00\x02\x03\x00\x08"
+    TXT_WINDOW_STR "\x00\x00"
+    "\x00\x00\x02\x05\x00\x08"
+    TXT_ACTIONS_STR "\x00"
+    "\x00\x00\x02\x0C\x00\x0E"
+    TXT_DISPINFO_STR "\x00"
+    "\x00\x00\x02\x0D\x00\x12"
+    TXT_DISPTIME_STR "\x00"
+    "\x00\x00\x02\x11\x00\x08"
+    TXT_PARENT_STR "\x00\x00"
+    "\x00\x00\x02\x12\x00\x06"
+    TXT_PATHS_STR "\x00"
+    "\x00\x00\x02\x13\x00\x08"
+    TXT_HEIGHT_STR "\x00\x00"
+    "\x00\x00\x02\x14\x00\x0E"
+    TXT_ICONSTART_STR "\x00"
+    "\x00\x00\x02\x15\x00\x0A"
+    TXT_LEFTEDGE_STR "\x00"
+    "\x00\x00\x02\x16\x00\x18"
+    TXT_MUIQUIT_STR "\x00"
+    "\x00\x00\x02\x17\x00\x0A"
+    TXT_TOPEDGE_STR "\x00\x00"
+    "\x00\x00\x02\x18\x00\x06"
+    TXT_WIDTH_STR "\x00"
+    "\x00\x00\x02\x19\x00\x10"
+    TXT_CONFIRMREPLACE_STR "\x00"
+    "\x00\x00\x02\x1A\x00\x0C"
+    TXT_COPYICONS_STR "\x00\x00"
+    "\x00\x00\x02\x1B\x00\x0E"
+    TXT_CREATEICONS_STR "\x00\x00"
+    "\x00\x00\x02\x1C\x00\x12"
+    TXT_DATESTRING_STR "\x00"
+    "\x00\x00\x02\x1D\x00\x14"
+    TXT_DRAWERSFIRST_STR "\x00\x00"
+    "\x00\x00\x02\x1E\x00\x08"
+    TXT_GENERAL_STR "\x00"
+    "\x00\x00\x02\x1F\x00\x0A"
+    TXT_CLISIZE_STR "\x00\x00"
+    "\x00\x00\x02\x21\x00\x0C"
+    TXT_CHOOSEFILE_STR "\x00"
+    "\x00\x00\x02\x23\x00\x06"
+    TXT_PATH_STR "\x00\x00"
+    "\x00\x00\x02\x24\x00\x24"
+    TXT_NOTAVAIL_STR "\x00"
+    "\x00\x00\x02\x25\x00\x22"
+    TXT_OPENPREFS_STR "\x00\x00"
+    "\x00\x00\x02\x28\x00\x22"
+    TXT_SAVEPREFS_STR "\x00\x00"
+    "\x00\x00\x02\x2B\x00\x12"
+    TXT_SMALLIM_STR "\x00\x00"
+    "\x00\x00\x02\x2C\x00\x06"
+    TXT_EDIT_STR "\x00\x00"
+    "\x00\x00\x02\x2D\x00\x0E"
+    MEN_LASTSAVED_STR "\x00\x00"
+    "\x00\x00\x02\x2E\x00\x0A"
+    MEN_OPEN_STR "\x00"
+    "\x00\x00\x02\x2F\x00\x14"
+    MEN_RESET_STR "\x00"
+    "\x00\x00\x02\x30\x00\x0A"
+    MEN_RESTORE_STR "\x00"
+    "\x00\x00\x02\x32\x00\x0E"
+    TXT_BOTTOMICONS_STR "\x00\x00"
+    "\x00\x00\x02\x34\x00\x1C"
+    TXT_CHECKFIT_STR "\x00\x00"
+    "\x00\x00\x02\x35\x00\x16"
+    ERR_SAVEPREFS_STR "\x00\x00"
+    "\x00\x00\x02\x36\x00\x16"
+    TXT_HIGHDIRS_STR "\x00"
+    "\x00\x00\x02\x38\x00\x0A"
+    TXT_KEYCOM_STR "\x00"
+    "\x00\x00\x02\x39\x00\x44"
+    TXT_REPLACETOOLTYPES_STR "\x00\x00"
+    "\x00\x00\x02\x3A\x00\x0C"
+    TXT_SHOWIM_STR "\x00"
+    "\x00\x00\x02\x3B\x00\x0A"
+    TXT_TOPICONS_STR "\x00"
+    "\x00\x00\x02\x3D\x00\x0E"
+    MEN_SAVEAS_STR "\x00"
+    "\x00\x00\x02\x3E\x00\x2C"
+    TXT_WHEREISCA_STR "\x00"
+    "\x00\x00\x02\x3F\x00\x12"
+    TXT_APPX_STR "\x00"
+    "\x00\x00\x02\x40\x00\x12"
+    TXT_APPY_STR "\x00\x00"
+    "\x00\x00\x02\x41\x00\x18"
+    TXT_DSTSTARTPATH_STR "\x00\x00"
+    "\x00\x00\x02\x42\x00\x0E"
+    TXT_PUBLICSCREEN_STR "\x00"
+    "\x00\x00\x02\x43\x00\x12"
+    TXT_SRCSTARTPATH_STR "\x00"
+    "\x00\x00\x02\x44\x00\x0E"
+    TXT_SHOWDEVS_STR "\x00\x00"
+    "\x00\x00\x02\x45\x00\x0E"
+    TXT_DELETEICONS_STR "\x00\x00"
+    "\x00\x00\x02\x47\x00\x0E"
+    TXT_MAXPATHS_STR "\x00\x00"
+    "\x00\x00\x02\x48\x00\x0E"
+    TXT_MAXTABS_STR "\x00\x00"
+    "\x00\x00\x02\x49\x00\x12"
+    TXT_PATHNOTIFY_STR "\x00\x00"
+    "\x00\x00\x02\x4A\x00\x08"
+    TXT_REFRESH_STR "\x00"
+    "\x00\x00\x02\x4B\x00\x0C"
+    TXT_LISTERFONT_STR "\x00"
+    "\x00\x00\x02\x4C\x00\x0A"
+    TXT_MENUFONT_STR "\x00"
+    "\x00\x00\x02\x4D\x00\x0C"
+    TXT_BACKGROUND_STR "\x00\x00"
+    "\x00\x00\x02\x4E\x00\x18"
+    MSG_DELETEPROTECTED_STR "\x00\x00"
+    "\x00\x00\x02\x4F\x00\x0A"
+    TXT_PATHMENU_STR "\x00"
+    "\x00\x00\x02\x50\x00\x14"
+    MSG_VERTICAL_STR "\x00"
+    "\x00\x00\x02\x51\x00\x08"
+    MEN_HELP_STR "\x00\x00"
+    "\x00\x00\x02\x52\x00\x14"
+    MSG_SUPPORTEDARCHIVES_STR "\x00\x00"
+    "\x00\x00\x02\x53\x00\x10"
+    MSG_BUTTOPENICONS_STR "\x00\x00"
+    "\x00\x00\x02\x57\x00\x06"
+    MSG_ASYNC_STR "\x00"
+    "\x00\x00\x02\x58\x00\x0A"
+    MSG_READDEST_STR "\x00"
+    "\x00\x00\x02\x5A\x00\x12"
+    MSG_BUFFERSIZE_STR "\x00"
+    "\x00\x00\x02\x5B\x00\x10"
+    MSG_COPYANDDELETE_STR "\x00"
+    "\x00\x00\x02\x5C\x00\x18"
+    MSG_COUNTFILES_STR "\x00"
+    "\x00\x00\x02\x5D\x00\x0A"
+    MSG_HIDEKEY_STR "\x00\x00"
+    "\x00\x00\x02\x5E\x00\x0C"
+    MEN_SHOWHELP_STR "\x00"
+    "\x00\x00\x02\x5F\x00\x0A"
+    MSG_POPUPKEY_STR "\x00"
+    "\x00\x00\x02\x60\x00\x16"
+    MSG_PULLDOWNMENU_STR "\x00"
+    "\x00\x00\x02\x61\x00\x24"
+    MSG_REPLACEVERSION_STR "\x00"
+    "\x00\x00\x02\x62\x00\x1C"
+    MSG_SHOWVERSION_STR "\x00"
+    "\x00\x00\x02\x63\x00\x06"
+    MSG_NAME_STR "\x00\x00"
+    "\x00\x00\x02\x64\x00\x06"
+    MSG_PATH_STR "\x00\x00"
+    "\x00\x00\x02\x65\x00\x0E"
+    TXT_BUTTLPATHS_STR "\x00"
+    "\x00\x00\x02\x66\x00\x0A"
+    MSG_OPENWITH_STR "\x00"
+    "\x00\x00\x02\x67\x00\x0A"
+    MSG_PATHLIST_STR "\x00"
+    "\x00\x00\x02\x68\x00\x0E"
+    TXT_BUTTPUP_STR "\x00\x00"
+    "\x00\x00\x02\x69\x00\x10"
+    TXT_BUTTPDOWN_STR "\x00\x00"
+    "\x00\x00\x02\x6A\x00\x0A"
+    TXT_BUTTPADD_STR "\x00\x00"
+    "\x00\x00\x02\x6B\x00\x0C"
+    TXT_BUTTPREM_STR "\x00"
+    "\x00\x00\x02\x6C\x00\x18"
+    MSG_ENTERPATH_STR "\x00"
+    "\x00\x00\x02\x6D\x00\x26"
+    MSG_ENTERPATHTITLE_STR "\x00\x00"
+    "\x00\x00\x02\x6E\x00\x1A"
+    MSG_TABBUTTONSTRANSPARENT_STR "\x00\x00"
+    "\x00\x00\x02\x6F\x00\x08"
+    MSG_VOLUME_STR "\x00\x00"
+    "\x00\x00\x02\x70\x00\x1E"
+    ERR_DELCLASS_STR "\x00"
+    "\x00\x00\x02\x71\x00\x16"
+    MSG_BUTTCLASSIMAGE_STR "\x00\x00"
+    "\x00\x00\x02\x72\x00\x06"
+    MSG_IMAGE_STR "\x00"
+    "\x00\x00\x02\x73\x00\x16"
+    MSG_BUTTLOADIMAGE_STR "\x00\x00"
+    "\x00\x00\x02\x74\x00\x12"
+    MSG_CLASSIMAGES_STR "\x00\x00"
+    "\x00\x00\x02\x75\x00\x0C"
+    MSG_OWNSCREEN_STR "\x00\x00"
+    "\x00\x00\x02\x76\x00\x08"
+    MSG_ARCHIVE_STR "\x00"
+    "\x00\x00\x02\x77\x00\x14"
+    MSG_ONLYPATTERNS_STR "\x00"
+    "\x00\x00\x02\x7A\x00\x0A"
+    MSG_DUPLICATE_STR "\x00"
+    "\x00\x00\x02\x7B\x00\x06"
+    MSG_PASTE_STR "\x00"
+    "\x00\x00\x02\x7C\x00\x06"
+    MSG_LEARN_STR "\x00"
+    "\x00\x00\x02\x7D\x00\x08"
+    MSG_IMPORT_STR "\x00\x00"
+    "\x00\x00\x02\x7E\x00\x08"
+    MSG_EXPORT_STR "\x00\x00"
+    "\x00\x00\x02\x7F\x00\x06"
+    MSG_COPY_STR "\x00\x00"
+    "\x00\x00\x02\x80\x00\x06"
+    MSG_BLUE_STR "\x00\x00"
+    "\x00\x00\x02\x81\x00\x0C"
+    MSG_DATEFORMAT_STR "\x00"
+    "\x00\x00\x02\x82\x00\x0E"
+    MSG_EXPORTCLASS_STR "\x00\x00"
+    "\x00\x00\x02\x83\x00\x06"
+    MSG_GREEN_STR "\x00"
+    "\x00\x00\x02\x84\x00\x0E"
+    MSG_IMPORTCLASS_STR "\x00\x00"
+    "\x00\x00\x02\x85\x00\x04"
+    MSG_RED_STR "\x00"
+    "\x00\x00\x02\x86\x00\x0C"
+    MSG_USEEXALL_STR "\x00"
+    "\x00\x00\x02\x87\x00\x14"
+    MSG_USEREACTIONREQUEST_STR "\x00"
+    "\x00\x00\x02\x88\x00\x10"
+    MSG_BUTTDIR_STR "\x00\x00"
+    "\x00\x00\x02\x89\x00\x08"
+    MSG_SOURCE_STR "\x00\x00"
+    "\x00\x00\x02\x8A\x00\x0C"
+    MSG_DESTINATION_STR "\x00"
+    "\x00\x00\x02\x8B\x00\x0C"
+    MSG_PROGDIR_STR "\x00"
+    "\x00\x00\x02\x8C\x00\x04"
+    MSG_CD_STR "\x00\x00"
+    "\x00\x00\x02\x8D\x00\x10"
+    MSG_CONFIRMDELETE_STR "\x00\x00"
+    "\x00\x00\x02\x8E\x00\x18"
+    MSG_EXALLFILES_STR "\x00\x00"
+};
+
+#endif /* CATCOMP_BLOCK */
+
+
+/****************************************************************************/
+
+
+struct LocaleInfo
+{
+    APTR li_LocaleBase;
+    APTR li_Catalog;
+};
+
+
+#ifdef CATCOMP_CODE
+
+STRPTR GetString(struct LocaleInfo *li, LONG stringNum)
+{
+LONG   *l;
+UWORD  *w;
+STRPTR  builtIn;
+
+    l = (LONG *)CatCompBlock;
+
+    while (*l != stringNum)
+    {
+        w = (UWORD *)((ULONG)l + 4);
+        l = (LONG *)((ULONG)l + (ULONG)*w + 6);
+    }
+    builtIn = (STRPTR)((ULONG)l + 6);
+
+#undef LocaleBase
+#define LocaleBase li->li_LocaleBase
+    
+    if (LocaleBase)
+        return(GetCatalogStr(li->li_Catalog,stringNum,builtIn));
+#undef LocaleBase
+
+    return(builtIn);
+}
+
+
+#endif /* CATCOMP_CODE */
+
+
+/****************************************************************************/
+
+
+#endif /* CLASSACTIONPREFSCD_H */

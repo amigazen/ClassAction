@@ -1,0 +1,718 @@
+; This Catalog Translation ".ct" file has been written using
+; ReCatIt 2.50 (09.14.97) - By Fabio Rotondo
+;
+## version $VER: ClassActionPrefs.catalog 46.0 (05-30-04)
+## codeset 0
+## language deutsch
+;
+TXT_CLASSNAME
+Klassenname
+;
+TXT_MATCHNAME
+Namensmuster
+;
+TXT_OFFSET1
+Offset #1
+;
+TXT_OFFSET2
+Offset #2
+;
+TXT_OFFSET3
+Offset #3
+;
+TXT_OFFSET4
+Offset #4
+;
+TXT_OFFSET5
+Offset #5
+;
+TXT_BUTTLST1
+Liste der definierten Klassen
+;
+TXT_BUTTCLASS
+Name der Klasse
+;
+TXT_BUTTMATCH
+Muster für den Dateinamen
+;
+TXT_BUTTCHOFF
+Wählt einen von 6 Offsets
+;
+TXT_BUTTOFFSET
+Geben Sie einen Vergleichstext an
+;
+TXT_BUTTADD
+Neue Klasse hinzufügen
+;
+TXT_BUTTREMOVE
+Diese Klasse entfernen
+;
+TXT_BUTTLST2
+Liste der definierten Aktionen
+;
+TXT_BUTTANAME
+Der Name der Aktion
+;
+TXT_BUTTUP
+Bewegt die Aktion nach oben
+;
+TXT_BUTTDOWN
+Bewegt die Aktion nach unten
+;
+TXT_BUTTADD2
+Fügt eine neue Aktion hinzu
+;
+TXT_BUTTREMOVE2
+Entfernt diese Aktion
+;
+TXT_ABOUT
+Über
+;
+TXT_PROJECT
+Projekt
+;
+MEN_QUIT
+Q_Beenden
+;
+ERR_GENERAL
+Ein unbekannter Fehler ist aufgetreten.
+;
+ERR_NOCONFIG
+Konfigurationsdatei nicht gefunden.
+;
+ERR_NOICON
+Es gibt kein Icon!
+;
+ERR_NOLIB
+Library nicht gefunden. Vielleicht falsches OS.
+;
+TXT_DELACTION
+Diese Aktion löschen?
+;
+TXT_DELCLASS
+Diese Klasse löschen
+;
+TXT_NEWACTION
+<Neue Aktion #%d>
+;
+TXT_NEWCLASS
+<Neue Klasse #%d>
+;
+TXT_NOACT
+Keine Aktion
+;
+TXT_INFORMATION
+Information
+;
+TXT_OK
+Ok
+;
+TXT_YESNO
+Ja|Nein
+;
+ERR_CONFIGNOTVALID
+Ihre Konfigurationsdatei\n\nist keine gültige\n\nClassAction-Konfigurationsdatei
+;
+ERR_GENERICNOTVALID
+Die Generic-Datei ist nicht gültig.
+;
+TXT_GENERIC
+Allgemeine Aktionen
+;
+TXT_UNKNOWN
+Unbekannte Klasse
+;
+TXT_DIRECTORY
+Verzeichnis
+;
+ERR_DIRNOTVALID
+Das Verzeichnis ist ungültig.
+;
+ERR_CONFIGCORRUPT
+Ihre Konfigurationsdatei ist fehlerhaft.
+;
+TXT_LCHOOSE
+Wählen Sie Dateien zum Lernen.
+;
+TXT_LCOMP
+Analyse fertig.
+;
+TXT_LPREP
+Bereite vor ... Bitte warten
+;
+TXT_LPROG
+Analyse im Gang
+;
+TXT_LEARN
+Lernen
+;
+TXT_ACCEPT
+Akzeptieren
+;
+TXT_BUTTLACCEPT
+Akzeptiert diese Offsets und Zeichenketten
+;
+TXT_BUTTLCANCEL
+Bricht den Lernprozess ab
+;
+TXT_PROG
+ClassActionPrefs
+;
+TXT_LMEMORY
+Nicht genug Speicher zum Lernen.
+;
+TXT_LNEED
+Mindestens 2 Dateien zum Lernen erforderlich.
+;
+TXT_LNOTHING
+Nichts gefunden.
+;
+TXT_COPYRIGHT
+    %s\n\n© 2002 by Martin R. Elsner & Salim Gasmi\n\nIch bin erreichbar unter :\n\nMartin R. Elsner\nMüsener Strasse 46\n57223 Kreuztal\nDeutschland\n\nEmail: classaction@martin-elsner.de\nWeb: http://www.martin-elsner.de
+;
+TXT_OPTIONS
+Optionen
+;
+TXT_COMMANDS
+Befehle
+;
+TXT_CLASSES
+Klassen
+;
+TXT_SAVE
+Speichern
+;
+TXT_BUTTSAVE
+Speichert die Änderungen
+;
+TXT_USE
+Benutzen
+;
+TXT_BUTTUSE
+Benutzt die Änderungen, ohne sie zu speichern
+;
+TXT_CANCEL
+Abbrechen
+;
+TXT_BUTTCANCEL
+Beendet das Programm ohne zu speichern
+;
+TXT_ISSURE
+Sind Sie sicher ?
+;
+TXT_ACTIKEY
+Aktivierungstaste
+;
+TXT_SELRAWKEY
+Wähle RAW-Taste
+;
+TXT_NAMEE
+Name:
+;
+TXT_ICON
+Icon
+;
+TXT_ADD
+Hinzufügen
+;
+TXT_REMOVE
+Entfernen
+;
+TXT_NAME
+Name
+;
+TXT_BUTTCOMM
+Füge besondere Befehle ein
+;
+TXT_REQPF2
+[F] Pfad+Dateiname
+;
+TXT_REQS2
+[S] Pfad+Dateiname ohne Endung
+;
+TXT_REQB2
+[B] Dateiname
+;
+TXT_REQX2
+[X] Dateiname ohne Endung
+;
+TXT_SRC
+[SRC] Pfad des Quelllisters
+;
+TXT_SRCS
+[SRCS] Pfad des Quelllisters + '/'
+;
+TXT_DST
+[DST] Pfad des Ziellisters
+;
+TXT_DSTS
+[DSTS] Pfad des Ziellisters + '/'
+;
+TXT_REQF
+[REQF:] Frage nach einer Datei
+;
+TXT_REQD
+[REQF:] Frage nach einem Verzeichnis
+;
+TXT_REQT
+[REQT:] Frage nach einem Text
+;
+TXT_SURE
+[SURE:] Bestätige einen Befehl
+;
+TXT_COMMAND
+Befehl
+;
+TXT_CLI
+CLI
+;
+TXT_WB
+WB
+;
+TXT_NOCLI
+Quiet CLI
+;
+TXT_AREXX
+ARexx
+;
+TXT_INTERNAL
+Intern
+;
+TXT_SPACE
+Space
+;
+TXT_BUTTMODE
+Wählt den Startmodus
+;
+TXT_MODE
+Modus
+;
+TXT_INTCOMMANDS
+Interne Befehle
+;
+TXT_VARIABLES
+Variablen
+;
+TXT_HELPE
+Hilfe:
+;
+TXT_BUTTSTACK
+Die Größe des erforderlichen Stacks
+;
+TXT_STACK
+Stack
+;
+TXT_BUTTDELAY
+Die gewünschte Verzögerung
+;
+TXT_DELAY
+Verzögerung
+;
+MSG_READSOURCE
+Quelle lesen
+;
+TXT_CHOOSEICON
+Icon auswählen
+;
+TXT_PRESSKEY
+Taste drücken
+;
+TXT_BUTTCOMMAND
+Befehlszeile
+;
+TXT_BUTTLOAD
+Lade eine Datei
+;
+TXT_BUTTLCOM
+Befehlsliste
+;
+TXT_BUTTCUP
+Befehl nach oben
+;
+TXT_BUTTCDOWN
+Befehl nach unten
+;
+TXT_BUTTCADD
+Befehl hinzufügen
+;
+TXT_BUTTCREM
+Befehl entfernen
+;
+TXT_BUTTCNAME
+Name des Befehls
+;
+TXT_BUTTCHELP
+Hilfstext für den Befehl
+;
+TXT_BUTTINT
+Internen Befehl auswählen
+;
+TXT_BUTTOPTIONS
+Liste der Optionen
+;
+TXT_ICONS
+Icons
+;
+TXT_BUTTONS
+Knöpfe
+;
+TXT_LISTERS
+Lister
+;
+TXT_BUTTGTICON
+Das Icon für den Befehl
+;
+TXT_BUTTPREVIEW
+Vorschau der Icons
+;
+TXT_BUTTKEY
+Den RAW-Code einer Taste ermitteln
+;
+TXT_BUTTSTRKEY
+Aktivierungstaste für den Befehl
+;
+TXT_BUTTCHKEY
+Der Typ der Taste
+;
+TXT_SHOWHELP
+Hilfe zeigen
+;
+TXT_WINDOW
+Fenster
+;
+TXT_ACTIONS
+Aktionen
+;
+TXT_DISPINFO
+Icons anzeigen
+;
+TXT_DISPTIME
+Auch Zeit anzeigen
+;
+TXT_PARENT
+Mutterverzeichnis
+;
+TXT_PATHS
+Pfade
+;
+TXT_HEIGHT
+Höhe
+;
+TXT_ICONSTART
+Starte als Icon
+;
+TXT_LEFTEDGE
+Linker Rand
+;
+TXT_MUIQUIT
+Verbergen durch Schließgadget
+;
+TXT_TOPEDGE
+Oberer Rand
+;
+TXT_WIDTH
+Breite
+;
+TXT_CONFIRMREPLACE
+Ersetzung bestätigen
+;
+TXT_COPYICONS
+Icons kopieren
+;
+TXT_CREATEICONS
+Icons erzeugen
+;
+TXT_DATESTRING
+Datum als Text zeigen
+;
+TXT_DRAWERSFIRST
+Zeige Verzeichnisse zuerst
+;
+TXT_GENERAL
+Allgemein
+;
+TXT_CLISIZE
+Cli-Größe
+;
+TXT_CHOOSEFILE
+Datei auswählen
+;
+TXT_PATH
+Pfad
+;
+TXT_NOTAVAIL
+Diese Funktion ist noch nicht implementiert.
+;
+TXT_OPENPREFS
+ClassAction Einstellungsdatei öffnen
+;
+TXT_SAVEPREFS
+ClassAction Einstellungsdatei speichern
+;
+TXT_SMALLIM
+Benutze kleine Symbole
+;
+TXT_EDIT
+Vorgaben
+;
+MEN_LASTSAVED
+L_auf zuletzt gespeichertes
+;
+MEN_OPEN
+O_Öffnen ...
+;
+MEN_RESET
+D_auf Vorgaben zurücksetzen
+;
+MEN_RESTORE
+S_auf vorherigen Stand
+;
+TXT_BOTTOMICONS
+Untere Icons
+;
+TXT_CHECKFIT
+Platz vor dem Kopieren prüfen
+;
+ERR_SAVEPREFS
+Konnte Einstellungen nicht speichern!
+;
+TXT_HIGHDIRS
+Verzeichnisse hervorheben
+;
+TXT_KEYCOM
+Tastaturbefehle
+;
+TXT_REPLACETOOLTYPES
+Jetzt werden ihre alten Tooltypes geladen und im neuen Format gespeichert.
+;
+TXT_SHOWIM
+Symbole anzeigen
+;
+TXT_TOPICONS
+Obere Icons
+;
+MEN_SAVEAS
+S_Speichern als ...
+;
+TXT_WHEREISCA
+Wo ist dein altes ClassAction-Programm?
+;
+TXT_APPX
+AppIcon linker Rand
+;
+TXT_APPY
+AppIcon oberer Rand
+;
+TXT_DSTSTARTPATH
+Startpfad Ziellister
+;
+TXT_PUBLICSCREEN
+Öffentlicher Bildschirm
+;
+TXT_SRCSTARTPATH
+Startpfad Quelllister
+;
+TXT_SHOWDEVS
+Devices anzeigen
+;
+TXT_DELETEICONS
+Icons löschen
+;
+TXT_MAXPATHS
+Gepufferte Pfade
+;
+TXT_MAXTABS
+Pfad-Knöpfe
+;
+TXT_PATHNOTIFY
+Bei Änderungen aktualisieren
+;
+TXT_REFRESH
+Erneuern
+;
+TXT_LISTERFONT
+Listerzeichensatz
+;
+TXT_MENUFONT
+Menüzeichensatz
+;
+TXT_BACKGROUND
+Hintergrund
+;
+MSG_DELETEPROTECTED
+Lösche geschützte Dateien
+;
+TXT_PATHMENU
+Pfad-Menü
+;
+MSG_VERTICAL
+Vertikal angeordnet
+;
+MEN_HELP
+H_Hilfe
+;
+MSG_SUPPORTEDARCHIVES
+Unterstützte Archive
+;
+MSG_BUTTOPENICONS
+MRE:Icons öffnen
+;
+MSG_ASYNC
+Asynchron
+;
+MSG_READDEST
+Ziel lesen
+;
+MSG_BUFFERSIZE
+Buffer-Größe in KB
+;
+MSG_COPYANDDELETE
+Kopieren und Löschen
+;
+MSG_COUNTFILES
+Dateien vor dem Kopieren zählen
+;
+MSG_HIDEKEY
+Taste zum Verbergen
+;
+MEN_SHOWHELP
+?_Hilfe anzeigen
+;
+MSG_POPUPKEY
+Taste zum Öffnen
+;
+MSG_PULLDOWNMENU
+Menü ist Pulldown-Menü
+;
+MSG_REPLACEVERSION
+Ältere Versionen beim Kopieren ersetzen
+;
+MSG_SHOWVERSION
+Version beim Ersetzen anzeigen
+;
+MSG_NAME
+Name
+;
+MSG_PATH
+Pfad
+;
+TXT_BUTTLPATHS
+Liste der Pfade
+;
+MSG_OPENWITH
+Öffnen mit
+;
+MSG_PATHLIST
+Pfadliste
+;
+TXT_BUTTPUP
+Pfad nach oben bewegen
+;
+TXT_BUTTPDOWN
+Pfad nach unten bewegen
+;
+TXT_BUTTPADD
+Pfad hinzufügen
+;
+TXT_BUTTPREM
+Pfad entfernen
+;
+MSG_ENTERPATH
+Bitte geben Sie den Pfad an
+;
+MSG_ENTERPATHTITLE
+Bitte geben Sie den Titel für diesen Pfad ein:
+;
+MSG_TABBUTTONSTRANSPARENT
+Pfadknöpfe transparent
+;
+MSG_VOLUME
+Datenträger
+;
+ERR_DELCLASS
+Diese Klasse kann nicht gelöscht werden.
+;
+MSG_BUTTCLASSIMAGE
+Bild für diese Klasse
+;
+MSG_IMAGE
+Bild
+;
+MSG_BUTTLOADIMAGE
+Wählen Sie eine Bild-Datei
+;
+MSG_CLASSIMAGES
+Klassen-Bilder anzeigen
+;
+MSG_OWNSCREEN
+Eigener Bildschirm
+;
+MSG_ARCHIVE
+Archiv
+;
+MSG_ONLYPATTERNS
+Nur Muster prüfen
+;
+MSG_DUPLICATE
+Duplizieren
+;
+MSG_PASTE
+Einfügen
+;
+MSG_LEARN
+Lernen
+;
+MSG_IMPORT
+Importieren
+;
+MSG_EXPORT
+Exportieren
+;
+MSG_COPY
+Kopieren
+;
+MSG_BLUE
+Blau
+;
+MSG_DATEFORMAT
+Datumsformat
+;
+MSG_EXPORTCLASS
+Klasse exportieren
+;
+MSG_GREEN
+Grün
+;
+MSG_IMPORTCLASS
+Klasse importieren
+;
+MSG_RED
+Rot
+;
+MSG_USEEXALL
+Use ExAll() benutzen
+;
+MSG_USEREACTIONREQUEST
+Reaction-Requester
+;
+MSG_BUTTDIR
+Arbeitsverzeichnis
+;
+MSG_SOURCE
+Quelle
+;
+MSG_DESTINATION
+Ziel
+;
+MSG_PROGDIR
+Programmverzeichnis
+;
+MSG_CD
+CD
+;
+MSG_CONFIRMDELETE
+Löschen bestätigen
+;
+MSG_EXALLFILES
+Dateien mit ExAll() lesen
+;

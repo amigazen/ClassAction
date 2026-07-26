@@ -1,0 +1,503 @@
+; *** catalog description file of "ClassAction.res"
+;
+TXT_HELP (272//)
+Help
+;
+TXT_ICONIFY (273//)
+Iconify
+;
+TXT_PROJECT (274//)
+Project
+;
+TXT_QUIT (275//)
+Quit
+;
+TXT_PREFERENCES (276//)
+Preferences
+;
+TXT_ABOUT (277//)
+About
+;
+ERR_NOLIB (279//)
+Library not found.\nCheck the requirements.
+;
+TXT_INFORMATION (280//)
+Information
+;
+TXT_COPYRIGHT (281//)
+%s\n\n© 2003 by Martin R. Elsner & Salim Gasmi\n\nYou can contact the author at :\n\nMartin R. Elsner\nMuesener Strasse 46\n57223 Kreuztal\nGermany\n\nEmail: classaction@martin-elsner.de \nWeb: http://www.martin-elsner.de
+;
+TXT_SURE (282//)
+Are you sure ?
+;
+TXT_DIR (283//)
+Directory
+;
+TXT_MEMORY (286//)
+Not Enough Memory \n\nto load the file
+;
+TXT_UNKNOWN (287//)
+Unknown
+;
+TXT_REQERROR (288//)
+Syntax Error in REQ command
+;
+TXT_YESNO (289//)
+Yes|No
+;
+TXT_SUREERROR (290//)
+Syntax error in SURE command
+;
+TXT_ASSIGN (291//)
+Assign
+;
+TXT_CLONE (292//)
+Copy As
+;
+TXT_DRAWER (293//)
+Drawer
+;
+TXT_VOLUME (294//)
+Volume
+;
+TXT_OK (295//)
+Okay
+;
+TXT_CANCEL (296//)
+Cancel
+;
+TXT_DELOK (297//)
+Do you really want to delete the entries %s, ... ?
+;
+MSG_MKDIR (298//)
+Create new directory
+;
+TXT_NOCONFIG (299//)
+Config file not found.
+;
+TXT_CONFIGCORRUPT (300//)
+Your config file is corrupted.
+;
+TXT_CONFIGNOTVALID (301//)
+Your config file is not a valid\nClassAction config file.
+;
+ERR_GENERAL (303//)
+An unspecified error has occured.
+;
+ERR_NOICON (304//)
+There is no icon!
+;
+ERR_WRONGPATH (305//)
+This path does not exist!
+;
+ERR_FILENOTFOUND (306//)
+File not found.
+;
+ERR_NOAREXX (307//)
+The ARexx port could not be opened.
+;
+ERR_NOXFD (308//)
+Xfdmaster.library not found !!\nThe autodecrunching function\nwill be deactivated.
+;
+ERR_NOTCRUNCHED (309//)
+Not crunched.
+;
+ERR_NOTDATA (310//)
+Not a data file.
+;
+ERR_NOTDECR (311//)
+Not decrunched.
+;
+TXT_RENAME (313//)
+Rename
+;
+TXT_FILEEXISTS (315//)
+Do you want to replace
+;
+TXT_CONFIRMREPLACE (317//)
+Confirm replace
+;
+TXT_COPYICONS (318//)
+Copy Icons
+;
+TXT_CREATEICONS (319//)
+Create Icons
+;
+TXT_DISPLAYINFO (320//)
+Display .info
+;
+TXT_SETTINGS (321//)
+Settings
+;
+TXT_SHOWDRAWERSFIRST (322//)
+Show drawers first
+;
+TXT_BUTTDEV (335//)
+Show all devices
+;
+TXT_BUTTN (336//)
+Show the given path
+;
+TXT_BUTTMKDIR (337//)
+Create a new directory
+;
+TXT_BUTTPATH (339//)
+Enter a path to list it
+;
+TXT_PROG (345//)
+ClassAction
+;
+TXT_COPYING (346//)
+Copying
+;
+TXT_DELETING (347//)
+Deleting
+;
+TXT_MOVING (348//)
+Moving
+;
+TXT_SNAPSHOTWINDOW (350//)
+Snapshot Window
+;
+TXT_YESALLNONENO (351//)
+Yes|All|None|No
+;
+TXT_HASICON (353//)
+has already an icon!
+;
+ERR_NOCOPY (356//)
+Could not copy %s !
+;
+ERR_NODEL (357//)
+Could not delete %s !
+;
+ERR_NOMOVE (358//)
+Could not move %s !
+;
+TXT_ENTPAT (359//)
+Enter Pattern
+;
+TXT_NEWFILE (361//)
+New file:
+;
+TXT_OLDFILE (362//)
+Old file:
+;
+TXT_MOVEAS (363//)
+Move As
+;
+TXT_DATESTRING (364//)
+Date as text
+;
+TXT_DISPLAYTIME (365//)
+Display time
+;
+TXT_BUTTABORT (368//)
+Abort the current process
+;
+TXT_DRAGBAR (369//)
+Dragbar
+;
+TXT_TOOLBAR (370//)
+Toolbar
+;
+TXT_VISIBLE (371//)
+Visible
+;
+TXT_BYTESSEL (373//)
+%s bytes selected
+;
+TXT_CHECKING (374//)
+Checking
+;
+TXT_DDSELECTED (375//)
+%d selected / %d available
+;
+TXT_NOTENOUGHSPACE (376//)
+Not enough space!
+;
+TXT_CHECKFIT (385//)
+Check space
+;
+TXT_DELETEICONS (386//)
+Delete icons
+;
+TXT_GENERAL (387//)
+General
+;
+TXT_HIGHDIRS (388//)
+Highlight dirs
+;
+TXT_ICONS (389//)
+Icons
+;
+TXT_LISTERS (390//)
+Listers
+;
+TXT_SHOWIMAGES (391//)
+Show images
+;
+TXT_USED (392//)
+used
+;
+TXT_BUTTPARENT (393//)
+Go to the parent directory
+;
+TXT_NAME (396//)
+Name
+;
+TXT_SIZE (397//)
+Size
+;
+TXT_DATE (398//)
+Date
+;
+TXT_BITS (399//)
+Bits
+;
+TXT_BUTTDIR (400//)
+Source
+;
+TXT_BUTTDIR2 (401//)
+Destination
+;
+TXT_COPY (402//)
+Copy
+;
+TXT_CUT (403//)
+Cut
+;
+TXT_EDIT (404//)
+Edit
+;
+TXT_PASTE (405//)
+Paste
+;
+TXT_PATHNOTIFY (406//)
+Update on changes
+;
+TXT_SEARCH (407//)
+Search
+;
+TXT_SELALL (408//)
+Select all
+;
+TXT_SELNONE (409//)
+Select nothing
+;
+TXT_SELTOGGLE (410//)
+Toggle selection
+;
+TXT_SELTYPE (411//)
+Select same type
+;
+TXT_SELPATTERN (412//)
+Select pattern
+;
+TXT_DELETE (413//)
+Delete
+;
+TXT_COPYAS (414//)
+Copy as
+;
+TXT_FILE (415//)
+File
+;
+TXT_MOVE (416//)
+Move
+;
+TXT_PACK (417//)
+Pack
+;
+TXT_BUTTREFRESH (418//)
+Refresh this lister
+;
+TXT_CREATEARCHIVE (419//)
+Create archive
+;
+TXT_CREATESUBDIR (420//)
+Create subdirectory
+;
+TXT_DELOKSINGLE (421//)
+Do you really want to delete the entry %s ?
+;
+TXT_GENERIC (422//)
+Generic
+;
+TXT_BUTTACTIVATE (423//)
+Activate lister
+;
+TXT_BUTTDEACTIVATE (424//)
+Deactivate lister
+;
+MSG_COMMENT (427//)
+Comment
+;
+MSG_ARCHIVE (428//)
+Archive
+;
+MSG_EXECUTABLE (430//)
+Executable
+;
+MSG_OPENWINDOW (431//)
+Open window
+;
+MSG_READABLE (432//)
+Readable
+;
+MSG_ROOTDIR (433//)
+Root directory
+;
+MSG_SCRIPT (434//)
+Script
+;
+MSG_VOLUMES (435//)
+Volumes
+;
+MSG_WRITABLE (436//)
+Writable
+;
+MSG_DELETABLE (437//)
+Deletable
+;
+MSG_COMMENT8 (438//)
+Comment:
+;
+MSG_DATE8 (439//)
+Date:
+;
+MSG_DATENOTVALID (440//)
+The date is not valid !
+;
+MSG_FILEALREADYEXISTS (441//)
+This file already exists !
+;
+MSG_NAME8 (442//)
+Name:
+;
+MSG_PROTECTION8 (443//)
+Protection:
+;
+MSG_CANCEL1 (444//)
+_Cancel
+;
+MSG_OK1 (445//)
+_Ok
+;
+MSG_NOTRASHCANAVAILABLE (446//)
+No trashcan available !
+;
+MSG_BUTTFUELGAUGE (448//)
+Click here to adjust the browser size
+;
+MSG_COUNTINGFILES (449//)
+Counting Files ...
+;
+TXT_DELOKTRASH (450//)
+Do you really want to move the entries %s, ... into the trashcan ?
+;
+TXT_DELOKSINGLETRASH (451//)
+Do you really want to move the entry %s into the trashcan ?
+;
+MSG_DEPROTECTFILE (452//)
+The file %s is write protected.\n Shall I remove the protection for this file?
+;
+ERR_NOMKDIR (453//)
+Could not create directory %s !
+;
+MSG_VERSION (454//)
+Version
+;
+MSG_NOTAVAILABLE (455//)
+not available
+;
+MSG_VERSION8 (456//)
+Version:
+;
+MSG_COPYANDDELETE (457//)
+Copy and delete
+;
+MSG_PULLDOWNMENU (458//)
+Pulldown menu
+;
+MSG_REPLACEVERSION (459//)
+Replace older versions
+;
+MSG_SAVE1 (460//)
+_Save
+;
+MSG_SHOWVERSION (461//)
+Show version
+;
+MSG_COUNTFILES (462//)
+Count Files
+;
+MSG_CREATE1 (464//)
+_Create
+;
+MSG_ICON (465//)
+Icon
+;
+MSG_NAMEOFDIR8 (466//)
+Name of the directory:
+;
+MSG_PLEASEENTERDIRNAME (467//)
+Please enter the name of the new directory.
+;
+MSG_ASSIGNTITLE (470//)
+Please enter assign title:
+;
+MSG_COPYTO (471//)
+Copy to
+;
+MSG_ERR_ASSIGN (472//)
+Assign could not be created. Please check if this assign already exists.
+;
+MSG_OPENWITH (473//)
+Open with
+;
+MSG_PATHS (474//)
+Paths
+;
+MSG_VISITEDPATHS (475//)
+Visited paths
+;
+MSG_ASSIGNEXISTS (476//)
+This assign already exists.
+;
+MSG_ASSIGNMAKE (477//)
+Make assign
+;
+MSG_ASSIGNREPLACEADD (478//)
+Replace|Add|Cancel
+;
+MSG_ASSIGNREMOVE (479//)
+Remove assign
+;
+MSG_ASSIGNWANTREMOVE (480//)
+Do you really want to remove this assign?
+;
+MSG_CLOSEWINDOW (481//)
+Please close all windows on this screen.
+;
+MSG_CONFIRMCHECKSIZE (482//)
+The volume reports 0 bytes of free space. Do you want to continue?
+;
+MSG_DDIRSDFILES (483//)
+%d/%d directories, %d/%d files
+;
+MSG_NORENAME (484//)
+Could not rename %s !
+;
+ERR_WRONGPREFS (485//)
+This is an old preference file.\nPlease start ClassActionPrefs and save your preferences.\nCheck if you are using the correct version of ClassAction and ClassActionPrefs.
+;
+MSG_CONFIRMDELETE (486//)
+Confirm delete
+;
+MSG_TOOLS (487//)
+Tools
+;
+MSG_NOCOPYTOSUBDIR (488//)
+It's not allowed to copy directories into any subdir!
+;

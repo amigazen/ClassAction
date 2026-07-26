@@ -1,0 +1,508 @@
+; This Catalog Translation ".ct" file has been written using
+; ReCatIt 2.50 (09.14.97) - By Fabio Rotondo
+;
+## version $VER: ClassAction.catalog 46.0 (05-30-04)
+## codeset 0
+## language deutsch
+;
+TXT_HELP
+Hilfe
+;
+TXT_ICONIFY
+Verbergen
+;
+TXT_PROJECT
+Projekt
+;
+TXT_QUIT
+Verlassen
+;
+TXT_PREFERENCES
+Einstellungen
+;
+TXT_ABOUT
+Über
+;
+ERR_NOLIB
+Library nicht gefunden.\nBitte Anforderungen überprüfen.
+;
+TXT_INFORMATION
+Information
+;
+TXT_COPYRIGHT
+     %s\n\n(c) 2002 by Martin R. Elsner und Salim Gasmi\n\nIch bin erreichbar unter :\n\nMartin R. Elsner\nMüsener Strasse 46\n57223 Kreuztal\nGermany\n\nEmail: classaction@martin-elsner.de \nWeb: http://www.martin-elsner.de
+;
+TXT_SURE
+Sind Sie sicher?
+;
+TXT_DIR
+Verzeichnis
+;
+TXT_MEMORY
+Nicht genug freier Speicher\n\num die Datei zu laden.
+;
+TXT_UNKNOWN
+Unbekannt
+;
+TXT_REQERROR
+Syntaxfehler in REQ-Befehl
+;
+TXT_YESNO
+Ja|Nein
+;
+TXT_SUREERROR
+Syntax-Fehler in SURE-Befehl
+;
+TXT_ASSIGN
+Logisches Laufwerk
+;
+TXT_CLONE
+Kopieren als
+;
+TXT_DRAWER
+Verzeichnis
+;
+TXT_VOLUME
+Datenträger
+;
+TXT_OK
+Okay
+;
+TXT_CANCEL
+Abbrechen
+;
+TXT_DELOK
+Sollen alle gewählten Einträge gelöscht werden?
+;
+MSG_MKDIR
+Erzeuge Verzeichnis
+;
+TXT_NOCONFIG
+Konfigurationsdatei nicht gefunden.
+;
+TXT_CONFIGCORRUPT
+Ihre Konfigurationsdatei ist ungültig.
+;
+TXT_CONFIGNOTVALID
+Ihre Konfigurationsdatei ist keine\ngültige ClassAction-Konfigurationsdatei.
+;
+ERR_GENERAL
+Ein unbekannter Fehler ist aufgetreten.
+;
+ERR_NOICON
+Es gibt kein Icon!
+;
+ERR_WRONGPATH
+Dieser Pfad existiert nicht!
+;
+ERR_FILENOTFOUND
+Datei nicht gefunden.
+;
+ERR_NOAREXX
+Der ARexx-Port konnte nicht geöffnet werden.
+;
+ERR_NOXFD
+Xfdmaster.library nicht gefunden !!\nDie automatische Decrunch-Function\nwird deaktiviert.
+;
+ERR_NOTCRUNCHED
+Nicht komprimiert.
+;
+ERR_NOTDATA
+Keine Datendatei.
+;
+ERR_NOTDECR
+Nicht dekomprimiert.
+;
+TXT_RENAME
+Umbenennen
+;
+TXT_FILEEXISTS
+Überschreibe die Datei
+;
+TXT_CONFIRMREPLACE
+Bestätige Ersetzung
+;
+TXT_COPYICONS
+Kopiere Icons
+;
+TXT_CREATEICONS
+Erzeuge Icons
+;
+TXT_DISPLAYINFO
+Zeige Icons an
+;
+TXT_SETTINGS
+Einstellungen
+;
+TXT_SHOWDRAWERSFIRST
+Zeige Verzeichnisse zuerst
+;
+TXT_BUTTDEV
+Zeige alle Geräte
+;
+TXT_BUTTN
+Zeige den angegebenen Pfad
+;
+TXT_BUTTMKDIR
+Erzeuge ein neues Verzeichnis
+;
+TXT_BUTTPATH
+Geben Sie einen Pfad zum Anzeigen an
+;
+TXT_PROG
+ClassAction
+;
+TXT_COPYING
+Kopiere
+;
+TXT_DELETING
+Lösche
+;
+TXT_MOVING
+Bewege
+;
+TXT_SNAPSHOTWINDOW
+Fenstergröße merken
+;
+TXT_YESALLNONENO
+Ja|Alle|Keine|Nein
+;
+TXT_HASICON
+besitzt schon ein Icon!
+;
+ERR_NOCOPY
+Konnte %s nicht kopieren !
+;
+ERR_NODEL
+Konnte %s nicht löschen !
+;
+ERR_NOMOVE
+Konnte %s nicht bewegen !
+;
+TXT_ENTPAT
+Muster eingeben
+;
+TXT_NEWFILE
+Neue Datei:
+;
+TXT_OLDFILE
+Alte Datei:
+;
+TXT_MOVEAS
+Bewegen als
+;
+TXT_DATESTRING
+Datum als Text
+;
+TXT_DISPLAYTIME
+Zeit anzeigen
+;
+TXT_BUTTABORT
+Den aktuellen Vorgang abbrechen
+;
+TXT_DRAGBAR
+Dragbar
+;
+TXT_TOOLBAR
+Toolbar
+;
+TXT_VISIBLE
+Sichtbar
+;
+TXT_BYTESSEL
+%s Bytes ausgewählt
+;
+TXT_CHECKING
+Überprüfe
+;
+TXT_DDSELECTED
+%d gewählt / %d vorhanden
+;
+TXT_NOTENOUGHSPACE
+Nicht genug Platz!
+;
+TXT_CHECKFIT
+Größe prüfen
+;
+TXT_DELETEICONS
+Lösche Icons
+;
+TXT_GENERAL
+Allgemein
+;
+TXT_HIGHDIRS
+Verzeichnisse hervorheben
+;
+TXT_ICONS
+Icons
+;
+TXT_LISTERS
+Lister
+;
+TXT_SHOWIMAGES
+Symbole anzeigen
+;
+TXT_USED
+voll
+;
+TXT_BUTTPARENT
+Gehe zum übergeordneten Verzeichnis
+;
+TXT_NAME
+Name
+;
+TXT_SIZE
+Größe
+;
+TXT_DATE
+Datum
+;
+TXT_BITS
+Bits
+;
+TXT_BUTTDIR
+Quelle
+;
+TXT_BUTTDIR2
+Ziel
+;
+TXT_COPY
+Kopieren
+;
+TXT_CUT
+Ausschneiden
+;
+TXT_EDIT
+Bearbeiten
+;
+TXT_PASTE
+Einfügen
+;
+TXT_PATHNOTIFY
+Bei Änderungen aktualisieren
+;
+TXT_SEARCH
+Suchen
+;
+TXT_SELALL
+Alles wählen
+;
+TXT_SELNONE
+Nichts wählen
+;
+TXT_SELTOGGLE
+Auswahl umschalten
+;
+TXT_SELTYPE
+Gleichen Typ auswählen
+;
+TXT_SELPATTERN
+Muster wählen
+;
+TXT_DELETE
+Löschen
+;
+TXT_COPYAS
+Kopieren als
+;
+TXT_FILE
+Datei
+;
+TXT_MOVE
+Bewegen
+;
+TXT_PACK
+Packen
+;
+TXT_BUTTREFRESH
+Lister aktualisieren
+;
+TXT_CREATEARCHIVE
+Archiv anlegen
+;
+TXT_CREATESUBDIR
+Unterverzeichnis anlegen
+;
+TXT_DELOKSINGLE
+Wirklich den Eintrag %s löschen ?
+;
+TXT_GENERIC
+Allgemein
+;
+TXT_BUTTACTIVATE
+Lister aktivieren
+;
+TXT_BUTTDEACTIVATE
+Lister deaktivieren
+;
+MSG_COMMENT
+Kommentar
+;
+MSG_ARCHIVE
+Archiv
+;
+MSG_EXECUTABLE
+Ausführbar
+;
+MSG_OPENWINDOW
+Fenster öffnen
+;
+MSG_READABLE
+Lesbar
+;
+MSG_ROOTDIR
+Wurzelverzeichnis
+;
+MSG_SCRIPT
+Skript
+;
+MSG_VOLUMES
+Laufwerke
+;
+MSG_WRITABLE
+Schreibbar
+;
+MSG_DELETABLE
+Löschbar
+;
+MSG_COMMENT8
+Kommentar:
+;
+MSG_DATE8
+Datum:
+;
+MSG_DATENOTVALID
+Das Datum ist ungültig !
+;
+MSG_FILEALREADYEXISTS
+Die Datei existiert schon !
+;
+MSG_NAME8
+Name:
+;
+MSG_PROTECTION8
+Schutz:
+;
+MSG_CANCEL1
+_Abbrechen
+;
+MSG_OK1
+_Ok
+;
+MSG_NOTRASHCANAVAILABLE
+Kein Papierkorb vorhanden !
+;
+MSG_BUTTFUELGAUGE
+Hier klicken um die Listengröße anzupassen
+;
+MSG_COUNTINGFILES
+Zähle Dateien ...
+;
+TXT_DELOKTRASH
+Wollen Sie wirklich die Einträge %s,... in den Papierkorb verschieben ?
+;
+TXT_DELOKSINGLETRASH
+Wollen Sie wirklich den Eintrag %s in den Papierkorb verschieben ?
+;
+MSG_DEPROTECTFILE
+Die Datei %s ist schreibgeschützt.\n Soll ich den Schutz für diese Datei entfernen ?
+;
+ERR_NOMKDIR
+Konnte Verzeichnis %s nicht erzeugen !
+;
+MSG_VERSION
+Version
+;
+MSG_NOTAVAILABLE
+nicht verfügbar
+;
+MSG_VERSION8
+Version:
+;
+MSG_COPYANDDELETE
+Kopieren und Löschen
+;
+MSG_PULLDOWNMENU
+Pulldown-Menü
+;
+MSG_REPLACEVERSION
+Ältere Versionen ersetzen
+;
+MSG_SAVE1
+_Speichern
+;
+MSG_SHOWVERSION
+Version anzeigen
+;
+MSG_COUNTFILES
+Dateien zählen
+;
+MSG_CREATE1
+_Erzeugen
+;
+MSG_ICON
+Icon
+;
+MSG_NAMEOFDIR8
+Name des Verzeichnisses:
+;
+MSG_PLEASEENTERDIRNAME
+Bitte geben Sie den Namen des neuen Verzeichnisses an.
+;
+MSG_ASSIGNTITLE
+Bitte geben Sie den Namen des logischen Laufwerks ein:
+;
+MSG_COPYTO
+Kopieren nach
+;
+MSG_ERR_ASSIGN
+Das logische Laufwerk konnte nicht erzeugt werden. Bitte überprüfen Sie, ob es schon existiert.
+;
+MSG_OPENWITH
+Öffnen mit
+;
+MSG_PATHS
+Pfade
+;
+MSG_VISITEDPATHS
+Besuchte Pfade
+;
+MSG_ASSIGNEXISTS
+Dieses logische Laufwerk existiert bereits.
+;
+MSG_ASSIGNMAKE
+Logisches Laufwerk erzeugen
+;
+MSG_ASSIGNREPLACEADD
+Ersetzen|Hinzufügen|Abbrechen
+;
+MSG_ASSIGNREMOVE
+Logisches Laufwerk entfernen
+;
+MSG_ASSIGNWANTREMOVE
+Wollen Sie wirklich dieses logische Laufwerk entfernen?
+;
+MSG_CLOSEWINDOW
+Bitte schließen Sie alle Fenster auf diesem Bildschirm.
+;
+MSG_CONFIRMCHECKSIZE
+Das Laufwerk meldet 0 Bytes freien Speicher. Wollen Sie trotzdem fortfahren?
+;
+MSG_DDIRSDFILES
+%d/%d Verzeichnisse, %d/%d Dateien
+;
+MSG_NORENAME
+Konnte %s nicht umbenennen !
+;
+ERR_WRONGPREFS
+Ihre Konfigurationsdatei ist nicht mehr gültig.\nBitte starten sie ClassActionPrefs und speichern sie die Einstellungen.\nPrüfen Sie, ob sie die korrekten Versionen von ClassAction und ClassActionPrefs installiert haben.
+;
+MSG_CONFIRMDELETE
+Löschen bestätigen
+;
+MSG_TOOLS
+Hilfsmittel
+;
+MSG_NOCOPYTOSUBDIR
+Es ist nicht erlaubt, Verzeichnisse in eigene Unterverzeichnisse zu kopieren!
+;

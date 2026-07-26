@@ -1,0 +1,2030 @@
+Global M68K Construktors
+	_INIT_0_InitFiles
+	_INIT_1_Utility_c
+	_INIT_1_DOS_c
+	_INIT_2_Layers_c
+	_INIT_2_MathIEEESingBas_c
+	_INIT_2_MathIEEEDoubTrans_c
+	_INIT_2_MathIEEEDoubBas_c
+	_INIT_2_Intuition_c
+	_INIT_2_Graphics_c
+	_INIT_3_Locale_c
+	_INIT_3_DataTypes_c
+	_INIT_3_AmigaGuide_c
+	_INIT_5_InitStdIOFiles
+Global M68K Destruktors
+	_EXIT_5_InitStdIOFiles
+	_EXIT_5_InitFiles
+	_EXIT_4_free
+	_EXIT_3_AmigaGuide_c
+	_EXIT_3_DataTypes_c
+	_EXIT_3_Locale_c
+	_EXIT_2_Graphics_c
+	_EXIT_2_Intuition_c
+	_EXIT_2_MathIEEEDoubBas_c
+	_EXIT_2_MathIEEEDoubTrans_c
+	_EXIT_2_MathIEEESingBas_c
+	_EXIT_2_Layers_c
+	_EXIT_1_DOS_c
+	_EXIT_1_Utility_c
+No Global PPC Construktors
+No Global PPC Destruktors
+
+M68K Code
+
+
+  Hunk #0 ( Far Public ) 53688 Bytes (0xd1b8)
+  _exit = 132 (0x84) referenced 1 times
+    File Work:Anwendungen/StormC/StormSYS/startups/startup.o
+  ShowHelp(char *) = 180 (0xb4) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/ClassAction.o
+  SetHString(int,char *) = 236 (0xec) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/ClassAction.o
+  MakeParent(char *) = 328 (0x148) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/ClassAction.o
+  MakeFile(char *) = 416 (0x1a0) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/ClassAction.o
+  PathHelp(unsigned char) = 512 (0x200) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/ClassAction.o
+  TabHelp(unsigned char,unsigned char) = 630 (0x276) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/ClassAction.o
+  ListHelp(unsigned char) = 788 (0x314) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/ClassAction.o
+  IDCMPHandler(register __a0 Hook *,register __a2 void *,register __a1 void *) = 1330 (0x532) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/ClassAction.o
+  HandleRawKey(IntuiMessage *) = 1360 (0x550) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/ClassAction.o
+  MessageLoop() = 2592 (0xa20) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/ClassAction.o
+  OpenLibs() = 5732 (0x1664) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/ClassAction.o
+  CloseLibs() = 6666 (0x1a0a) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/ClassAction.o
+  CreateActionList() = 7046 (0x1b86) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/ClassAction.o
+  ARX_Quit(char *) = 8508 (0x213c) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/ClassAction.o
+  ARX_Status(char *) = 8528 (0x2150) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/ClassAction.o
+  ARX_AppIconify(char *) = 8602 (0x219a) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/ClassAction.o
+  ARX_Use(char *) = 8670 (0x21de) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/ClassAction.o
+  ARX_Load(char *) = 8702 (0x21fe) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/ClassAction.o
+  ARX_Show(char *) = 8910 (0x22ce) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/ClassAction.o
+  ARX_Ver(char *) = 9006 (0x232e) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/ClassAction.o
+  ARX_Getclass(char *) = 9038 (0x234e) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/ClassAction.o
+  ARX_Action(char *) = 9256 (0x2428) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/ClassAction.o
+  MC_Quit() = 9738 (0x260a) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/ClassAction.o
+  MC_Help() = 9758 (0x261e) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/ClassAction.o
+  MC_Copy() = 9780 (0x2634) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/ClassAction.o
+  GetNextFile(char *,char *,short) = 10364 (0x287c) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/ClassAction.o
+  MC_Paste() = 10642 (0x2992) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/ClassAction.o
+  PreInit() = 12060 (0x2f1c) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/ClassAction.o
+  PostClear() = 12390 (0x3066) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/ClassAction.o
+  InitAll() = 12584 (0x3128) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/ClassAction.o
+  FreeAll() = 16516 (0x4084) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/ClassAction.o
+  main() = 17188 (0x4324) referenced 2 times
+    File Daten:Cpp/ClassAction/objects/ClassAction.o
+  wbmain(WBStartup *) = 18454 (0x4816) referenced 2 times
+    File Daten:Cpp/ClassAction/objects/ClassAction.o
+  HandleNotify() = 20716 (0x50ec) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/cagui.o
+  HandleDiskNotify(unsigned long) = 20914 (0x51b2) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/cagui.o
+  FormatSize(char *,float) = 21012 (0x5214) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/cagui.o
+  GetCurrentListBrowser() = 21166 (0x52ae) referenced 2 times
+    File Daten:Cpp/ClassAction/objects/cagui.o
+  GetListBrowser(unsigned char) = 21218 (0x52e2) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/cagui.o
+  GetPath(unsigned char) = 21266 (0x5312) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/cagui.o
+  GetSrc() = 21322 (0x534a) referenced 2 times
+    File Daten:Cpp/ClassAction/objects/cagui.o
+  GetDst() = 21354 (0x536a) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/cagui.o
+  ActivateBrowser(unsigned char) = 21388 (0x538c) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/cagui.o
+  OpenPath(unsigned char) = 21828 (0x5544) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/cagui.o
+  AdjustHistory(char *) = 21880 (0x5578) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/cagui.o
+  ClearHistory() = 22180 (0x56a4) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/cagui.o
+  OpenOld(unsigned char) = 22262 (0x56f6) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/cagui.o
+  PopupOnCurrentFiles() = 22314 (0x572a) referenced 2 times
+    File Daten:Cpp/ClassAction/objects/cagui.o
+  DeSelect(TLBNode *,char *) = 23536 (0x5bf0) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/cagui.o
+  HandleAppMessage() = 23692 (0x5c8c) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/cagui.o
+  Suffix(char *) = 24342 (0x5f16) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/cagui.o
+  GetPreNode(List *,TLBNode *,int,short) = 24390 (0x5f46) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/cagui.o
+  MakeDateString(char *,DateStamp *) = 26312 (0x66c8) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/cagui.o
+  MakeProtString(char *,unsigned long) = 26526 (0x679e) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/cagui.o
+  BuildLBList(unsigned char,List *,TPathNode *,TTabNode *) = 26718 (0x685e) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/cagui.o
+  InsertPathFile(TPathNode *,char *,char *,unsigned char,unsigned long,DateStamp *,unsigned long,short,char *) = 27562 (0x6baa) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/cagui.o
+  SetVolumeSizeStr(char *,InfoData *) = 27862 (0x6cd6) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/cagui.o
+  ReadDirIntoList(char *) = 28308 (0x6e94) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/cagui.o
+  ReadVolumesIntoList() = 29322 (0x728a) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/cagui.o
+  SetCurrentTabTitle(unsigned char,char *) = 30524 (0x773c) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/cagui.o
+  GetPathNode(char *,short) = 30640 (0x77b0) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/cagui.o
+  ListDir(unsigned char,char *,int,unsigned long) = 30804 (0x7854) referenced 3 times
+    File Daten:Cpp/ClassAction/objects/cagui.o
+  Refresh(unsigned char) = 32568 (0x7f38) referenced 2 times
+    File Daten:Cpp/ClassAction/objects/cagui.o
+  ShowOtherTab(unsigned char,unsigned char) = 32812 (0x802c) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/cagui.o
+  ChoixDirList(unsigned char) = 33212 (0x81bc) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/cagui.o
+  LhaPopup(char *) = 33532 (0x82fc) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/cagui.o
+  LhaFileDoubleClick(char *) = 33702 (0x83a6) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/cagui.o
+  DoubleClickDirList(unsigned char) = 33924 (0x8484) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/cagui.o
+  TitleClickDirList(int) = 34502 (0x86c6) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/cagui.o
+  Prefs() = 35054 (0x88ee) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/cagui.o
+  RequesterVers() = 35170 (0x8962) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/cagui.o
+  CheckAbort() = 35244 (0x89ac) referenced 2 times
+    File Daten:Cpp/ClassAction/objects/cagui.o
+  EnableAbort(short) = 35338 (0x8a0a) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/cagui.o
+  Parent(unsigned char) = 35516 (0x8abc) referenced 2 times
+    File Daten:Cpp/ClassAction/objects/cagui.o
+  WbInfo() = 35656 (0x8b48) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/cagui.o
+  WbInfoDir() = 36358 (0x8e06) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/cagui.o
+  AddIcon() = 36612 (0x8f04) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/cagui.o
+  RenameFile(TFileList *) = 37386 (0x920a) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/cagui.o
+  AskReplace(char *,char *,char *) = 38470 (0x9646) referenced 2 times
+    File Daten:Cpp/ClassAction/objects/cagui.o
+  EnoughSpaceForCopy() = 39258 (0x995a) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/cagui.o
+  FileTransfer(TFileList *) = 39662 (0x9aee) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/cagui.o
+  MkDir(TFileList *,unsigned char) = 42598 (0xa666) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/cagui.o
+  Pack() = 44262 (0xace6) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/cagui.o
+  GetSize(short,short) = 45170 (0xb072) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/cagui.o
+  Swap() = 46148 (0xb444) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/cagui.o
+  Key(char) = 46592 (0xb600) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/cagui.o
+  KeyMove(unsigned char,short) = 46924 (0xb74c) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/cagui.o
+  ListBrowserKeyMove(IntuiMessage *) = 47828 (0xbad4) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/cagui.o
+  Pat() = 48274 (0xbc92) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/cagui.o
+  All() = 48664 (0xbe18) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/cagui.o
+  None() = 48822 (0xbeb6) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/cagui.o
+  DeselectList(TFileList *) = 49020 (0xbf7c) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/cagui.o
+  Toggle() = 49286 (0xc086) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/cagui.o
+  Type() = 49562 (0xc19a) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/cagui.o
+  Search() = 50212 (0xc424) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/cagui.o
+  Root() = 50316 (0xc48c) referenced 2 times
+    File Daten:Cpp/ClassAction/objects/cagui.o
+  Assign(char *) = 50412 (0xc4ec) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/cagui.o
+  OpenDirWindow() = 50978 (0xc722) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/cagui.o
+  IconifyWindow() = 51114 (0xc7aa) referenced 2 times
+    File Daten:Cpp/ClassAction/objects/cagui.o
+  UnIconifyWindow() = 51212 (0xc80c) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/cagui.o
+  SnapshotWindow() = 51390 (0xc8be) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/cagui.o
+  ActivatePathGadget(unsigned char) = 51774 (0xca3e) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/cagui.o
+  RearrangeBrowserSize() = 51904 (0xcac0) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/cagui.o
+
+  Hunk #1 ( Far Public ) 51904 Bytes (0xcac0)
+  My_Free(char *,int) = 0 (0x0) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/caexec.o
+  CompareDate(char *,char *) = 50 (0x32) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/caexec.o
+  StoreFib(char *,char *,short) = 216 (0xd8) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/caexec.o
+  FileLength(char *,FileInfoBlock *) = 540 (0x21c) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/caexec.o
+  GetVersion(char *,char *) = 814 (0x32e) referenced 2 times
+    File Daten:Cpp/ClassAction/objects/caexec.o
+  CopyArchiveFile(char *,char *) = 1286 (0x506) referenced 2 times
+    File Daten:Cpp/ClassAction/objects/caexec.o
+  TryDeprotectFile(char *) = 2434 (0x982) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/caexec.o
+  MRECopy(char *,char *,unsigned long *,unsigned char) = 2822 (0xb06) referenced 2 times
+    File Daten:Cpp/ClassAction/objects/caexec.o
+  DelFile(const char *) = 5312 (0x14c0) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/caexec.o
+  CutSuffix(char *) = 5498 (0x157a) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/caexec.o
+  AppendFilesToString(char *,TFileList *,char) = 5620 (0x15f4) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/caexec.o
+  ParseArgs(char *,char *,TFileList *,char *) = 6092 (0x17cc) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/caexec.o
+  BstrToStr(long,char *) = 8134 (0x1fc6) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/caexec.o
+  ParseReq(char *,char *,char **,char *) = 8196 (0x2004) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/caexec.o
+  WbStart(char *) = 9722 (0x25fa) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/caexec.o
+  InternalCommand(TAction *,TFileList *) = 10492 (0x28fc) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/caexec.o
+  ReleaseFileList(TFileList *) = 12244 (0x2fd4) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/caexec.o
+  Runner(TAction *,char *) = 12320 (0x3020) referenced 4 times
+    File Daten:Cpp/ClassAction/objects/caexec.o
+  ReactionRequest(Window *,EasyStruct *,void *,void *) = 15176 (0x3b48) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/careq.o
+  Req(char *) = 16484 (0x4064) referenced 2 times
+    File Daten:Cpp/ClassAction/objects/careq.o
+  DInfo(char *) = 16626 (0x40f2) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/careq.o
+  Info(char *,short) = 16764 (0x417c) referenced 4 times
+    File Daten:Cpp/ClassAction/objects/careq.o
+  SureReq(char *,char *) = 16904 (0x4208) referenced 2 times
+    File Daten:Cpp/ClassAction/objects/careq.o
+  Freq(char *,int,char *) = 17006 (0x426e) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/careq.o
+  GetText(char *,int,char *) = 17506 (0x4462) referenced 2 times
+    File Daten:Cpp/ClassAction/objects/careq.o
+  ReadClassEntry(TIniFile *,TFileType *) = 18404 (0x47e4) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/cadisk.o
+  LoadPaths(TIniFile *) = 18986 (0x4a2a) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/cadisk.o
+  LoadClasses(TIniFile *) = 19162 (0x4ada) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/cadisk.o
+  LoadOptions(TIniFile *) = 20360 (0x4f88) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/cadisk.o
+  SetFileAttributes(char *) = 22622 (0x585e) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/cadisk.o
+  OpenXfdLib() = 27412 (0x6b14) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/caxfd.o
+  CloseXfdLib() = 27462 (0x6b46) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/caxfd.o
+  Decrunch(char *,int,char *,int *) = 27496 (0x6b68) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/caxfd.o
+  XAD_IsArchive(char *,char **) = 27968 (0x6d40) referenced 3 times
+    File Daten:Cpp/ClassAction/objects/calha.o
+  TArchive::InsertDir(char *,xadFileInfo *) = 28246 (0x6e56) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/calha.o
+  TArchive::InsertFNode(xadFileInfo *) = 28654 (0x6fee) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/calha.o
+  TArchive::Directory(char *,xadFileInfo *) = 29212 (0x721c) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/calha.o
+  TArchive::File(char *) = 29574 (0x7386) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/calha.o
+  TArchive::DeleteList(List *) = 29794 (0x7462) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/calha.o
+  TArchive::TArchive() = 29904 (0x74d0) referenced 3 times
+    File Daten:Cpp/ClassAction/objects/calha.o
+  TArchive::~TArchive() = 29972 (0x7514) referenced 3 times
+    File Daten:Cpp/ClassAction/objects/calha.o
+  TArchive::Lock(char *) = 30044 (0x755c) referenced 3 times
+    File Daten:Cpp/ClassAction/objects/calha.o
+  TArchive::UnLock() = 30774 (0x7836) referenced 3 times
+    File Daten:Cpp/ClassAction/objects/calha.o
+  TArchive::Examine(FileInfoBlock *) = 30860 (0x788c) referenced 2 times
+    File Daten:Cpp/ClassAction/objects/calha.o
+  TArchive::ExNext(FileInfoBlock *) = 30948 (0x78e4) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/calha.o
+  TArchive::PathValid(char *) = 31046 (0x7946) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/calha.o
+  TArchive::ArchiveName(char *) = 31554 (0x7b42) referenced 2 times
+    File Daten:Cpp/ClassAction/objects/calha.o
+  TArchive::LocalName(char *) = 31578 (0x7b5a) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/calha.o
+  TArchive::UnpackFile(char *,char *) = 31744 (0x7c00) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/calha.o
+  TArchiveList::TArchiveList() = 32198 (0x7dc6) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/calha.o
+  TArchiveList::~TArchiveList() = 32266 (0x7e0a) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/calha.o
+  TArchiveList::AddList(char *) = 32336 (0x7e50) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/calha.o
+  TArchiveList::GetList(char *) = 32490 (0x7eea) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/calha.o
+  TArchiveList::RemoveList(char *) = 32556 (0x7f2c) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/calha.o
+  TArchiveList::RemoveDir(List *) = 32626 (0x7f72) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/calha.o
+  TArchiveList::RemoveList(TFileListNode *) = 32738 (0x7fe2) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/calha.o
+  butclass_redraw(unsigned long *,GadgetInfo *) = 32860 (0x805c) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/cabutclass.o
+  butclass_HANDLEINPUT(IClass *,unsigned long *,gpInput *) = 32930 (0x80a2) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/cabutclass.o
+  IsIconFrameless(DiskObject *) = 33060 (0x8124) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/cabutclass.o
+  butclass_RENDER(IClass *,unsigned long *,gpRender *) = 33140 (0x8174) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/cabutclass.o
+  butclass_SET(IClass *,unsigned long *,opSet *) = 33346 (0x8242) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/cabutclass.o
+  butclass_HITTEST(IClass *,unsigned long *,gpHitTest *) = 33668 (0x8384) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/cabutclass.o
+  butclass_DOMAIN(IClass *,unsigned long *,gpDomain *) = 33678 (0x838e) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/cabutclass.o
+  butclass_DISPATCH(register __a0 IClass *,register __a2 unsigned long *,register __a1  *) = 33840 (0x8430) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/cabutclass.o
+  MakeIconClass() = 34158 (0x856e) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/cabutclass.o
+  TClipBoard::TClipBoard() = 34224 (0x85b0) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/caccp.o
+  TClipBoard::Init(int) = 34242 (0x85c2) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/caccp.o
+  TClipBoard::~TClipBoard() = 34316 (0x860c) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/caccp.o
+  TClipBoard::Paste() = 34374 (0x8646) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/caccp.o
+  TClipBoard::WriteChunk(IFFHandle *,long,char *) = 34836 (0x8814) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/caccp.o
+  TClipBoard::Copy(char *) = 34960 (0x8890) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/caccp.o
+  TClipBoard::FreeBuffer() = 35124 (0x8934) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/caccp.o
+  AdjustPath(char *) = 35172 (0x8964) referenced 2 times
+    File Daten:Cpp/ClassAction/objects/cautils.o
+  CheckPath(char *,char *) = 35262 (0x89be) referenced 4 times
+    File Daten:Cpp/ClassAction/objects/cautils.o
+  InitHook(Hook *,unsigned long (*)(),void *) = 35562 (0x8aea) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/cautils.o
+  sign(int) = 35602 (0x8b12) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/cautils.o
+  fsign(float) = 35640 (0x8b38) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/cautils.o
+  stristr(char *,char *) = 35702 (0x8b76) referenced 2 times
+    File Daten:Cpp/ClassAction/objects/cautils.o
+  strincmp(char *,char *) = 35950 (0x8c6e) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/cautils.o
+  RemoveChar(char *,char) = 36072 (0x8ce8) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/cautils.o
+  CoordsInGadget(int,int,Gadget *) = 36110 (0x8d0e) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/cautils.o
+  FileExists(char *) = 36204 (0x8d6c) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/cautils.o
+  IsDirectory(char *) = 36254 (0x8d9e) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/cautils.o
+  FileCount(char *,FileInfoBlock *) = 36364 (0x8e0c) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/cautils.o
+  RemoveQuotes(char *) = 36594 (0x8ef2) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/cautils.o
+  ToBig(char *) = 36620 (0x8f0c) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/cautils.o
+  AddMenuItem(TagItem *,char *,void *) = 36664 (0x8f38) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/capopup.o
+  AddMenuTitle(TagItem *,char *) = 36748 (0x8f8c) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/capopup.o
+  AddBar(TagItem *) = 36838 (0x8fe6) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/capopup.o
+  OpenActionMenu(TFileType *,char *) = 36906 (0x902a) referenced 2 times
+    File Daten:Cpp/ClassAction/objects/capopup.o
+  OpenVolumeMenu(unsigned char) = 38448 (0x9630) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/capopup.o
+  IsGlobalVariable(void *) = 39172 (0x9904) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/capopup.o
+  BuildMenu() = 39222 (0x9936) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/capopup.o
+  BuildDirMenu() = 43202 (0xa8c2) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/capopup.o
+  OpenMenu() = 43774 (0xaafe) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/capopup.o
+  OpenDirMenu() = 43978 (0xabca) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/capopup.o
+  HandlePopupMessage(IntuiMessage *) = 44110 (0xac4e) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/capopup.o
+  FreeMenu() = 44824 (0xaf18) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/capopup.o
+  FreeDirMenu() = 44880 (0xaf50) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/capopup.o
+  OpenPathMenu() = 44936 (0xaf88) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/capopup.o
+  OpenHistoryMenu() = 45222 (0xb0a6) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/capopup.o
+  TCommodities::TCommodities() = 46236 (0xb49c) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/unCommodities.o
+  TCommodities::Init() = 46260 (0xb4b4) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/unCommodities.o
+  TCommodities::Add(int,char *) = 46442 (0xb56a) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/unCommodities.o
+  TCommodities::Free() = 46538 (0xb5ca) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/unCommodities.o
+  TCommodities::GetCXId() = 46622 (0xb61e) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/unCommodities.o
+  MREBitmap::MREBitmap(char *,Screen *) = 46824 (0xb6e8) referenced 2 times
+    File Daten:Cpp/ClassAction/objects/unBitmap.o
+  MREBitmap::~MREBitmap() = 46884 (0xb724) referenced 2 times
+    File Daten:Cpp/ClassAction/objects/unBitmap.o
+  MREBitmap::LoadFromFile(char *,Screen *) = 46914 (0xb742) referenced 2 times
+    File Daten:Cpp/ClassAction/objects/unBitmap.o
+  MREBitmap::Clone(Screen *) = 47128 (0xb818) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/unBitmap.o
+  MREBitmap::IntuiImage() = 47236 (0xb884) referenced 2 times
+    File Daten:Cpp/ClassAction/objects/unBitmap.o
+  MREBitmap::Free() = 47252 (0xb894) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/unBitmap.o
+  TARexx::Init(char *) = 47292 (0xb8bc) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/unARexx.o
+  TARexx::Free() = 47534 (0xb9ae) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/unARexx.o
+  TARexx::AddCmd(char *,void (*)(char *)) = 47692 (0xba4c) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/unARexx.o
+  TARexx::Signals() = 47762 (0xba92) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/unARexx.o
+  TARexx::GetMessage() = 47790 (0xbaae) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/unARexx.o
+  TARexx::ReplyMessage(RexxMsg *,char *,unsigned long) = 47918 (0xbb2e) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/unARexx.o
+  TARexx::SetError(char *) = 48022 (0xbb96) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/unARexx.o
+  TARexx::SetResult(char *) = 48048 (0xbbb0) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/unARexx.o
+  TARexx::HandleMsg() = 48070 (0xbbc6) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/unARexx.o
+  TARexx::Name() = 48264 (0xbc88) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/unARexx.o
+  TcaFileTypes::TcaFileTypes() = 48300 (0xbcac) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/cafiletypes.o
+  TcaFileTypes::~TcaFileTypes() = 48332 (0xbccc) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/cafiletypes.o
+  TcaFileTypes::Clear() = 48356 (0xbce4) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/cafiletypes.o
+  TcaFileTypes::AddFileType(char *) = 48378 (0xbcfa) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/cafiletypes.o
+  TcaFileTypes::AddAction(TFileType *,char *) = 48528 (0xbd90) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/cafiletypes.o
+  TcaFileTypes::RemoveFileType(TFileType *,short) = 48614 (0xbde6) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/cafiletypes.o
+  TcaFileTypes::RemoveAction(TAction *,short) = 48764 (0xbe7c) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/cafiletypes.o
+  TcaFileTypes::ClearFileTypes() = 48812 (0xbeac) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/cafiletypes.o
+  FileOffsetCorrect(TFileType *,long) = 48856 (0xbed8) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/cafiletypes.o
+  CheckBufferOffset(TFileType *,char *,int) = 49458 (0xc132) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/cafiletypes.o
+  IsAscii(char *) = 50016 (0xc360) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/cafiletypes.o
+  TcaFileTypes::GetFileType(char *,char *,short,short) = 50264 (0xc458) referenced 2 times
+    File Daten:Cpp/ClassAction/objects/cafiletypes.o
+  TcaFileTypes::ContainsArchive(char *,char *) = 50928 (0xc6f0) referenced 3 times
+    File Daten:Cpp/ClassAction/objects/cafiletypes.o
+  TcaFileTypes::BelongsToFileType(char *,TFileType *) = 51068 (0xc77c) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/cafiletypes.o
+  TcaFileTypes::GetFileTypeImage(char *,Screen *,short) = 51138 (0xc7c2) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/cafiletypes.o
+  TcaFileTypes::AddSuffix(char *,TFileType *) = 51470 (0xc90e) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/cafiletypes.o
+
+  Hunk #2 ( Far Public ) 42108 Bytes (0xa47c)
+  MakeNewTab(unsigned long *,char *,unsigned char) = 0 (0x0) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/capaths.o
+  InitPaths() = 186 (0xba) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/capaths.o
+  IsPathNodeValid(TPathNode *) = 650 (0x28a) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/capaths.o
+  RemovePathNode(TPathNode *) = 698 (0x2ba) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/capaths.o
+  ClearPaths() = 970 (0x3ca) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/capaths.o
+  ClearUserPaths() = 1158 (0x486) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/capaths.o
+  TcaActions::TcaActions() = 1236 (0x4d4) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/caactions.o
+  TcaActions::~TcaActions() = 1260 (0x4ec) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/caactions.o
+  TcaActions::CreateAction(char *) = 1308 (0x51c) referenced 4 times
+    File Daten:Cpp/ClassAction/objects/caactions.o
+  TcaActions::DeleteAction(TAction *,short) = 1406 (0x57e) referenced 3 times
+    File Daten:Cpp/ClassAction/objects/caactions.o
+  TcaActions::Add(char *,char *,char,char *,char *,short,short,short) = 1450 (0x5aa) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/caactions.o
+  TcaActions::Item(char *) = 1622 (0x656) referenced 2 times
+    File Daten:Cpp/ClassAction/objects/caactions.o
+  TcaIcons::Init() = 1688 (0x698) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/caicons.o
+  TcaIcons::Free() = 1756 (0x6dc) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/caicons.o
+  TcaIcons::LoadCommands(TIniFile *,Screen *,unsigned long *,unsigned long *,unsigned long *) = 1788 (0x6fc) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/caicons.o
+  TcaIcons::FreeIconList(List *) = 3054 (0xbee) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/caicons.o
+  TcaIcons::FreeIcons() = 3194 (0xc7a) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/caicons.o
+  TcaIcons::GetCommandList(int) = 3256 (0xcb8) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/caicons.o
+  TcaIcons::DoIconCommand(Window *,unsigned long) = 3302 (0xce6) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/caicons.o
+  TcaIcons::ShowIconHelp(Window *,unsigned long) = 3830 (0xef6) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/caicons.o
+  TIniFile::TIniFile() = 4092 (0xffc) referenced 2 times
+    File Daten:Cpp/ClassAction/objects/IniFile.o
+  TIniFile::~TIniFile() = 4122 (0x101a) referenced 2 times
+    File Daten:Cpp/ClassAction/objects/IniFile.o
+  TIniFile::SeekLine(int) = 4158 (0x103e) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/IniFile.o
+  TIniFile::SeekGroup(char *,short) = 4220 (0x107c) referenced 2 times
+    File Daten:Cpp/ClassAction/objects/IniFile.o
+  TIniFile::SeekEntry(char *,char *,short) = 4434 (0x1152) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/IniFile.o
+  TIniFile::SeekValue(char *,char *) = 4714 (0x126a) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/IniFile.o
+  TIniFile::GetBool(char *,char *,short) = 4800 (0x12c0) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/IniFile.o
+  TIniFile::GetInt(char *,char *,int) = 4880 (0x1310) referenced 2 times
+    File Daten:Cpp/ClassAction/objects/IniFile.o
+  TIniFile::GetString(char *,char *,char *,char *) = 4956 (0x135c) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/IniFile.o
+  TIniFile::GetNextGroupEntry() = 5034 (0x13aa) referenced 2 times
+    File Daten:Cpp/ClassAction/objects/IniFile.o
+  TIniFile::AddToGroup(char *) = 5112 (0x13f8) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/IniFile.o
+  TIniFile::AppendGroup(char *) = 5204 (0x1454) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/IniFile.o
+  TIniFile::WriteString(char *,char *,char *) = 5272 (0x1498) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/IniFile.o
+  TIniFile::WriteBool(char *,char *,short) = 5414 (0x1526) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/IniFile.o
+  TIniFile::WriteInt(char *,char *,int) = 5574 (0x15c6) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/IniFile.o
+  TStringList::TStringList() = 5744 (0x1670) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/StringList.o
+  TStringList::~TStringList() = 5774 (0x168e) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/StringList.o
+  TStringList::ItemCount() = 5796 (0x16a4) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/StringList.o
+  TStringList::Clear() = 5812 (0x16b4) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/StringList.o
+  TStringList::Append(char *) = 5908 (0x1714) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/StringList.o
+  TStringList::Items(int) = 6040 (0x1798) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/StringList.o
+  TStringList::Insert(char *,int) = 6094 (0x17ce) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/StringList.o
+  TStringList::Find(char *) = 6310 (0x18a6) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/StringList.o
+  TStringList::IndexOf(char *) = 6366 (0x18de) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/StringList.o
+  TStringList::Change(Node *,char *) = 6432 (0x1920) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/StringList.o
+  TStringList::Change(int,char *) = 6534 (0x1986) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/StringList.o
+  TStringList::Delete(char *) = 6668 (0x1a0c) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/StringList.o
+  TStringList::Delete(Node *) = 6736 (0x1a50) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/StringList.o
+  TStringList::Insert(char *,Node *) = 6838 (0x1ab6) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/StringList.o
+  TStringList::LoadFromFile(char *) = 6978 (0x1b42) referenced 2 times
+    File Daten:Cpp/ClassAction/objects/StringList.o
+  TStringList::SaveToFile(char *) = 7136 (0x1be0) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/StringList.o
+  TXT_HELP_STR = 7256 (0x1c58) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_ICONIFY_STR = 7261 (0x1c5d) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_PROJECT_STR = 7269 (0x1c65) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_QUIT_STR = 7277 (0x1c6d) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_PREFERENCES_STR = 7282 (0x1c72) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_ABOUT_STR = 7294 (0x1c7e) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  ERR_NOLIB_STR = 7300 (0x1c84) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_INFORMATION_STR = 7343 (0x1caf) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_COPYRIGHT_STR = 7355 (0x1cbb) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_HELP = 7528 (0x1d68) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_ICONIFY = 7529 (0x1d69) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_PROJECT = 7530 (0x1d6a) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_QUIT = 7531 (0x1d6b) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_PREFERENCES = 7532 (0x1d6c) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_ABOUT = 7533 (0x1d6d) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  ERR_NOLIB = 7535 (0x1d6f) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_INFORMATION = 7536 (0x1d70) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_COPYRIGHT = 7537 (0x1d71) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_SURE = 7538 (0x1d72) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_DIR = 7539 (0x1d73) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_MEMORY = 7542 (0x1d76) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_UNKNOWN = 7543 (0x1d77) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_REQERROR = 7544 (0x1d78) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_YESNO = 7545 (0x1d79) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_SUREERROR = 7546 (0x1d7a) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_ASSIGN = 7547 (0x1d7b) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_CLONE = 7548 (0x1d7c) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_DRAWER = 7549 (0x1d7d) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_VOLUME = 7550 (0x1d7e) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_OK = 7551 (0x1d7f) referenced 2 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_CANCEL = 7552 (0x1d80) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_DELOK = 7553 (0x1d81) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_MKDIR = 7554 (0x1d82) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_NOCONFIG = 7555 (0x1d83) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_CONFIGCORRUPT = 7556 (0x1d84) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_CONFIGNOTVALID = 7557 (0x1d85) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  ERR_GENERAL = 7559 (0x1d87) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  ERR_NOICON = 7560 (0x1d88) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  ERR_WRONGPATH = 7561 (0x1d89) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  ERR_FILENOTFOUND = 7562 (0x1d8a) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  ERR_NOAREXX = 7563 (0x1d8b) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  ERR_NOXFD = 7564 (0x1d8c) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_SURE_STR = 7565 (0x1d8d) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  ERR_NOTCRUNCHED = 7565 (0x1d8d) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  ERR_NOTDATA = 7566 (0x1d8e) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  ERR_NOTDECR = 7567 (0x1d8f) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_RENAME = 7569 (0x1d91) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_FILEEXISTS = 7571 (0x1d93) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_CONFIRMREPLACE = 7573 (0x1d95) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_COPYICONS = 7574 (0x1d96) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_CREATEICONS = 7575 (0x1d97) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_DISPLAYINFO = 7576 (0x1d98) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_SETTINGS = 7577 (0x1d99) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_SHOWDRAWERSFIRST = 7578 (0x1d9a) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_DIR_STR = 7580 (0x1d9c) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_MEMORY_STR = 7590 (0x1da6) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_BUTTDEV = 7591 (0x1da7) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_BUTTN = 7592 (0x1da8) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_BUTTMKDIR = 7593 (0x1da9) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_BUTTPATH = 7595 (0x1dab) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_PROG = 7601 (0x1db1) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_COPYING = 7602 (0x1db2) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_DELETING = 7603 (0x1db3) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_MOVING = 7604 (0x1db4) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_SNAPSHOTWINDOW = 7606 (0x1db6) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_YESALLNONENO = 7607 (0x1db7) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_HASICON = 7609 (0x1db9) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  ERR_NOCOPY = 7612 (0x1dbc) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  ERR_NODEL = 7613 (0x1dbd) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  ERR_NOMOVE = 7614 (0x1dbe) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_ENTPAT = 7615 (0x1dbf) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_NEWFILE = 7617 (0x1dc1) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_OLDFILE = 7618 (0x1dc2) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_MOVEAS = 7619 (0x1dc3) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_DATESTRING = 7620 (0x1dc4) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_DISPLAYTIME = 7621 (0x1dc5) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_BUTTABORT = 7624 (0x1dc8) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_DRAGBAR = 7625 (0x1dc9) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_TOOLBAR = 7626 (0x1dca) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_UNKNOWN_STR = 7627 (0x1dcb) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_VISIBLE = 7627 (0x1dcb) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_BYTESSEL = 7629 (0x1dcd) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_CHECKING = 7630 (0x1dce) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_DDSELECTED = 7631 (0x1dcf) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_NOTENOUGHSPACE = 7632 (0x1dd0) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_REQERROR_STR = 7635 (0x1dd3) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_CHECKFIT = 7641 (0x1dd9) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_DELETEICONS = 7642 (0x1dda) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_GENERAL = 7643 (0x1ddb) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_HIGHDIRS = 7644 (0x1ddc) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_ICONS = 7645 (0x1ddd) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_LISTERS = 7646 (0x1dde) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_SHOWIMAGES = 7647 (0x1ddf) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_USED = 7648 (0x1de0) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_BUTTPARENT = 7649 (0x1de1) referenced 2 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_NAME = 7652 (0x1de4) referenced 2 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_SIZE = 7653 (0x1de5) referenced 2 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_DATE = 7654 (0x1de6) referenced 2 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_BITS = 7655 (0x1de7) referenced 2 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_BUTTDIR = 7656 (0x1de8) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_BUTTDIR2 = 7657 (0x1de9) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_COPY = 7658 (0x1dea) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_CUT = 7659 (0x1deb) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_EDIT = 7660 (0x1dec) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_PASTE = 7661 (0x1ded) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_PATHNOTIFY = 7662 (0x1dee) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_YESNO_STR = 7663 (0x1def) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_SEARCH = 7663 (0x1def) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_SELALL = 7664 (0x1df0) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_SELNONE = 7665 (0x1df1) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_SELTOGGLE = 7666 (0x1df2) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_SELTYPE = 7667 (0x1df3) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_SELPATTERN = 7668 (0x1df4) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_DELETE = 7669 (0x1df5) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_SUREERROR_STR = 7670 (0x1df6) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_COPYAS = 7670 (0x1df6) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_FILE = 7671 (0x1df7) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_MOVE = 7672 (0x1df8) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_PACK = 7673 (0x1df9) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_BUTTREFRESH = 7674 (0x1dfa) referenced 2 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_CREATEARCHIVE = 7675 (0x1dfb) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_CREATESUBDIR = 7676 (0x1dfc) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_DELOKSINGLE = 7677 (0x1dfd) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_GENERIC = 7678 (0x1dfe) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_BUTTACTIVATE = 7679 (0x1dff) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_BUTTDEACTIVATE = 7680 (0x1e00) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_COMMENT = 7683 (0x1e03) referenced 2 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_ARCHIVE = 7684 (0x1e04) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_EXECUTABLE = 7686 (0x1e06) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_OPENWINDOW = 7687 (0x1e07) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_READABLE = 7688 (0x1e08) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_ROOTDIR = 7689 (0x1e09) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_SCRIPT = 7690 (0x1e0a) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_VOLUMES = 7691 (0x1e0b) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_WRITABLE = 7692 (0x1e0c) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_DELETABLE = 7693 (0x1e0d) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_COMMENT8 = 7694 (0x1e0e) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_DATE8 = 7695 (0x1e0f) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_DATENOTVALID = 7696 (0x1e10) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_FILEALREADYEXISTS = 7697 (0x1e11) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_NAME8 = 7698 (0x1e12) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_ASSIGN_STR = 7699 (0x1e13) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_PROTECTION8 = 7699 (0x1e13) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_CANCEL1 = 7700 (0x1e14) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_OK1 = 7701 (0x1e15) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_NOTRASHCANAVAILABLE = 7702 (0x1e16) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_BUTTFUELGAUGE = 7704 (0x1e18) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_COUNTINGFILES = 7705 (0x1e19) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_CLONE_STR = 7706 (0x1e1a) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_DELOKTRASH = 7706 (0x1e1a) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_DELOKSINGLETRASH = 7707 (0x1e1b) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_DEPROTECTFILE = 7708 (0x1e1c) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  ERR_NOMKDIR = 7709 (0x1e1d) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_VERSION = 7710 (0x1e1e) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_NOTAVAILABLE = 7711 (0x1e1f) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_VERSION8 = 7712 (0x1e20) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_COPYANDDELETE = 7713 (0x1e21) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_DRAWER_STR = 7714 (0x1e22) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_PULLDOWNMENU = 7714 (0x1e22) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_REPLACEVERSION = 7715 (0x1e23) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_SAVE1 = 7716 (0x1e24) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_SHOWVERSION = 7717 (0x1e25) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_COUNTFILES = 7718 (0x1e26) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_CREATE1 = 7720 (0x1e28) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_VOLUME_STR = 7721 (0x1e29) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_ICON = 7721 (0x1e29) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_NAMEOFDIR8 = 7722 (0x1e2a) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_PLEASEENTERDIRNAME = 7723 (0x1e2b) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_ASSIGNTITLE = 7726 (0x1e2e) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_COPYTO = 7727 (0x1e2f) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_OK_STR = 7728 (0x1e30) referenced 2 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_ERR_ASSIGN = 7728 (0x1e30) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_OPENWITH = 7729 (0x1e31) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_PATHS = 7730 (0x1e32) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_VISITEDPATHS = 7731 (0x1e33) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_ASSIGNEXISTS = 7732 (0x1e34) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_CANCEL_STR = 7733 (0x1e35) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_ASSIGNMAKE = 7733 (0x1e35) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_ASSIGNREPLACEADD = 7734 (0x1e36) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_ASSIGNREMOVE = 7735 (0x1e37) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_ASSIGNWANTREMOVE = 7736 (0x1e38) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_CLOSEWINDOW = 7737 (0x1e39) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_CONFIRMCHECKSIZE = 7738 (0x1e3a) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_DDIRSDFILES = 7739 (0x1e3b) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_DELOK_STR = 7740 (0x1e3c) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_NORENAME = 7740 (0x1e3c) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  ERR_WRONGPREFS = 7741 (0x1e3d) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_TOOLS = 7742 (0x1e3e) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_MKDIR_STR = 7791 (0x1e6f) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_NOCONFIG_STR = 7812 (0x1e84) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_CONFIGCORRUPT_STR = 7835 (0x1e9b) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_CONFIGNOTVALID_STR = 7866 (0x1eba) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  ERR_GENERAL_STR = 7923 (0x1ef3) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  ERR_NOICON_STR = 7957 (0x1f15) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  ERR_WRONGPATH_STR = 7975 (0x1f27) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  ERR_FILENOTFOUND_STR = 8001 (0x1f41) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  ERR_NOAREXX_STR = 8017 (0x1f51) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  ERR_NOXFD_STR = 8053 (0x1f75) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  ERR_NOTCRUNCHED_STR = 8134 (0x1fc6) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  ERR_NOTDATA_STR = 8148 (0x1fd4) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  ERR_NOTDECR_STR = 8165 (0x1fe5) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_RENAME_STR = 8181 (0x1ff5) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_FILEEXISTS_STR = 8188 (0x1ffc) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_CONFIRMREPLACE_STR = 8211 (0x2013) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_COPYICONS_STR = 8227 (0x2023) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_CREATEICONS_STR = 8238 (0x202e) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_DISPLAYINFO_STR = 8251 (0x203b) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_SETTINGS_STR = 8265 (0x2049) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_SHOWDRAWERSFIRST_STR = 8274 (0x2052) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_BUTTDEV_STR = 8293 (0x2065) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_BUTTN_STR = 8310 (0x2076) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_BUTTMKDIR_STR = 8330 (0x208a) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_BUTTPATH_STR = 8353 (0x20a1) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_PROG_STR = 8377 (0x20b9) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_COPYING_STR = 8389 (0x20c5) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_DELETING_STR = 8397 (0x20cd) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_MOVING_STR = 8406 (0x20d6) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_SNAPSHOTWINDOW_STR = 8413 (0x20dd) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_YESALLNONENO_STR = 8429 (0x20ed) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_HASICON_STR = 8445 (0x20fd) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  ERR_NOCOPY_STR = 8466 (0x2112) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  ERR_NODEL_STR = 8486 (0x2126) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  ERR_NOMOVE_STR = 8508 (0x213c) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_ENTPAT_STR = 8528 (0x2150) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_NEWFILE_STR = 8542 (0x215e) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_OLDFILE_STR = 8552 (0x2168) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_MOVEAS_STR = 8562 (0x2172) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_DATESTRING_STR = 8570 (0x217a) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_DISPLAYTIME_STR = 8583 (0x2187) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_BUTTABORT_STR = 8596 (0x2194) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_DRAGBAR_STR = 8622 (0x21ae) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_TOOLBAR_STR = 8630 (0x21b6) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_VISIBLE_STR = 8638 (0x21be) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_BYTESSEL_STR = 8646 (0x21c6) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_CHECKING_STR = 8664 (0x21d8) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_DDSELECTED_STR = 8673 (0x21e1) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_NOTENOUGHSPACE_STR = 8700 (0x21fc) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_CHECKFIT_STR = 8718 (0x220e) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_DELETEICONS_STR = 8730 (0x221a) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_GENERAL_STR = 8743 (0x2227) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_HIGHDIRS_STR = 8751 (0x222f) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_ICONS_STR = 8766 (0x223e) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_LISTERS_STR = 8772 (0x2244) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_SHOWIMAGES_STR = 8780 (0x224c) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_USED_STR = 8792 (0x2258) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_BUTTPARENT_STR = 8797 (0x225d) referenced 2 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_NAME_STR = 8824 (0x2278) referenced 2 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_SIZE_STR = 8829 (0x227d) referenced 2 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_DATE_STR = 8834 (0x2282) referenced 2 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_BITS_STR = 8839 (0x2287) referenced 2 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_BUTTDIR_STR = 8844 (0x228c) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_BUTTDIR2_STR = 8851 (0x2293) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_COPY_STR = 8863 (0x229f) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_CUT_STR = 8868 (0x22a4) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_EDIT_STR = 8872 (0x22a8) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_PASTE_STR = 8877 (0x22ad) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_PATHNOTIFY_STR = 8883 (0x22b3) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_SEARCH_STR = 8901 (0x22c5) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_SELALL_STR = 8908 (0x22cc) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_SELNONE_STR = 8919 (0x22d7) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_SELTOGGLE_STR = 8934 (0x22e6) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_SELTYPE_STR = 8951 (0x22f7) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_SELPATTERN_STR = 8968 (0x2308) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_DELETE_STR = 8983 (0x2317) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_COPYAS_STR = 8990 (0x231e) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_FILE_STR = 8998 (0x2326) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_MOVE_STR = 9003 (0x232b) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_PACK_STR = 9008 (0x2330) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_BUTTREFRESH_STR = 9013 (0x2335) referenced 2 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_CREATEARCHIVE_STR = 9033 (0x2349) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_CREATESUBDIR_STR = 9048 (0x2358) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_DELOKSINGLE_STR = 9068 (0x236c) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_GENERIC_STR = 9112 (0x2398) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_BUTTACTIVATE_STR = 9120 (0x23a0) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_BUTTDEACTIVATE_STR = 9136 (0x23b0) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_COMMENT_STR = 9154 (0x23c2) referenced 2 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_ARCHIVE_STR = 9162 (0x23ca) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_EXECUTABLE_STR = 9170 (0x23d2) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_OPENWINDOW_STR = 9181 (0x23dd) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_READABLE_STR = 9193 (0x23e9) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_ROOTDIR_STR = 9202 (0x23f2) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_SCRIPT_STR = 9217 (0x2401) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_VOLUMES_STR = 9224 (0x2408) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_WRITABLE_STR = 9232 (0x2410) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_DELETABLE_STR = 9241 (0x2419) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_COMMENT8_STR = 9251 (0x2423) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_DATE8_STR = 9260 (0x242c) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_DATENOTVALID_STR = 9266 (0x2432) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_FILEALREADYEXISTS_STR = 9290 (0x244a) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_NAME8_STR = 9317 (0x2465) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_PROTECTION8_STR = 9323 (0x246b) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_CANCEL1_STR = 9335 (0x2477) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_OK1_STR = 9343 (0x247f) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_NOTRASHCANAVAILABLE_STR = 9347 (0x2483) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_BUTTFUELGAUGE_STR = 9371 (0x249b) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_COUNTINGFILES_STR = 9409 (0x24c1) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_DELOKTRASH_STR = 9428 (0x24d4) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  TXT_DELOKSINGLETRASH_STR = 9495 (0x2517) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_DEPROTECTFILE_STR = 9555 (0x2553) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  ERR_NOMKDIR_STR = 9633 (0x25a1) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_VERSION_STR = 9665 (0x25c1) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_NOTAVAILABLE_STR = 9673 (0x25c9) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_VERSION8_STR = 9687 (0x25d7) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_COPYANDDELETE_STR = 9696 (0x25e0) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_PULLDOWNMENU_STR = 9712 (0x25f0) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_REPLACEVERSION_STR = 9726 (0x25fe) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_SAVE1_STR = 9749 (0x2615) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_SHOWVERSION_STR = 9755 (0x261b) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_COUNTFILES_STR = 9768 (0x2628) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_CREATE1_STR = 9780 (0x2634) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_ICON_STR = 9788 (0x263c) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_NAMEOFDIR8_STR = 9793 (0x2641) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_PLEASEENTERDIRNAME_STR = 9816 (0x2658) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_ASSIGNTITLE_STR = 9860 (0x2684) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_COPYTO_STR = 9887 (0x269f) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_ERR_ASSIGN_STR = 9895 (0x26a7) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_OPENWITH_STR = 9968 (0x26f0) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_PATHS_STR = 9978 (0x26fa) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_VISITEDPATHS_STR = 9984 (0x2700) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_ASSIGNEXISTS_STR = 9998 (0x270e) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_ASSIGNMAKE_STR = 10026 (0x272a) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_ASSIGNREPLACEADD_STR = 10038 (0x2736) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_ASSIGNREMOVE_STR = 10057 (0x2749) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_ASSIGNWANTREMOVE_STR = 10071 (0x2757) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_CLOSEWINDOW_STR = 10113 (0x2781) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_CONFIRMCHECKSIZE_STR = 10154 (0x27aa) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_DDIRSDFILES_STR = 10221 (0x27ed) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_NORENAME_STR = 10252 (0x280c) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  ERR_WRONGPREFS_STR = 10274 (0x2822) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  MSG_TOOLS_STR = 10443 (0x28cb) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  CatCompArray = 10452 (0x28d4) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  _CatCompArray = 10452 (0x28d4) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/classactioncd.o
+  _isalnum = 11772 (0x2dfc) unused, maybe local
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _isalpha = 11798 (0x2e16) unused, maybe local
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _iscntrl = 11824 (0x2e30) unused, maybe local
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _isdigit = 11850 (0x2e4a) unused, maybe local
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _isgraph = 11876 (0x2e64) unused, maybe local
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _islower = 11902 (0x2e7e) unused, maybe local
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _isprint = 11928 (0x2e98) unused, maybe local
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _ispunct = 11954 (0x2eb2) unused, maybe local
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _isspace = 11980 (0x2ecc) unused, maybe local
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _isupper = 12006 (0x2ee6) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _isxdigit = 12032 (0x2f00) unused, maybe local
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _tolower = 12058 (0x2f1a) referenced 3 times
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _toupper = 12102 (0x2f46) referenced 2 times
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _which_xdigit = 12146 (0x2f72) unused, maybe local
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _fopen = 12342 (0x3036) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _freopen = 12498 (0x30d2) unused, maybe local
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _fclose = 12590 (0x312e) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _fflush = 12690 (0x3192) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _setvbuf = 12774 (0x31e6) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _setbuf = 12994 (0x32c2) unused, maybe local
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _ferror = 13050 (0x32fa) unused, maybe local
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _clearerr = 13076 (0x3314) unused, maybe local
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _perror = 13094 (0x3326) unused, maybe local
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _remove = 13144 (0x3358) unused, maybe local
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _rename = 13176 (0x3378) unused, maybe local
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _tmpnam = 13216 (0x33a0) unused, maybe local
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _tmpfile = 13340 (0x341c) unused, maybe local
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _amigaopen = 13394 (0x3452) unused, maybe local
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _amigaread = 14330 (0x37fa) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _amigareadunget = 14822 (0x39e6) unused, maybe local
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _amigawrite = 14926 (0x3a4e) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _amigaeof = 15502 (0x3c8e) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _amigaseek = 15526 (0x3ca6) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _amigagetc = 15832 (0x3dd8) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _amigagetcunget = 15890 (0x3e12) unused, maybe local
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _amigaungetc = 15922 (0x3e32) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _amigaputc = 15952 (0x3e50) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _amigaflush = 16014 (0x3e8e) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _amigaclose = 16252 (0x3f7c) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _INIT_0_InitFiles = 16384 (0x4000) unused, maybe local
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _EXIT_5_InitFiles = 16456 (0x4048) unused, maybe local
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _div = 16680 (0x4128) unused, maybe local
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _abs = 16736 (0x4160) unused, maybe local
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _labs = 16748 (0x416c) unused, maybe local
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _llabs = 16760 (0x4178) unused, maybe local
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _atoi = 16810 (0x41aa) referenced 6 times
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _atol = 16834 (0x41c2) unused, maybe local
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _strtol = 16858 (0x41da) unused, maybe local
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _strtoul = 17418 (0x440a) unused, maybe local
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _atoll = 17918 (0x45fe) unused, maybe local
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _strtoll = 17942 (0x4616) unused, maybe local
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _strtoull = 18792 (0x4968) unused, maybe local
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _uinttostr = 19538 (0x4c52) unused, maybe local
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _inttostr = 19728 (0x4d10) unused, maybe local
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _ullongtostr = 19780 (0x4d44) unused, maybe local
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _llongtostr = 20020 (0x4e34) unused, maybe local
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _memcpy = 20104 (0x4e88) referenced 8 times
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _memmove = 20142 (0x4eae) unused, maybe local
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _memcmp = 20202 (0x4eea) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _memchr = 20262 (0x4f26) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _memset = 20312 (0x4f58) unused, maybe local
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _set_new_handler = 20382 (0x4f9e) unused, maybe local
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _malloc = 20402 (0x4fb2) referenced 5 times
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _free = 20816 (0x5150) referenced 5 times
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _EXIT_4_free = 21010 (0x5212) unused, maybe local
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _calloc = 21128 (0x5288) unused, maybe local
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _realloc = 21180 (0x52bc) unused, maybe local
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  operator new(unsigned int) = 21296 (0x5330) referenced 8 times
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  operator delete(void *,unsigned int) = 21312 (0x5340) referenced 8 times
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _formatted_out = 22220 (0x56cc) referenced 2 times
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _formatted_in = 24288 (0x5ee0) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _fgets = 25708 (0x646c) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _fputc = 25772 (0x64ac) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _fputs = 25792 (0x64c0) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _fprintf = 25844 (0x64f4) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _sprintf = 25896 (0x6528) referenced 11 times
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _sscanf = 25960 (0x6568) referenced 2 times
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _INIT_5_InitStdIOFiles = 26016 (0x65a0) unused, maybe local
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _EXIT_5_InitStdIOFiles = 26280 (0x66a8) unused, maybe local
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _strerror = 26324 (0x66d4) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _strcpy = 28120 (0x6dd8) referenced 16 times
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _strncpy = 28148 (0x6df4) referenced 8 times
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _strcat = 28202 (0x6e2a) referenced 10 times
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _strncat = 28236 (0x6e4c) unused, maybe local
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _strcmp = 28288 (0x6e80) referenced 7 times
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _strncmp = 28344 (0x6eb8) referenced 2 times
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _strchr = 28420 (0x6f04) referenced 8 times
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _strrchr = 28460 (0x6f2c) referenced 2 times
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _strspn = 28530 (0x6f72) unused, maybe local
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _strcspn = 28574 (0x6f9e) unused, maybe local
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _strpbrk = 28618 (0x6fca) referenced 2 times
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _strstr = 28668 (0x6ffc) referenced 5 times
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _strlen = 28740 (0x7044) referenced 13 times
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _strtok = 28762 (0x705a) unused, maybe local
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _stricmp = 28928 (0x7100) referenced 7 times
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _strnicmp = 29050 (0x717a) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _strlwr = 29246 (0x723e) unused, maybe local
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _strupr = 29300 (0x7274) unused, maybe local
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _signed_out = 29356 (0x72ac) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _signed_out_l = 30012 (0x753c) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _unsigned_out = 30100 (0x7594) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _unsigned_out_l = 30700 (0x77ec) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _char_out = 31266 (0x7a22) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _string_out = 31422 (0x7abe) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _int_in = 31634 (0x7b92) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _char_in = 32750 (0x7fee) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _string_in = 32908 (0x808c) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _BITMAP_GetClass = 33164 (0x818c) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _CreateCxObj = 33180 (0x819c) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _CxBroker = 33204 (0x81b4) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _ActivateCxObj = 33228 (0x81cc) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _DeleteCxObjAll = 33252 (0x81e4) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _AttachCxObj = 33272 (0x81f8) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _CxMsgType = 33296 (0x8210) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _CxMsgID = 33316 (0x8224) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _ObtainDataTypeA = 33336 (0x8238) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _ReleaseDataType = 33360 (0x8250) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _GetDTString = 33380 (0x8264) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _Open = 33400 (0x8278) referenced 3 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _Close = 33428 (0x8294) referenced 3 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _Read = 33448 (0x82a8) referenced 2 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _Seek = 33476 (0x82c4) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _Rename = 33504 (0x82e0) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _Lock = 33532 (0x82fc) referenced 3 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _UnLock = 33560 (0x8318) referenced 3 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _Examine = 33580 (0x832c) referenced 2 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _ExNext = 33608 (0x8348) referenced 2 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _Info = 33636 (0x8364) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _CreateDir = 33664 (0x8380) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _CurrentDir = 33684 (0x8394) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _AllocDosObject = 33704 (0x83a8) referenced 3 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _FreeDosObject = 33732 (0x83c4) referenced 3 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _ExamineFH = 33760 (0x83e0) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _NameFromLock = 33788 (0x83fc) referenced 2 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _SystemTags = 33816 (0x8418) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _AssignLock = 33848 (0x8438) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _AssignAdd = 33876 (0x8454) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _LockDosList = 33904 (0x8470) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _UnLockDosList = 33924 (0x8484) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _NextDosEntry = 33944 (0x8498) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _Relabel = 33972 (0x84b4) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _CompareDates = 34000 (0x84d0) referenced 2 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _DateToStr = 34028 (0x84ec) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _FilePart = 34048 (0x8500) referenced 2 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _PathPart = 34068 (0x8514) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _AddPart = 34088 (0x8528) referenced 2 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _ParsePatternNoCase = 34116 (0x8544) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _MatchPatternNoCase = 34144 (0x8560) referenced 2 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _Forbid = 34172 (0x857c) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _Permit = 34188 (0x858c) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _AllocMem = 34204 (0x859c) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _FreeMem = 34228 (0x85b4) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _AddTail = 34252 (0x85cc) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _Remove = 34276 (0x85e4) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _RemHead = 34296 (0x85f8) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _GetMsg = 34316 (0x860c) referenced 2 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _ReplyMsg = 34336 (0x8620) referenced 2 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _WaitPort = 34356 (0x8634) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _FindPort = 34376 (0x8648) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _CloseLibrary = 34396 (0x865c) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _OpenLibrary = 34416 (0x8670) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _CreateMsgPort = 34440 (0x8688) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _DeleteMsgPort = 34456 (0x8698) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _AllocVec = 34476 (0x86ac) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _FreeVec = 34500 (0x86c4) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _IconControl = 34520 (0x86d8) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _DrawIconState = 34544 (0x86f0) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _GetIconRectangle = 34576 (0x8710) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _GetIconTags = 34604 (0x872c) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _PutIconTags = 34628 (0x8744) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _AllocIFF = 34656 (0x8760) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _OpenIFF = 34672 (0x8770) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _ParseIFF = 34696 (0x8788) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _CloseIFF = 34720 (0x87a0) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _FreeIFF = 34740 (0x87b4) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _ReadChunkBytes = 34760 (0x87c8) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _WriteChunkBytes = 34788 (0x87e4) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _PushChunk = 34816 (0x8800) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _PopChunk = 34848 (0x8820) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _PropChunks = 34868 (0x8834) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _StopChunk = 34896 (0x8850) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _CurrentChunk = 34924 (0x886c) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _InitIFFasClip = 34944 (0x8880) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _OpenClipboard = 34964 (0x8894) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _CloseClipboard = 34984 (0x88a8) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _DisplayBeep = 35004 (0x88bc) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _RefreshGList = 35024 (0x88d0) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _LockPubScreen = 35056 (0x88f0) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _UnlockPubScreen = 35076 (0x8904) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _ObtainGIRPort = 35100 (0x891c) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _ReleaseGIRPort = 35120 (0x8930) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _NewObject = 35140 (0x8944) referenced 2 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _DisposeObject = 35168 (0x8960) referenced 2 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _SetAttrs = 35188 (0x8974) referenced 2 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _GetAttr = 35212 (0x898c) referenced 2 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _SetGadgetAttrs = 35236 (0x89a4) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _MakeClass = 35264 (0x89c0) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _MapRawKey = 35296 (0x89e0) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _InstallLayerHook = 35328 (0x8a00) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _GetCatalogStr = 35352 (0x8a18) referenced 2 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _StrnCmp = 35380 (0x8a34) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _CreateArgstring = 35412 (0x8a54) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _DeleteArgstring = 35436 (0x8a6c) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _DeleteRexxMsg = 35456 (0x8a80) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _NextTagItem = 35476 (0x8a94) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _WBInfo = 35496 (0x8aa8) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _OpenWorkbenchObjectA = 35524 (0x8ac4) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _DoMethod = 35548 (0x8adc) referenced 5 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _DoSuperMethod = 35568 (0x8af0) unused, maybe local
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _CoerceMethod = 35594 (0x8b0a) unused, maybe local
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _CoerceMethodA = 35616 (0x8b20) unused, maybe local
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _DoMethodA = 35652 (0x8b44) unused, maybe local
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _DoSuperMethodA = 35672 (0x8b58) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _SetSuperAttrs = 35698 (0x8b72) unused, maybe local
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _atof = 35790 (0x8bce) referenced 1 times
+    File Work:Anwendungen/StormC/StormSYS/lib/math020.lib
+  _strtod = 35852 (0x8c0c) unused, maybe local
+    File Work:Anwendungen/StormC/StormSYS/lib/math020.lib
+  _fabs = 35932 (0x8c5c) referenced 1 times
+    File Work:Anwendungen/StormC/StormSYS/lib/math020.lib
+  _floor = 35956 (0x8c74) referenced 2 times
+    File Work:Anwendungen/StormC/StormSYS/lib/math020.lib
+  _atan = 35980 (0x8c8c) referenced 1 times
+    File Work:Anwendungen/StormC/StormSYS/lib/math020.lib
+  _pow = 36004 (0x8ca4) referenced 1 times
+    File Work:Anwendungen/StormC/StormSYS/lib/math020.lib
+  _atan2 = 36032 (0x8cc0) unused, maybe local
+    File Work:Anwendungen/StormC/StormSYS/lib/math020.lib
+  _ldexp = 36422 (0x8e46) unused, maybe local
+    File Work:Anwendungen/StormC/StormSYS/lib/math020.lib
+  _frexp = 36494 (0x8e8e) referenced 1 times
+    File Work:Anwendungen/StormC/StormSYS/lib/math020.lib
+  _modf = 36600 (0x8ef8) unused, maybe local
+    File Work:Anwendungen/StormC/StormSYS/lib/math020.lib
+  _fmod = 36728 (0x8f78) unused, maybe local
+    File Work:Anwendungen/StormC/StormSYS/lib/math020.lib
+  lib_double2float = 36924 (0x903c) referenced 2 times
+    File Work:Anwendungen/StormC/StormSYS/lib/math020.lib
+  lib_float2double = 36944 (0x9050) referenced 3 times
+    File Work:Anwendungen/StormC/StormSYS/lib/math020.lib
+  lib_int2float = 36964 (0x9064) referenced 2 times
+    File Work:Anwendungen/StormC/StormSYS/lib/math020.lib
+  lib_float2int = 36984 (0x9078) referenced 1 times
+    File Work:Anwendungen/StormC/StormSYS/lib/math020.lib
+  lib_float_add = 37004 (0x908c) referenced 2 times
+    File Work:Anwendungen/StormC/StormSYS/lib/math020.lib
+  lib_float_sub = 37024 (0x90a0) referenced 1 times
+    File Work:Anwendungen/StormC/StormSYS/lib/math020.lib
+  lib_float_cmp = 37044 (0x90b4) referenced 1 times
+    File Work:Anwendungen/StormC/StormSYS/lib/math020.lib
+  lib_float_mult = 37064 (0x90c8) referenced 2 times
+    File Work:Anwendungen/StormC/StormSYS/lib/math020.lib
+  lib_float_div = 37084 (0x90dc) referenced 3 times
+    File Work:Anwendungen/StormC/StormSYS/lib/math020.lib
+  lib_float_tst = 37104 (0x90f0) referenced 1 times
+    File Work:Anwendungen/StormC/StormSYS/lib/math020.lib
+  _double_out = 37676 (0x932c) referenced 1 times
+    File Work:Anwendungen/StormC/StormSYS/lib/math020.lib
+  _double_in = 39184 (0x9910) referenced 2 times
+    File Work:Anwendungen/StormC/StormSYS/lib/math020.lib
+  _INIT_3_AmigaGuide_c = 40148 (0x9cd4) unused, maybe local
+    File Work:Anwendungen/StormC/StormSYS/lib/stormcstartup020.lib
+  _EXIT_3_AmigaGuide_c = 40178 (0x9cf2) unused, maybe local
+    File Work:Anwendungen/StormC/StormSYS/lib/stormcstartup020.lib
+  _INIT_3_DataTypes_c = 40216 (0x9d18) unused, maybe local
+    File Work:Anwendungen/StormC/StormSYS/lib/stormcstartup020.lib
+  _EXIT_3_DataTypes_c = 40246 (0x9d36) unused, maybe local
+    File Work:Anwendungen/StormC/StormSYS/lib/stormcstartup020.lib
+  _INIT_1_DOS_c = 40280 (0x9d58) unused, maybe local
+    File Work:Anwendungen/StormC/StormSYS/lib/stormcstartup020.lib
+  _EXIT_1_DOS_c = 40312 (0x9d78) unused, maybe local
+    File Work:Anwendungen/StormC/StormSYS/lib/stormcstartup020.lib
+  _INIT_2_Graphics_c = 40340 (0x9d94) unused, maybe local
+    File Work:Anwendungen/StormC/StormSYS/lib/stormcstartup020.lib
+  _EXIT_2_Graphics_c = 40372 (0x9db4) unused, maybe local
+    File Work:Anwendungen/StormC/StormSYS/lib/stormcstartup020.lib
+  _InitModules = 40440 (0x9df8) referenced 1 times
+    File Work:Anwendungen/StormC/StormSYS/lib/stormcstartup020.lib
+  _CleanupModules = 40508 (0x9e3c) referenced 2 times
+    File Work:Anwendungen/StormC/StormSYS/lib/stormcstartup020.lib
+  _INIT_2_Intuition_c = 40564 (0x9e74) unused, maybe local
+    File Work:Anwendungen/StormC/StormSYS/lib/stormcstartup020.lib
+  _EXIT_2_Intuition_c = 40596 (0x9e94) unused, maybe local
+    File Work:Anwendungen/StormC/StormSYS/lib/stormcstartup020.lib
+  _INIT_2_Layers_c = 40632 (0x9eb8) unused, maybe local
+    File Work:Anwendungen/StormC/StormSYS/lib/stormcstartup020.lib
+  _EXIT_2_Layers_c = 40664 (0x9ed8) unused, maybe local
+    File Work:Anwendungen/StormC/StormSYS/lib/stormcstartup020.lib
+  LibBaseC::LibBaseC(char *,unsigned long,short) = 40736 (0x9f20) referenced 11 times
+    File Work:Anwendungen/StormC/StormSYS/lib/stormcstartup020.lib
+  LibBaseC::~LibBaseC() = 41072 (0xa070) referenced 11 times
+    File Work:Anwendungen/StormC/StormSYS/lib/stormcstartup020.lib
+  LibBaseC::version() const  = 41110 (0xa096) unused, maybe local
+    File Work:Anwendungen/StormC/StormSYS/lib/stormcstartup020.lib
+  _INIT_3_Locale_c = 41248 (0xa120) unused, maybe local
+    File Work:Anwendungen/StormC/StormSYS/lib/stormcstartup020.lib
+  _EXIT_3_Locale_c = 41278 (0xa13e) unused, maybe local
+    File Work:Anwendungen/StormC/StormSYS/lib/stormcstartup020.lib
+  _INIT_2_MathIEEEDoubBas_c = 41312 (0xa160) unused, maybe local
+    File Work:Anwendungen/StormC/StormSYS/lib/stormcstartup020.lib
+  _EXIT_2_MathIEEEDoubBas_c = 41344 (0xa180) unused, maybe local
+    File Work:Anwendungen/StormC/StormSYS/lib/stormcstartup020.lib
+  _INIT_2_MathIEEEDoubTrans_c = 41384 (0xa1a8) unused, maybe local
+    File Work:Anwendungen/StormC/StormSYS/lib/stormcstartup020.lib
+  _EXIT_2_MathIEEEDoubTrans_c = 41416 (0xa1c8) unused, maybe local
+    File Work:Anwendungen/StormC/StormSYS/lib/stormcstartup020.lib
+  _INIT_2_MathIEEESingBas_c = 41460 (0xa1f4) unused, maybe local
+    File Work:Anwendungen/StormC/StormSYS/lib/stormcstartup020.lib
+  _EXIT_2_MathIEEESingBas_c = 41492 (0xa214) unused, maybe local
+    File Work:Anwendungen/StormC/StormSYS/lib/stormcstartup020.lib
+  _INIT_1_Utility_c = 41532 (0xa23c) unused, maybe local
+    File Work:Anwendungen/StormC/StormSYS/lib/stormcstartup020.lib
+  _EXIT_1_Utility_c = 41564 (0xa25c) unused, maybe local
+    File Work:Anwendungen/StormC/StormSYS/lib/stormcstartup020.lib
+  uintmult = 41596 (0xa27c) unused, maybe local
+    File Work:Anwendungen/StormC/StormSYS/lib/stormcsupport020.lib
+  intmult = 41596 (0xa27c) unused, maybe local
+    File Work:Anwendungen/StormC/StormSYS/lib/stormcsupport020.lib
+  ___uintmult32 = 41596 (0xa27c) unused, maybe local
+    File Work:Anwendungen/StormC/StormSYS/lib/stormcsupport020.lib
+  ___intmult32 = 41596 (0xa27c) unused, maybe local
+    File Work:Anwendungen/StormC/StormSYS/lib/stormcsupport020.lib
+  intdiv = 41628 (0xa29c) unused, maybe local
+    File Work:Anwendungen/StormC/StormSYS/lib/stormcsupport020.lib
+  uintdiv = 41666 (0xa2c2) unused, maybe local
+    File Work:Anwendungen/StormC/StormSYS/lib/stormcsupport020.lib
+  lib_div_uint = 41666 (0xa2c2) unused, maybe local
+    File Work:Anwendungen/StormC/StormSYS/lib/stormcsupport020.lib
+  ___uintdivmod32 = 41666 (0xa2c2) unused, maybe local
+    File Work:Anwendungen/StormC/StormSYS/lib/stormcsupport020.lib
+  lib_div_int = 41628 (0xa29c) unused, maybe local
+    File Work:Anwendungen/StormC/StormSYS/lib/stormcsupport020.lib
+  ___intdivmod32 = 41628 (0xa29c) unused, maybe local
+    File Work:Anwendungen/StormC/StormSYS/lib/stormcsupport020.lib
+  Add64 = 41748 (0xa314) referenced 2 times
+    File Work:Anwendungen/StormC/StormSYS/lib/stormcsupport020.lib
+  ___add64 = 41748 (0xa314) unused, maybe local
+    File Work:Anwendungen/StormC/StormSYS/lib/stormcsupport020.lib
+  Neg64 = 41756 (0xa31c) referenced 2 times
+    File Work:Anwendungen/StormC/StormSYS/lib/stormcsupport020.lib
+  ___neg64 = 41756 (0xa31c) unused, maybe local
+    File Work:Anwendungen/StormC/StormSYS/lib/stormcsupport020.lib
+  SMult64 = 41764 (0xa324) referenced 1 times
+    File Work:Anwendungen/StormC/StormSYS/lib/stormcsupport020.lib
+  UMult64 = 41798 (0xa346) referenced 2 times
+    File Work:Anwendungen/StormC/StormSYS/lib/stormcsupport020.lib
+  ___uintmult64 = 41798 (0xa346) unused, maybe local
+    File Work:Anwendungen/StormC/StormSYS/lib/stormcsupport020.lib
+  ___intmult64 = 41764 (0xa324) unused, maybe local
+    File Work:Anwendungen/StormC/StormSYS/lib/stormcsupport020.lib
+  SDiv64 = 41916 (0xa3bc) referenced 1 times
+    File Work:Anwendungen/StormC/StormSYS/lib/stormcsupport020.lib
+  UDiv64 = 41956 (0xa3e4) referenced 1 times
+    File Work:Anwendungen/StormC/StormSYS/lib/stormcsupport020.lib
+  ___uintdivmod64 = 41956 (0xa3e4) unused, maybe local
+    File Work:Anwendungen/StormC/StormSYS/lib/stormcsupport020.lib
+  ___intdivmod64 = 41916 (0xa3bc) unused, maybe local
+    File Work:Anwendungen/StormC/StormSYS/lib/stormcsupport020.lib
+  UMod64 = 42056 (0xa448) referenced 1 times
+    File Work:Anwendungen/StormC/StormSYS/lib/stormcsupport020.lib
+  ___uintmod64 = 42056 (0xa448) unused, maybe local
+    File Work:Anwendungen/StormC/StormSYS/lib/stormcsupport020.lib
+  SMod64 = 42068 (0xa454) referenced 1 times
+    File Work:Anwendungen/StormC/StormSYS/lib/stormcsupport020.lib
+  ___intmod64 = 42068 (0xa454) unused, maybe local
+    File Work:Anwendungen/StormC/StormSYS/lib/stormcsupport020.lib
+  ___udivmod32 = 42080 (0xa460) referenced 1 times
+    File Work:Anwendungen/StormC/StormSYS/lib/stormcsupport020.lib
+  ___udivmod64 = 42092 (0xa46c) referenced 1 times
+    File Work:Anwendungen/StormC/StormSYS/lib/stormcsupport020.lib
+
+  Hunk #3 ( Merged Public ) 208 Bytes (0xd0)
+  _NewList = 0 (0x0) referenced 9 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _CreatePort = 20 (0x14) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+  _DeletePort = 144 (0x90) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/amiga.lib
+
+PowerPC Code
+
+
+Data
+
+
+  Hunk #4 ( Far Public ) 35680 Bytes (0x8b60)
+  _SysBase = 0 (0x0) referenced 31 times
+    File Work:Anwendungen/StormC/StormSYS/startups/startup.o
+  _Soft = 16 (0x10) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/ClassAction.o
+  _DosStart = 52 (0x34) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/ClassAction.o
+  _Quote = 54 (0x36) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/ClassAction.o
+  _QuoteStr = 55 (0x37) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/ClassAction.o
+  _Pens_3D_Struct = 58 (0x3a) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/ClassAction.o
+  _ReqTags = 72 (0x48) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/ClassAction.o
+  _Quote = 88 (0x58) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/caexec.o
+  _QuoteStr = 89 (0x59) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/caexec.o
+  _xadMasterBase = 92 (0x5c) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/calha.o
+  _ftxtprops = 96 (0x60) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/caccp.o
+  _RCTResource = 32059 (0x7d3b) referenced 1 times
+    File Daten:Cpp/ClassAction/ClassAction.o
+  _RCTLocaleStrings = 32449 (0x7ec1) referenced 1 times
+    File Daten:Cpp/ClassAction/ClassAction.o
+  ___ctypetable = 33840 (0x8430) unused, maybe local
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _std__out = 34728 (0x87a8) unused, maybe local
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _std__in = 34812 (0x87fc) unused, maybe local
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _std__err = 34896 (0x8850) referenced 1 times
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+  _AmigaGuideBase = 35496 (0x8aa8) referenced 1 times
+    File Work:Anwendungen/StormC/StormSYS/lib/stormcstartup020.lib
+  _DataTypesBase = 35500 (0x8aac) referenced 3 times
+    File Work:Anwendungen/StormC/StormSYS/lib/stormcstartup020.lib
+  _DOSBase = 35504 (0x8ab0) referenced 39 times
+    File Work:Anwendungen/StormC/StormSYS/lib/stormcstartup020.lib
+  _GfxBase = 35508 (0x8ab4) referenced 1 times
+    File Work:Anwendungen/StormC/StormSYS/lib/stormcstartup020.lib
+  _IntuitionBase = 35520 (0x8ac0) referenced 20 times
+    File Work:Anwendungen/StormC/StormSYS/lib/stormcstartup020.lib
+  _LayersBase = 35524 (0x8ac4) referenced 1 times
+    File Work:Anwendungen/StormC/StormSYS/lib/stormcstartup020.lib
+  _not_open__LibBaseC = 35528 (0x8ac8) unused, maybe local
+    File Work:Anwendungen/StormC/StormSYS/lib/stormcstartup020.lib
+  _LocaleBase = 35532 (0x8acc) referenced 7 times
+    File Work:Anwendungen/StormC/StormSYS/lib/stormcstartup020.lib
+  _MathIeeeDoubBasBase = 35536 (0x8ad0) referenced 5 times
+    File Work:Anwendungen/StormC/StormSYS/lib/stormcstartup020.lib
+  _MathIeeeDoubTransBase = 35540 (0x8ad4) referenced 4 times
+    File Work:Anwendungen/StormC/StormSYS/lib/stormcstartup020.lib
+  _MathIeeeSingBasBase = 35544 (0x8ad8) referenced 8 times
+    File Work:Anwendungen/StormC/StormSYS/lib/stormcstartup020.lib
+  _UtilityBase = 35548 (0x8adc) referenced 1 times
+    File Work:Anwendungen/StormC/StormSYS/lib/stormcstartup020.lib
+  ___init_table68k = 35552 (0x8ae0) referenced 1 times
+    File <Internal Assembled>
+  ___exit_table68k = 35616 (0x8b20) referenced 1 times
+    File <Internal Assembled>
+
+  Hunk #5 ( Far Public ) 28 Bytes (0x1c)
+	Has no symbols but has 1 sections
+
+BSS
+
+
+  Hunk #6 ( Far Public ) 1612 Bytes (0x64c)
+  _DosBase = 0 (0x0) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/ClassAction.o
+  _DiskfontBase = 4 (0x4) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/ClassAction.o
+  _IFFParseBase = 8 (0x8) referenced 16 times
+    File Daten:Cpp/ClassAction/objects/ClassAction.o
+  _IconBase = 12 (0xc) referenced 6 times
+    File Daten:Cpp/ClassAction/objects/ClassAction.o
+  _GadToolsBase = 16 (0x10) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/ClassAction.o
+  _ResourceBase = 20 (0x14) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/ClassAction.o
+  _WorkbenchBase = 24 (0x18) referenced 3 times
+    File Daten:Cpp/ClassAction/objects/ClassAction.o
+  _ButtonBase = 28 (0x1c) referenced 4 times
+    File Daten:Cpp/ClassAction/objects/ClassAction.o
+  _SpaceBase = 32 (0x20) referenced 3 times
+    File Daten:Cpp/ClassAction/objects/ClassAction.o
+  _LabelBase = 36 (0x24) referenced 3 times
+    File Daten:Cpp/ClassAction/objects/ClassAction.o
+  _BitMapBase = 40 (0x28) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/ClassAction.o
+  _StringBase = 44 (0x2c) referenced 2 times
+    File Daten:Cpp/ClassAction/objects/ClassAction.o
+  _CheckBoxBase = 48 (0x30) referenced 2 times
+    File Daten:Cpp/ClassAction/objects/ClassAction.o
+  _WindowBase = 52 (0x34) referenced 3 times
+    File Daten:Cpp/ClassAction/objects/ClassAction.o
+  _LayoutBase = 56 (0x38) referenced 3 times
+    File Daten:Cpp/ClassAction/objects/ClassAction.o
+  _ListBrowserBase = 60 (0x3c) referenced 2 times
+    File Daten:Cpp/ClassAction/objects/ClassAction.o
+  _AslBase = 64 (0x40) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/ClassAction.o
+  _AmigaguideBase = 68 (0x44) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/ClassAction.o
+  _DataBase = 72 (0x48) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/ClassAction.o
+  _RexxSysBase = 76 (0x4c) referenced 3 times
+    File Daten:Cpp/ClassAction/objects/ClassAction.o
+  _KeymapBase = 80 (0x50) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/ClassAction.o
+  _CxBase = 84 (0x54) referenced 7 times
+    File Daten:Cpp/ClassAction/objects/ClassAction.o
+  _PopupMenuBase = 88 (0x58) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/ClassAction.o
+  _Main = 92 (0x5c) referenced 7 times
+    File Daten:Cpp/ClassAction/objects/ClassAction.o
+  _Olddir = 96 (0x60) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/ClassAction.o
+  _Store = 356 (0x164) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/ClassAction.o
+  _UseReactionRequest = 360 (0x168) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/careq.o
+  _xfdMasterBase = 364 (0x16c) unused, maybe local
+    File Daten:Cpp/ClassAction/objects/caxfd.o
+  _ArchiveList = 368 (0x170) referenced 2 times
+    File Daten:Cpp/ClassAction/objects/calha.o
+  _ClipBoard = 372 (0x174) referenced 1 times
+    File Daten:Cpp/ClassAction/objects/caccp.o
+  _caFileTypes = 376 (0x178) referenced 5 times
+    File Daten:Cpp/ClassAction/objects/cafiletypes.o
+  _CurrentTab = 384 (0x180) referenced 2 times
+    File Daten:Cpp/ClassAction/objects/capaths.o
+  _caActions = 392 (0x188) referenced 5 times
+    File Daten:Cpp/ClassAction/objects/caactions.o
+  _caIcons = 396 (0x18c) referenced 2 times
+    File Daten:Cpp/ClassAction/objects/caicons.o
+  _errno = 400 (0x190) referenced 2 times
+    File Work:Anwendungen/StormC/Lib/storm020.lib
+
+END

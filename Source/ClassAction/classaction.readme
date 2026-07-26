@@ -1,0 +1,55 @@
+Short:    AmigaOS multipurpose filemanager
+Author:   email@martin-elsner.de (Martin R. Elsner)
+Uploader: email@martin-elsner.de (Martin R. Elsner)
+Version:  4.0
+Type:     util/wb
+Requires: AmigaOS 3.5 or 3.9
+Kurz:     vielseitiger AmigaOS Dateimanager
+    
+ClassAction is more than a file manager for AmigaOS; you are able to
+define classes of files, and actions for each class.
+
+It is
+
+- a file manager for copying, moving, deleting, renaming, adding icons,
+  showing information
+
+- a class manager that allows to view, edit, (un)pack, compile, start ...
+  the files
+
+It is the perfect add-on to OS 3.5 and 3.9.
+
+Please notice: the French files are old! So there is no catalog and
+only the guide of V3.6! Please use the English guide for new features.
+
+Get the recent news at http://www.martin-elsner.de/
+
+
+31/03/01 : V4.0
+
+    - "Rewritten" the program to use Reaction and new OS3.5+ features.
+
+    - Now only 13 path buttons can be configured (should be enough!).
+
+    - Manager actions are now images!
+
+    - Devices are now shown in the normal file list.
+
+    - New buttons: MakeDir also for right file list, WbInfo, AddIcon,
+      MoveAs, all the selecting methods.
+
+    - Added a menu(!) with help, preferences, settings, ...
+
+    - Added asynchronous help!
+
+    - Added a progress bar for copying/moving/...
+
+    - Now the class of a file is the one with the MOST fitting offsets,
+      not the first one that matches.
+
+    - Comment optimization and Tooltype NOCOMMENT removed.
+
+    - New tooltypes: COPYICONS,CREATEICONS,DRAWERSFIRST,HELPFILE,SHOWHELP
+      X,Y,WIDTH,HEIGHT,POPUPWIDTH,POPUPHEIGHT,more keys
+
+    - ARexx port is now CLASSACTION.1 to make handling easier
