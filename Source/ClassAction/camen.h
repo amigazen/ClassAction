@@ -59,7 +59,7 @@ public:
  ~TPopMenu();
  void     AddItem( char *title,UBYTE type,APTR ptr );
  // type: POP_ITEM,POP_MENU,POP_SEPARATOR
- // ptr:  pointer to the void action() or to the submenu
+ // ptr:  pointer to the void action() || to the submenu
  int      Show();
  int      SelectedItem;
 private:

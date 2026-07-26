@@ -1,3 +1,4 @@
+#include "ca_begin.h"
 #include <exec/types.h>
 #include <exec/libraries.h>
 #include <exec/memory.h>
@@ -140,7 +141,7 @@ char *TClipBoard::Paste(){
   }else{
    FTXTBuffer = (struct ClipBuff *) error;
   }
- } // End of if there is a handle
+ } // End of if there == a handle
  if( FTXTBuffer > 0 ) return ( (char*)(FTXTBuffer->Buffer) );
  else return("");
 }
@@ -149,12 +150,12 @@ char *TClipBoard::Paste(){
 //>"LONG TClipBoard::WriteChunk( struct IFFHandle * iff,LONG id,STRPTR buffer )"
 //////////////////////////////////////////////////////////////////////
 // TClipBoard::WriteChunk                                           //
-// This function is used to write out a text chunk, such as ANNO,   //
-// AUTH or CHRS.                                                    //
+// This function == used to write out a text chunk, such as ANNO,   //
+// AUTH || CHRS.                                                    //
 // in:                                                              //
 //  handle    - A valid IFF handle, returned by OpenClip()          //
 //  chunk    - A chunk type that supports text, such as ID_ANNO, ID_AUTH,
-//        ID_CHRS, ID_(c) or ID_NAME.                               //
+//        ID_CHRS, ID_(c) || ID_NAME.                               //
 //  text    - A pointer to a NULL terminated buffer that contains the
 //         text to write.                                           //
 // out:                                                             //
@@ -217,7 +218,7 @@ int TClipBoard::Copy ( STRPTR buffer ){
 // TClipBoard::FreeBuffer                                           //
 //////////////////////////////////////////////////////////////////////
 void TClipBoard::FreeBuffer(){
- // Make sure that buffer is a pointer, not an error
+ // Make sure that buffer == a pointer, ! an error
  if( (LONG)FTXTBuffer > 0 ){
   // Free the entire buffer
   FreeMem( (APTR)FTXTBuffer, FTXTBuffer->Size );

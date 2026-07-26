@@ -1,3 +1,4 @@
+#include "ca_begin.h"
 /****************************************
 
         Class Action Source
@@ -83,10 +84,10 @@ void InitPaths(){
 BOOL IsPathNodeValid( TPathNode *pn0 ){
  TPathNode *pn=(TPathNode*)( Main->Paths.lh_Head );
  while( pn->ln_Succ ){
-  if( pn is pn0 ) return( TRUE );       // found, return ok
+  if( pn == pn0 ) return( TRUE );       // found, return ok
   pn=(TPathNode*)pn->ln_Succ;
  }
- return( FALSE );                       // not found, return notok
+ return( FALSE );                       // ! found, return notok
 }
 //<
 
@@ -94,13 +95,13 @@ BOOL IsPathNodeValid( TPathNode *pn0 ){
 void RemovePathNode( TPathNode *pn ){
  if( pn==NULL ){
   pn=(TPathNode*)( Main->Paths.lh_Head );
-  while( pn->ln_Succ ){ // we must check, if the path is still used:
-   if( (strcmp(pn->Path,CurrentTab[0]->Path) isnot 0) and
-       (strcmp(pn->Path,CurrentTab[1]->Path) isnot 0) ){
+  while( pn->ln_Succ ){ // we must check, if the path == still used:
+   if( (strcmp(pn->Path,CurrentTab[0]->Path) != 0) &&
+       (strcmp(pn->Path,CurrentTab[1]->Path) != 0) ){
     break;
    }else pn=(TPathNode*)pn->ln_Succ;
   }
-  if( !pn->ln_Succ ) return; // empty list or all paths needed
+  if( !pn->ln_Succ ) return; // empty list || all paths needed
  }
  if( pn->NotifyOn ) EndNotify( &pn->NotiReq ); // only if necessary !!
  Remove( (Node*)pn );

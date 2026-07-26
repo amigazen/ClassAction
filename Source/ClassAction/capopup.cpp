@@ -1,3 +1,4 @@
+#include "ca_begin.h"
 /****************************************
 
         Class Action Source
@@ -76,9 +77,9 @@ void OpenActionMenu( TFileType *SelectedClass,char *filename ){
   TagItem *Tags = (TagItem*)AllocVec( 300*sizeof(TagItem),MEMF_CLEAR  ); // should be enough
   TagItem *CurrentTag=Tags;
   BOOL IsDefinedClass =
-    (SelectedClass is caFileTypes->Directory) or
-    (SelectedClass is caFileTypes->Assign) or
-    (SelectedClass is caFileTypes->Volume);
+    (SelectedClass == caFileTypes->Directory) ||
+    (SelectedClass == caFileTypes->Assign) ||
+    (SelectedClass == caFileTypes->Volume);
   // insert Open With actions:
   if( !IsDefinedClass ){
     if( caFileTypes->OpenWith->ActionCount>0 ){
@@ -93,14 +94,14 @@ void OpenActionMenu( TFileType *SelectedClass,char *filename ){
     }
   }
   // insert Copy To Paths:
-  if( (SelectedClass isnot caFileTypes->Volume) and
-      (SelectedClass isnot caFileTypes->Assign) ){
+  if( (SelectedClass != caFileTypes->Volume) &&
+      (SelectedClass != caFileTypes->Assign) ){
     for( nd=(TUserPathNode*)Main->UserPaths.lh_Head,i=1; nd->ln_Succ; nd=(TUserPathNode*)nd->ln_Succ,i++ ){
-      if( nd->Name[0] and nd->Path[0]  ){
+      if( nd->Name[0] && nd->Path[0]  ){
         CurrentTag=AddMenuItem( CurrentTag,nd->Name,(APTR)i );
       }
     }
-    if( CurrentTag isnot Tags ){
+    if( CurrentTag != Tags ){
       CurrentTag->ti_Tag = TAG_END;
       CopyMenu = PM_MakeMenuA( Tags );
       CurrentTag=Tags;
@@ -110,18 +111,18 @@ void OpenActionMenu( TFileType *SelectedClass,char *filename ){
   // Actions
   if( SelectedClass->Name[0] )
     CurrentTag=AddMenuTitle( CurrentTag,SelectedClass->Name );
-  else if( SelectedClass is caFileTypes->Directory )
+  else if( SelectedClass == caFileTypes->Directory )
     CurrentTag=AddMenuTitle( CurrentTag,GetCatalogStr(Main->Catalog,TXT_DIR,TXT_DIR_STR) );
-  else if( SelectedClass is caFileTypes->Volume )
+  else if( SelectedClass == caFileTypes->Volume )
     CurrentTag=AddMenuTitle( CurrentTag,GetCatalogStr(Main->Catalog,TXT_VOLUME,TXT_VOLUME_STR) );
-  else if( SelectedClass is caFileTypes->Assign )
+  else if( SelectedClass == caFileTypes->Assign )
     CurrentTag=AddMenuTitle( CurrentTag,GetCatalogStr(Main->Catalog,TXT_ASSIGN,TXT_ASSIGN_STR) );
   else{
     char *ptr;
     if( (!filename) || (!XAD_IsArchive(filename,&ptr)) ) ptr=GetCatalogStr( Main->Catalog,TXT_UNKNOWN,TXT_UNKNOWN_STR );
     CurrentTag=AddMenuTitle( CurrentTag,ptr );
   }
-  if( SelectedClass isnot NULL ){
+  if( SelectedClass != NULL ){
    BOOL AtLeastOneAction = FALSE;
 
    if( OpenWithMenu ){
@@ -146,7 +147,7 @@ void OpenActionMenu( TFileType *SelectedClass,char *filename ){
     CurrentTag=AddMenuItem( CurrentTag,act->Name,act );
     AtLeastOneAction = TRUE;
    }
-   if( (SelectedClass isnot caFileTypes->Generic) and not IsDefinedClass ){
+   if( (SelectedClass != caFileTypes->Generic) && ! IsDefinedClass ){
     if( AtLeastOneAction ) CurrentTag=AddBar( CurrentTag );
     for( TAction *act=(TAction*)caFileTypes->Generic->Actions.lh_Head;act->ln_Succ;act=(TAction*)act->ln_Succ ){
       if( !bActions ){
@@ -225,10 +226,10 @@ void OpenVolumeMenu( UBYTE which ){
      i++;
   }}
   UnLockDosList( LDF_VOLUMES | LDF_READ );
-  while( not sorted ){
+  while( ! sorted ){
     sorted = TRUE;
     for( i=1;i<100;i++ ){
-      if( volumetitles[i] is NULL ) break;
+      if( volumetitles[i] == NULL ) break;
       if( stricmp(volumetitles[i-1],volumetitles[i])>0 ){
         dummy = volumetitles[i-1];
         volumetitles[i-1] = volumetitles[i];
@@ -239,7 +240,7 @@ void OpenVolumeMenu( UBYTE which ){
   }
 
   CurrentTag=AddMenuTitle( CurrentTag,GetCatalogStr(Main->Catalog,MSG_VOLUMES,MSG_VOLUMES_STR) );
-  for( i=0;(i<100) and volumetitles[i];i++ ){
+  for( i=0;(i<100) && volumetitles[i];i++ ){
     CurrentTag=AddMenuItem( CurrentTag,volumetitles[i],volumetitles[i] );
   }
   CurrentTag->ti_Tag = TAG_END;
@@ -252,7 +253,7 @@ void OpenVolumeMenu( UBYTE which ){
   PM_FreePopupMenu( VolumeMenu );
  }
  for( i=0;i<100;i++ ){
-   if( volumetitles[i] is NULL ) break;
+   if( volumetitles[i] == NULL ) break;
    FreeVec( volumetitles[i] );
  }
  FreeVec( Tags );
@@ -261,7 +262,7 @@ void OpenVolumeMenu( UBYTE which ){
 
 //>"BOOL IsGlobalVariable( APTR var )"
 BOOL IsGlobalVariable( APTR var ){
- if( ((ULONG)var >= (ULONG)&Main) and ((ULONG)var < (ULONG)&Main+sizeof(TMain)) )
+ if( ((ULONG)var >= (ULONG)&Main) && ((ULONG)var < (ULONG)&Main+sizeof(TMain)) )
   return( TRUE );
  else return( FALSE );
 }
@@ -416,7 +417,7 @@ void BuildDirMenu(){
 void OpenMenu(){
  if( Main->MainPopup ) {
   long y = IntuitionBase->MouseY;
-  ULONG font = Main->MenuFont and !Main->bPulldownMenu;
+  ULONG font = Main->MenuFont && !Main->bPulldownMenu;
   TAction *todo = (TAction*) PM_OpenPopupMenu( Main->IntuiWin,PM_Menu,Main->MainPopup,
                                 font ? PM_ForceFont : TAG_IGNORE,Main->MenuFont,
                                 PM_PullDown,Main->bPulldownMenu,
@@ -493,7 +494,7 @@ char *OpenPathMenu(){
   CurrentTag=AddMenuTitle( CurrentTag,GetCatalogStr(Main->Catalog,MSG_PATHS,MSG_PATHS_STR) );
 
   for( nd=(TUserPathNode*)Main->UserPaths.lh_Head;nd->ln_Succ;nd=(TUserPathNode*)nd->ln_Succ ){
-    if( nd->Name[0] and nd->Path[0]  ) CurrentTag=AddMenuItem( CurrentTag,nd->Name,nd->Path );
+    if( nd->Name[0] && nd->Path[0]  ) CurrentTag=AddMenuItem( CurrentTag,nd->Name,nd->Path );
   }
   CurrentTag->ti_Tag = TAG_END;
   PathMenu = PM_MakeMenuA( Tags );

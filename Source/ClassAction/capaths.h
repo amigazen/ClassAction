@@ -4,13 +4,24 @@
 
         Class Action Source
 
-        © 2002 by Martin R. Elsner & Salim Gasmi
+        ï¿½ 2002 by Martin R. Elsner & Salim Gasmi
 
         File: capths.h
 
 ****************************************/
 
 #include <dos/notify.h>
+
+struct TPathNode;
+struct TTabNode;
+struct TUserPathNode;
+struct FileNode;
+struct TLBNode;
+typedef struct TPathNode     TPathNode;
+typedef struct TTabNode      TTabNode;
+typedef struct TUserPathNode TUserPathNode;
+typedef struct FileNode      FileNode;
+typedef struct TLBNode       TLBNode;
 
 struct TPathNode{
    Node   *ln_Succ;
@@ -77,7 +88,7 @@ struct TLBNode{
   UBYTE  ln_Type;
   BYTE   ln_Pri;
   char   *ln_Name;
-  FileNode *Fn;          // pointer to the connected FileNode
+  struct FileNode *Fn;          // pointer to the connected FileNode
 };
 
 

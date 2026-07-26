@@ -1,0 +1,34 @@
+#ifndef _PROTO_XADMASTER_H
+#define _PROTO_XADMASTER_H
+
+#ifndef EXEC_TYPES_H
+#include <exec/types.h>
+#endif
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#ifndef CLIB_XADMASTER_PROTOS_H
+#include <clib/xadmaster_protos.h>
+#endif
+
+#ifndef __NOLIBBASE__
+extern struct xadMasterBase *xadMasterBase;
+#endif
+
+#ifdef __GNUC__
+#include <inline/xadmaster.h>
+#elif defined(__VBCC__)
+#if defined(__MORPHOS__) || !defined(__PPC__)
+#include <inline/xadmaster_protos.h>
+#endif
+#else
+#include <pragma/xadmaster_lib.h>
+#endif
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif	/*  _PROTO_XADMASTER_H  */

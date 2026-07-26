@@ -214,7 +214,7 @@ int TPopMenu::Show(){
 
  GetAttr( WINDOW_Window,WindowObject,(ULONG*)&MenuWindow );
  GetAttr( WINDOW_SigMask, WindowObject, &windowsignals );
- while( Result is -3 ){
+ while( Result == -3 ){
   mask = Wait( windowsignals | SIGBREAKF_CTRL_C );
   if( mask & SIGBREAKF_CTRL_C ) Leave=TRUE;
   if( mask & windowsignals ){
@@ -237,10 +237,10 @@ int TPopMenu::Show(){
       selgadget=(result & RL_GADGETMASK)-1;     // id = 1,...,n -> selgadget = 0,...,n-1
       node = (TPopNode*)Items.lh_Head;
       for( i=0;i<selgadget-1;i++ ) node = (TPopNode*)node->ln_Succ;
-      if( node->Type is POP_MENU ){
+      if( node->Type == POP_MENU ){
        OpenSubMenu = node->SubMenu;
        Result = OpenSubMenu->Show();
-       if( Result is -1 ) Result = -3; // do not close, if only window closed
+       if( Result == -1 ) Result = -3; // do ! close, if only window closed
        OpenSubMenu = NULL;
       }else{
        Result = selgadget;
@@ -251,17 +251,17 @@ int TPopMenu::Show(){
      case WMHI_MOUSEMOVE:{
       for( int i=n-1;i>-1;i-- ){
        if( (MenuWindow->MouseX > gadgarray[i]->LeftEdge)
-       and (MenuWindow->MouseX < gadgarray[i]->LeftEdge+gadgarray[i]->Width)
-       and (MenuWindow->MouseY > gadgarray[i]->TopEdge)
-       and (MenuWindow->MouseY < gadgarray[i]->TopEdge+gadgarray[i]->Height) ){
-        if( selgadget isnot i ){
-         if( selgadget isnot -1 ) SetGadgetAttrs( gadgarray[selgadget],MenuWindow,NULL,BUTTON_BevelStyle,BVS_NONE,GA_Selected,FALSE,TAG_END );
+       && (MenuWindow->MouseX < gadgarray[i]->LeftEdge+gadgarray[i]->Width)
+       && (MenuWindow->MouseY > gadgarray[i]->TopEdge)
+       && (MenuWindow->MouseY < gadgarray[i]->TopEdge+gadgarray[i]->Height) ){
+        if( selgadget != i ){
+         if( selgadget != -1 ) SetGadgetAttrs( gadgarray[selgadget],MenuWindow,NULL,BUTTON_BevelStyle,BVS_NONE,GA_Selected,FALSE,TAG_END );
          selgadget=i;
          SetGadgetAttrs( gadgarray[i],MenuWindow,NULL,BUTTON_BevelStyle,BVS_THIN,GA_Selected,TRUE,TAG_END );
         }
         break;
        }
-       if( i is 0 ) Result = -1;
+       if( i == 0 ) Result = -1;
  }}}}}}
  DoMethod( WindowObject,WM_CLOSE );
  DisposeObject( WindowObject );

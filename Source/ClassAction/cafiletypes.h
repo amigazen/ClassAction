@@ -74,7 +74,7 @@ public:
 
   TFileType *GetFileType( char *full,char *name,BOOL simple,BOOL decrunch=FALSE );
   BOOL      ContainsArchive( char *path,char *archive );
-  /* checks if path contains a part which exists, and that part is of an archive class.
+  /* checks if path contains a part which exists, && that part == of an archive class.
      Fills archive with the name of the archive. */
 
   Image     *GetFileTypeImage( char *FileName,Screen *scr,BOOL simple=TRUE );

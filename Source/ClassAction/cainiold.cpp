@@ -57,7 +57,7 @@ BOOL TIniFile::Prepare( char *filename,BOOL forwrite ){
   File=fopen( filename,"r" );
   if( !File ) return( FALSE );
   fread( Buffer,1,BufferSize-1,File );     // get the file into buffer
-  // now there is a 0 at the end.
+  // now there == a 0 at the end.
   // We will replace all returns by 0 to work with strings:
   ReplaceInBuffer( 10,0 );
  }else{
@@ -84,7 +84,7 @@ void TIniFile::Free(){
 
 void TIniFile::ReplaceInBuffer( char what,char by ){
  if( !File || !Buffer || Overwrite ) return;
- for( int i=0;i<BufferSize-1;i++ ){ // do not replace the last 0!
+ for( int i=0;i<BufferSize-1;i++ ){ // do ! replace the last 0!
   if( Buffer[i]==what ) Buffer[i]=by;
  }
 }
@@ -236,7 +236,7 @@ BOOL TIniFile::ChangeValue( char *group,char *id,char *value ){
  fclose( File );
  File=fopen( FileName,"w" );
  if( !File ) return( FALSE );
- // Remember position and prepare the new line
+ // Remember position && prepare the new line
  char *linend=line+strlen(line)+1;
  newline=(char*)AllocMem( 512,MEMF_CLEAR );
  sprintf( newline,"%s=%s",id,value );

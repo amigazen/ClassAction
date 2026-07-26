@@ -1,0 +1,654 @@
+Storm Shell Project (0018)
+Settings (Start)
+C/C++ Environment
+"StormC:include"
+0
+"Daten:Cpp/Global"
+0
+Includepath (End)
+0 "" 80
+1 "objects"
+1 0 "makelog.txt"
+""
+0
+0 0
+0
+0 1
+C/C++ Preprozessor
+1 "NDEBUG" ""
+0
+Defines (End)
+1 1 1
+0 0
+C/C++ Options
+1 0 0 0 1 1 0 0 0 1 0 1 0 0 0
+0 0 0
+0
+0 1 0
+C/C++ Optimizer
+5
+C/C++ Warnings
+1 1 1 1 1 1 0 1
+0 0
+GCC Options (1)
+Defines (End)
+1 0 0 1 0
+1 0 0 1 1 1 0
+0 2 1 0 0
+0 0 0 0 1 0 0
+0 0 0 0
+0 ""
+2 0 0 0
+1 0 0 1 0 1 0 1 0 1
+1 1 0 1 0 1
+0 1 1 1 1 0 0
+1 0 0 0 0
+Assembler
+0 ""
+0 "CON://640/200/Storm Assembler/AUTO/WAIT/SCREEN StormScreen"
+0 0
+0 1 60 0 1 0 0 20 0
+Sets (End)
+0 1 0 0 0 2 1 0 0
+1 1 1 1 0 0 0 0 0
+1 0
+0 0 0 0 0
+Linker
+0 0 "PROGDIR:startup.o" 1 0 1 0 0 0 0
+"StormC:lib/" 0 "StormC:lib/logfile" 0 1 1
+0 "_WizardSurface"
+0 0 50 0 50 0 50 0 0
+0 0 0 0 0 0 0 0
+Run
+30 "" "" "" 0
+""
+
+1 "CON://400/180/Storm Console/AUTO/WAIT/SCREEN StormScreen" "RAM:Output" "RAM:Input"
+1 0
+0 0 0 "" ""
+Settings (End)
+Storm Shell Project (Custom Sections End)
+Section
+1 1 100
+0 1 1 0
+4
+File
+1 "ClassAction.cpp"
+"ClassAction.cpp"
+"classactioncd.h"
+"classaction.h"
+"catypes.h"
+"calha.h"
+"caccp.h"
+"cavers.h"
+"cagui.h"
+"unCommodities.h"
+"unARexx.h"
+"caFileTypes.h"
+"unBitmap.h"
+"caglobal.h"
+"capopup.h"
+"caexec.h"
+"cautils.h"
+"careq.h"
+"cadisk.h"
+"capaths.h"
+"caactions.h"
+"caIcons.h"
+"newmouse.h"
+Storm Shell Project (Dependencies)
+"objects/ClassAction.o" "objects/ClassAction.debug"
+""
+1 1
+File
+1 "cagui.c"
+"cagui.c"
+"classaction.h"
+"classactioncd.h"
+"catypes.h"
+"caextern.h"
+"calha.h"
+"caccp.h"
+"cavers.h"
+"cagui.h"
+"unCommodities.h"
+"unARexx.h"
+"caFileTypes.h"
+"unBitmap.h"
+"cadisk.h"
+"caexec.h"
+"caglobal.h"
+"capopup.h"
+"careq.h"
+"cautils.h"
+"caactions.h"
+"capaths.h"
+"newmouse.h"
+Storm Shell Project (Dependencies)
+"objects/cagui.o" "objects/cagui.debug"
+""
+1 1
+File
+1 "caexec.c"
+"caexec.c"
+"classactioncd.h"
+"catypes.h"
+"calha.h"
+"caccp.h"
+"cagui.h"
+"unCommodities.h"
+"unARexx.h"
+"unBitmap.h"
+"cadisk.h"
+"caglobal.h"
+"careq.h"
+"cautils.h"
+"capaths.h"
+"caexec.h"
+"caFileTypes.h"
+"caactions.h"
+Storm Shell Project (Dependencies)
+"objects/caexec.o" "objects/caexec.debug"
+""
+1 1
+File
+1 "careq.c"
+"careq.c"
+"classaction.h"
+"classactioncd.h"
+"catypes.h"
+"caextern.h"
+"caccp.h"
+"unCommodities.h"
+"unARexx.h"
+"unBitmap.h"
+"caglobal.h"
+Storm Shell Project (Dependencies)
+"objects/careq.o" "objects/careq.debug"
+""
+1 1
+File
+1 "cadisk.c"
+"cadisk.c"
+"classactioncd.h"
+"catypes.h"
+"calha.h"
+"caccp.h"
+"unCommodities.h"
+"unARexx.h"
+"caFileTypes.h"
+"unBitmap.h"
+"caexec.h"
+"caactions.h"
+"caglobal.h"
+"capaths.h"
+"careq.h"
+"cadisk.h"
+Storm Shell Project (Dependencies)
+"objects/cadisk.o" "objects/cadisk.debug"
+""
+1 1
+File
+1 "caxfd.c"
+"caxfd.c"
+"classactioncd.h"
+"catypes.h"
+"caextern.h"
+"caccp.h"
+"unCommodities.h"
+"unARexx.h"
+"unBitmap.h"
+"caglobal.h"
+"caxfd.h"
+Storm Shell Project (Dependencies)
+"objects/caxfd.o" "objects/caxfd.debug"
+""
+1 1
+File
+1 "calha.cpp"
+"calha.cpp"
+"calha.h"
+"cautils.h"
+Storm Shell Project (Dependencies)
+"objects/calha.o" "objects/calha.debug"
+""
+1 1
+File
+1 "cabutclass.c"
+"cabutclass.c"
+Storm Shell Project (Dependencies)
+"objects/cabutclass.o" "objects/cabutclass.debug"
+""
+1 1
+File
+1 "caflist.cpp"
+"caflist.cpp"
+"classaction.h"
+"classactioncd.h"
+"catypes.h"
+"caextern.h"
+"caflist.h"
+Storm Shell Project (Dependencies)
+"objects/caflist.o" "objects/caflist.debug"
+""
+1 1
+File
+1 "caccp.cpp"
+"caccp.cpp"
+"Daten:Cpp/ClassAction/caccp.h"
+Storm Shell Project (Dependencies)
+"objects/caccp.o" "objects/caccp.debug"
+""
+1 1
+File
+1 "cautils.cpp"
+"cautils.cpp"
+"cautils.h"
+Storm Shell Project (Dependencies)
+"objects/cautils.o" "objects/cautils.debug"
+""
+1 1
+File
+1 "capopup.cpp"
+"capopup.cpp"
+"classactioncd.h"
+"catypes.h"
+"caccp.h"
+"cagui.h"
+"unCommodities.h"
+"unARexx.h"
+"caFileTypes.h"
+"unBitmap.h"
+"caexec.h"
+"caactions.h"
+"caglobal.h"
+"capaths.h"
+"capopup.h"
+"calha.h"
+"caicons.h"
+Storm Shell Project (Dependencies)
+"objects/capopup.o" "objects/capopup.debug"
+""
+1 1
+File
+1 "unCommodities.cpp"
+"unCommodities.cpp"
+"Daten:Cpp/ClassAction/unCommodities.h"
+Storm Shell Project (Dependencies)
+"objects/unCommodities.o" "objects/unCommodities.debug"
+""
+1 1
+File
+1 "unBitmap.cpp"
+"unBitmap.cpp"
+"Daten:Cpp/ClassAction/unBitmap.h"
+Storm Shell Project (Dependencies)
+"objects/unBitmap.o" "objects/unBitmap.debug"
+""
+1 1
+File
+1 "unARexx.cpp"
+"unARexx.cpp"
+"Daten:Cpp/ClassAction/unARexx.h"
+Storm Shell Project (Dependencies)
+"objects/unARexx.o" "objects/unARexx.debug"
+""
+1 1
+File
+1 "cafiletypes.cpp"
+"cafiletypes.cpp"
+"unBitmap.h"
+"cafiletypes.h"
+"caactions.h"
+"caxfd.h"
+"cautils.h"
+"calha.h"
+Storm Shell Project (Dependencies)
+"objects/cafiletypes.o" "objects/cafiletypes.debug"
+""
+1 1
+File
+1 "capaths.cpp"
+"capaths.cpp"
+"caglobal.h"
+"catypes.h"
+"caccp.h"
+"unBitmap.h"
+"unARexx.h"
+"unCommodities.h"
+"classaction.h"
+"capaths.h"
+Storm Shell Project (Dependencies)
+"objects/capaths.o" "objects/capaths.debug"
+""
+1 1
+File
+1 "caactions.cpp"
+"caactions.cpp"
+Storm Shell Project (Dependencies)
+"objects/caactions.o" "objects/caactions.debug"
+""
+1 1
+File
+1 "caicons.cpp"
+"caicons.cpp"
+"caexec.h"
+"caFileTypes.h"
+"unBitmap.h"
+"caactions.h"
+"catypes.h"
+"classaction.h"
+"classactioncd.h"
+"caicons.h"
+Storm Shell Project (Dependencies)
+"objects/caicons.o" "objects/caicons.debug"
+""
+1 1
+File
+1 "Daten:Cpp/Global/IniFile.cpp"
+"Daten:Cpp/Global/IniFile.cpp"
+"Daten:Cpp/Global/IniFile.h"
+"Daten:Cpp/Global/StringList.h"
+Storm Shell Project (Dependencies)
+"objects/IniFile.o" "objects/IniFile.debug"
+""
+1 1
+File
+1 "Daten:Cpp/Global/StringList.cpp"
+"Daten:Cpp/Global/StringList.cpp"
+"Daten:Cpp/Global/StringList.h"
+Storm Shell Project (Dependencies)
+"objects/StringList.o" "objects/StringList.debug"
+""
+1 1
+Section
+2 1 95
+0 1 1 0
+2
+File
+2 "ClassAction.h"
+"ClassAction.h"
+Storm Shell Project (Dependencies)
+"" ""
+""
+0 0
+File
+2 "classactioncd.h"
+"classactioncd.h"
+Storm Shell Project (Dependencies)
+"" ""
+""
+0 0
+File
+2 "catypes.h"
+"catypes.h"
+Storm Shell Project (Dependencies)
+"" ""
+""
+0 0
+File
+2 "caincludes.h"
+"caincludes.h"
+Storm Shell Project (Dependencies)
+"" ""
+""
+0 0
+File
+2 "caextern.h"
+"caextern.h"
+Storm Shell Project (Dependencies)
+"" ""
+""
+0 0
+File
+2 "caprotos.h"
+"caprotos.h"
+Storm Shell Project (Dependencies)
+"" ""
+""
+0 0
+File
+2 "calha.h"
+"calha.h"
+Storm Shell Project (Dependencies)
+"" ""
+""
+0 0
+File
+2 "caccp.h"
+"caccp.h"
+Storm Shell Project (Dependencies)
+"" ""
+""
+0 0
+File
+2 "camen.h"
+"camen.h"
+Storm Shell Project (Dependencies)
+"" ""
+""
+0 0
+File
+2 "cavers.h"
+"cavers.h"
+Storm Shell Project (Dependencies)
+"" ""
+""
+0 0
+File
+2 "cagui.h"
+"cagui.h"
+Storm Shell Project (Dependencies)
+"" ""
+""
+0 0
+File
+2 "unCommodities.h"
+"unCommodities.h"
+Storm Shell Project (Dependencies)
+"" ""
+""
+0 0
+File
+2 "unBitmap.h"
+"unBitmap.h"
+Storm Shell Project (Dependencies)
+"" ""
+""
+0 0
+File
+2 "unARexx.h"
+"unARexx.h"
+Storm Shell Project (Dependencies)
+"" ""
+""
+0 0
+File
+2 "cafiletypes.h"
+"cafiletypes.h"
+Storm Shell Project (Dependencies)
+"" ""
+""
+0 0
+File
+2 "caglobal.h"
+"caglobal.h"
+Storm Shell Project (Dependencies)
+"" ""
+""
+0 0
+File
+2 "calist.h"
+"calist.h"
+Storm Shell Project (Dependencies)
+"" ""
+""
+0 0
+File
+2 "capopup.h"
+"capopup.h"
+Storm Shell Project (Dependencies)
+"" ""
+""
+0 0
+File
+2 "caicon.h"
+"caicon.h"
+Storm Shell Project (Dependencies)
+"" ""
+""
+0 0
+File
+2 "caexec.h"
+"caexec.h"
+Storm Shell Project (Dependencies)
+"" ""
+""
+0 0
+File
+2 "cautils.h"
+"cautils.h"
+Storm Shell Project (Dependencies)
+"" ""
+""
+0 0
+File
+2 "careq.h"
+"careq.h"
+Storm Shell Project (Dependencies)
+"" ""
+""
+0 0
+File
+2 "cadisk.h"
+"cadisk.h"
+Storm Shell Project (Dependencies)
+"" ""
+""
+0 0
+File
+2 "caxfd.h"
+"caxfd.h"
+Storm Shell Project (Dependencies)
+"" ""
+""
+0 0
+File
+2 "capaths.h"
+"capaths.h"
+Storm Shell Project (Dependencies)
+"" ""
+""
+0 0
+File
+2 "caactions.h"
+"caactions.h"
+Storm Shell Project (Dependencies)
+"" ""
+""
+0 0
+File
+2 "caflist.h"
+"caflist.h"
+Storm Shell Project (Dependencies)
+"" ""
+""
+0 0
+File
+2 "caicons.h"
+"caicons.h"
+Storm Shell Project (Dependencies)
+"" ""
+""
+0 0
+File
+2 "Daten:Cpp/Global/IniFile.h"
+"Daten:Cpp/Global/IniFile.h"
+Storm Shell Project (Dependencies)
+"" ""
+""
+0 0
+File
+2 "Daten:Cpp/Global/StringList.h"
+"Daten:Cpp/Global/StringList.h"
+Storm Shell Project (Dependencies)
+"" ""
+""
+0 0
+File
+2 "newmouse.h"
+"newmouse.h"
+Storm Shell Project (Dependencies)
+"" ""
+""
+0 0
+Section
+12 1 90
+0 1 1 0
+4
+File
+12 "classactioncd.asm"
+"classactioncd.asm"
+Storm Shell Project (Dependencies)
+"objects/classactioncd.o" ""
+"StormC:rexx/phxass.srx"
+1 1
+Section
+15 1 80
+0 1 1 0
+8
+File
+15 "ClassAction.cd"
+"ClassAction.cd"
+Storm Shell Project (Dependencies)
+"ClassActionCD.h" "ClassActionCD.asm"
+"StormC:rexx/catcomp.srx"
+0 0
+Section
+10 1 40
+0 0 0 0
+7
+File
+10 "ClassAction"
+"ClassAction"
+Storm Shell Project (Dependencies)
+"" ""
+""
+0 0
+Section
+3 1 -40
+0 0 0 0
+7
+File
+3 "classactioncd.o"
+"classactioncd.o"
+Storm Shell Project (Dependencies)
+"" ""
+""
+0 0
+File
+3 "ClassAction.o"
+"ClassAction.o"
+Storm Shell Project (Dependencies)
+"" ""
+""
+0 0
+Section
+5 1 -50
+0 0 0 0
+7
+File
+5 "storm.lib"
+"storm.lib"
+Storm Shell Project (Dependencies)
+"" ""
+""
+0 0
+File
+5 "amiga.lib"
+"amiga.lib"
+Storm Shell Project (Dependencies)
+"" ""
+""
+0 0
+Storm Shell Project (End)

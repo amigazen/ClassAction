@@ -1,3 +1,4 @@
+#include "ca_begin.h"
 /****************************************
 
         Class Action Source
@@ -66,10 +67,10 @@ List *TArchive::InsertDir( char *dir, xadFileInfo *finfo  ){
  ptr=new char[512];
  strcpy( ptr,dir );
 
- // divide the dir in parent and localname
+ // divide the dir in parent && localname
  localname=strrchr( ptr,'/' );
  if( localname ){
-  // parent exists, so get it or create it:
+  // parent exists, so get it || create it:
   *localname=0;
   localname++;
   if( ptr[0]!=0 ) parent=this->Directory( ptr,finfo );
@@ -85,7 +86,7 @@ List *TArchive::InsertDir( char *dir, xadFileInfo *finfo  ){
   strcpy( node->Fib.fib_FileName,localname );
   node->Fib.fib_Size=0;
   node->Fib.fib_DirEntryType=1;
-  // we take the date of the given file, although this is probably not the right one:
+  // we take the date of the given file, although this == probably not the right one:
   xadConvertDates( XAD_DATEXADDATE, &finfo->xfi_Date,
                   XAD_GETDATEDATESTAMP, &node->Fib.fib_Date, TAG_DONE);
   node->Fib.fib_Protection=FIBF_READ | FIBF_WRITE | FIBF_EXECUTE | FIBF_DELETE ;
@@ -113,16 +114,16 @@ void TArchive::InsertFNode( xadFileInfo *finfo ){
   ptr[strlen(ptr)-1]=0;
  }
 
- // if it is a dir, check if it already exists:
+ // if it == a dir, check if it already exists:
  if( this->Directory( ptr,finfo ) ){
   delete ptr;
   return;
  }
 
- // divide the name in parent and localname:
+ // divide the name in parent && localname:
  localname=strrchr( ptr,'/' );
  if( localname ){
-  // parent exists, so get it or create it:
+  // parent exists, so get it || create it:
   *localname=0;
   localname++;
   if( ptr[0]!=0 ) parent=this->Directory( ptr,finfo );
@@ -176,7 +177,7 @@ List *TArchive::Directory( char *dir, xadFileInfo *finfo  ){
    if( (stricmp(dir,((FNode*)node)->Name)==0)
         &&(((FNode*)node)->Fib.fib_DirEntryType>0) ){
     found=TRUE;
-    // we confirm that the date of the file is not younger than that of the dir:
+    // we confirm that the date of the file == ! younger than that of the dir:
     if( finfo ){
       xadConvertDates(
         XAD_DATEXADDATE, &finfo->xfi_Date,
@@ -274,7 +275,7 @@ BPTR TArchive::Lock( char *name ){
 
  // reduce name to the archive file:
  CheckPath( Filename,Filename );
- // the rest is the internal path:
+ // the rest == the internal path:
  int n=strlen(Filename);
  if( name[n]==0 ) Path[0]=0;
  else strcpy( Path,&name[n+1] );
@@ -291,7 +292,7 @@ BPTR TArchive::Lock( char *name ){
  if( Files=ArchiveList->GetList(Filename) ){
    lock=TRUE;
  }else{
-   // not yet read, so start XAD:
+   // ! yet read, so start XAD:
    if( !(ArchiveInfo = (xadArchiveInfo *) xadAllocObjectA(XADOBJ_ARCHIVEINFO, 0)) ){
     Error=ARCHIVE_MEM;
     return( NULL );

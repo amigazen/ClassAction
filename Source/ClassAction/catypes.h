@@ -4,29 +4,33 @@
 
         Class Action Source
 
-        © 2002 by Martin R. Elsner & Salim Gasmi
+        ? 2002 by Martin R. Elsner & Salim Gasmi
 
 ****************************************/
 
 //#define BOBERG_TEST
 
+#include "stormcompat.h"
 #include <dos/dos.h>
 #include <intuition/intuition.h>
 
-#define is              ==      // don't want to get errors from = and ==
-#define isnot           !=
-#define and             &&
-#define or              ||
-#define not             !
-#define False           FALSE
-#define True            TRUE
+/* Storm used ==/&&/||/! macros; those break C++ && NDK headers.
+ * Use real C operators in the sources instead. */
 
 #define MXDRV           20
 #define TABCOUNT        5
 
 #define TPREFSFILE "T:ClassAction.prefs"
-#define PREFSFILE  "MRE:Config/ClassAction.prefs"
-#define DPREFSFILE "MRE:Config/Default/ClassAction.prefs"
+/* Prefs and assets live under PROGDIR (no MRE: assign required). */
+#define PREFSFILE  "PROGDIR:Config/ClassAction.prefs"
+#define DPREFSFILE "PROGDIR:Config/Default/ClassAction.prefs"
+#define CA_ICONFILE "PROGDIR:ClassAction"
+#define CA_GUIDEFILE "PROGDIR:ClassAction.guide"
+#define CA_PREFSAPP "PROGDIR:ClassActionPrefs"
+#define CA_IMG_LISTER11 "PROGDIR:Images/Lister/"
+#define CA_IMG_LISTER16 "PROGDIR:Images/Lister/"
+#define CA_IMG_FILETYPES "PROGDIR:Images/FileTypes/"
+#define CA_REQPATTERN "PROGDIR:Images/CAPatterns/CATile66x66.iff"
 
 struct TFileList{
   List  Files;                  // list of selected files
@@ -64,7 +68,7 @@ struct TFileEntry{
  BYTE   ln_Pri;
  char   *ln_Name;
  char   Name[256];      // full filename
- BOOL   Selected;       // is file selected or deselected (can be toggled!)
+ BOOL   Selected;       // == file selected || deselected (can be toggled!)
  BOOL   Success;        // message returned from command
 };
 

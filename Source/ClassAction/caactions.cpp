@@ -1,3 +1,4 @@
+#include "ca_begin.h"
 /****************************************
 
         Class Action Source
@@ -22,18 +23,16 @@
 
 TcaActions *caActions;
 
-//>"int TcaActions::TcaActions()"
-int TcaActions::TcaActions(){
+//>"TcaActions::TcaActions()"
+TcaActions::TcaActions(){
   NewList( &Actions );
-  return(0);
 }
 //<
 
-//>"int TcaActions::~TcaActions()"
-int TcaActions::~TcaActions(){
+//>"TcaActions::~TcaActions()"
+TcaActions::~TcaActions(){
  Node *act;
  while( act = RemHead(&Actions) ) FreeVec( act );
- return(0);
 }
 //<
 
@@ -76,7 +75,7 @@ TAction *TcaActions::Add( char *Name, char *Command, char WBRun, char *Stack, ch
 //>"Action *TcaActions::Item( char *Name )"
 TAction *TcaActions::Item( char *Name ){
  for( TAction *a = (TAction*)Actions.lh_Head;a->ln_Succ;a = (TAction*)a->ln_Succ ){
-  if( strcmp(a->Name,Name) is 0 ) return( a );
+  if( strcmp(a->Name,Name) == 0 ) return( a );
  }
  return( NULL );
 }

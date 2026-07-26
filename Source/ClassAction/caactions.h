@@ -31,7 +31,7 @@ struct TAction{
 // flags for Type:
 #define RUN_CLI         0      // SystemTags
 #define RUN_WB          1      // OpenWorkbenchObject
-#define RUN_NOCLI       2      // SystemTags, do not open a console
+#define RUN_NOCLI       2      // SystemTags, do ! open a console
 #define RUN_AREXX       3      // rx "..."
 #define RUN_INTERNAL    4      // CA command
 #define RUN_SPACE       5      // only space (icon)

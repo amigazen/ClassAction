@@ -1,8 +1,9 @@
+#include "ca_begin.h"
 /****************************************
 
         Class Action Source
 
-        © 2002 by Martin R. Elsner
+        ï¿½ 2002 by Martin R. Elsner
                 & Salim Gasmi
 
         File: caicons.cpp
@@ -40,15 +41,20 @@
 
 #include "caicons.h"
 
-IClass *MakeIconClass();
-
+#ifdef __cplusplus
+extern "C" {
+#endif
+Class *MakeIconClass(void);
+#ifdef __cplusplus
+}
+#endif
 
 TcaIcons *caIcons;
 
 //>"void TcaIcons::Init()"
 void TcaIcons::Init(){
   // get iconclass:
-  IconClass=(IClass*)MakeIconClass();
+  IconClass=(Class*)MakeIconClass();
   NewList( &Icons[0] );
   NewList( &Icons[1] );
   NewList( &Icons[2] );
@@ -82,7 +88,7 @@ void TcaIcons::LoadCommands( TIniFile *IniFile,Screen *scr,Object *Fuelgauge,Obj
  do{
   entryline=IniFile->GetNextGroupEntry();
   if( entryline && entryline[0] ){
-   if( mode isnot atoi(entryline) ){
+   if( mode != atoi(entryline) ){
     mode=atoi( entryline );
     list=&Icons[mode];
     switch( mode ){
@@ -114,7 +120,7 @@ void TcaIcons::LoadCommands( TIniFile *IniFile,Screen *scr,Object *Fuelgauge,Obj
      strcpy( nd->Action->Exec,entryline );
    }
 
-   if( (entryline=IniFile->GetNextGroupEntry()) and (entryline[0] is 'M') ){ // wbrun
+   if( (entryline=IniFile->GetNextGroupEntry()) && (entryline[0] == 'M') ){ // wbrun
      nd->Action->Type = entryline[1]-48;
      nd->Action->CD   = entryline[2]-48;
      if( (nd->Action->CD<0) || (nd->Action->CD>2) ) nd->Action->CD=0;
@@ -134,7 +140,7 @@ void TcaIcons::LoadCommands( TIniFile *IniFile,Screen *scr,Object *Fuelgauge,Obj
     if( entryline[0] ) dob=GetIconTags( entryline,ICONGETA_Screen,scr,TAG_END );
     else dob=NULL;
    }else dob=NULL;
-   if( !dob ) space=TRUE;       // icon not found, make a space gadget
+   if( !dob ) space=TRUE;       // icon ! found, make a space gadget
    if( entryline=IniFile->GetNextGroupEntry() ){ // key
     if( entryline[0]=='"' ){
      nd->Key=entryline[1];
@@ -192,7 +198,8 @@ void TcaIcons::FreeIcons(){
 
 //>"List *TcaIcons::GetCommandList( int Index )"
 List *TcaIcons::GetCommandList( int Index ){
-  if( (Index>-1) and (Index<3) ) return &Icons[Index];
+  if( (Index>-1) && (Index<3) ) return &Icons[Index];
+  return NULL;
 }
 //<
 
@@ -202,14 +209,14 @@ List *TcaIcons::GetCommandList( int Index ){
 /* Function: DoIconCommand              */
 /*                                      */
 /* Aim:      Execute the command for    */
-/*           gadget or key that was     */
+/*           gadget || key that was     */
 /*           activated.                 */
 /*                                      */
 /* Input:    msg = result of            */
 /*                WM_HANDLEINPUT        */
 /*                                      */
 /* Output:   TRUE: command found        */
-/*           FALSE: not found           */
+/*           FALSE: ! found           */
 /*                                      */
 /****************************************/
 BOOL TcaIcons::DoIconCommand( Window *win,ULONG msg ){

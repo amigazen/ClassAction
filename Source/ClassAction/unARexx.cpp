@@ -1,3 +1,4 @@
+#include "ca_begin.h"
 /*
 
   General ARexx class !
@@ -57,7 +58,7 @@ BOOL TARexx::Free(){
    }
   }
  }
- // Clean up the port and delete it...
+ // Clean up the port && delete it...
  while (rmsg=GetMessage()) ReplyMessage( rmsg,NULL,100L );
  DeletePort( Port );
  return( TRUE );
@@ -90,7 +91,7 @@ struct RexxMsg *TARexx::GetMessage(){
    short error;
    if( rmsg->rm_Result1 ) error=TRUE; else error=FALSE;
    // delete the message
-   DeleteArgstring( rmsg->rm_Args[0] );
+   DeleteArgstring( (UBYTE *)rmsg->rm_Args[0] );
    DeleteRexxMsg( rmsg );
    Outstanding-=1;
    if( error ) return( (struct RexxMsg*)-1L ); else return( NULL );
@@ -110,7 +111,7 @@ void TARexx::ReplyMessage( struct RexxMsg *rmsg,char *RString,ULONG error){
     if( RString ) rmsg->rm_Result2=(LONG)CreateArgstring( RString,(LONG)strlen(RString) );
    }
   }
-  // and reply
+  // && reply
   ReplyMsg( (struct Message *)rmsg );
  }
 }

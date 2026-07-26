@@ -1,0 +1,153 @@
+#
+# ClassAction 4.6 - SAS/C smakefile
+#
+# Replaces the StormC project. Build on Amiga with SAS/C 6.5x + NDK 3.5/3.9
+# ReAction classes, and the extra includes this tree needs:
+#   libraries/resource.h + resource.library (ReAction Resource)
+#   libraries/pm.h       + popupmenu.library
+#   proto/xadmaster.h    + xadmaster.library (runtime OpenLibrary)
+#   proto/xfdmaster.h    + xfdmaster.library (runtime OpenLibrary)
+#
+# Missing Global/ sources (IniFile, StringList) were reconstructed here from
+# the 4.6 object API. Storm ClassAction_res.o has odd-address RELOC32 sites
+# that SAS/C slink rejects (Error 611); ClassAction_res_embed.c is generated
+# from ClassAction_res.o + objects/classactioncd.o via embed_rct_res.py and
+# applies those fixups at startup. Keep the .o inputs for regeneration.
+# Hybrid Storm .c files that are actually C++ were renamed to .cpp for SAS/C.
+#
+# Usage:  smake
+#         smake clean
+#
+
+CC       = sc
+RM       = delete quiet force
+CPU      = 68020
+OBJDIR   = objects_sasc
+
+# Vendored SDK headers under ./proto ./libraries ./clib ./pragma[s] ./inline
+# (from github/popupmenu.library, xadmasterdev, github/resource; xfd kept local).
+# Also search the source trees via /// so Amiga builds work even if IDIR=.
+# does not pick up nested drawers. Runtime still needs the matching libs:.
+#
+# ca_begin.h neutralizes __ASM__/__STDARGS__/__REG__/... then includes
+# <clib/compiler-specific.h> so NDK function-pointer members are safe for SAS/C C++.
+# DEF=CA_DEBUG enables Printf() init tracing (cadebug.h). Omit for release.
+CFLAGS   = CPU=$(CPU) IDLEN=100 NOICONS DEF=CA_DEBUG \
+	INCLUDEDIR=. \
+	INCLUDEDIR=include: INCLUDEDIR=SDK:Include_H \
+	INCLUDEDIR=///github/resource/SDK/Include_H \
+	INCLUDEDIR=///github/popupmenu.library/SDK/Include_H \
+	INCLUDEDIR=///xadmasterdev/xad/Include/C \
+	INCLUDEDIR=///xfd_include
+
+CXXFLAGS = $(CFLAGS)
+
+OBJS = \
+	$(OBJDIR)/ClassAction.o \
+	$(OBJDIR)/cagui.o \
+	$(OBJDIR)/caexec.o \
+	$(OBJDIR)/careq.o \
+	$(OBJDIR)/cadisk.o \
+	$(OBJDIR)/caxfd.o \
+	$(OBJDIR)/calha.o \
+	$(OBJDIR)/cabutclass.o \
+	$(OBJDIR)/caccp.o \
+	$(OBJDIR)/cautils.o \
+	$(OBJDIR)/capopup.o \
+	$(OBJDIR)/unCommodities.o \
+	$(OBJDIR)/unBitmap.o \
+	$(OBJDIR)/unARexx.o \
+	$(OBJDIR)/cafiletypes.o \
+	$(OBJDIR)/capaths.o \
+	$(OBJDIR)/caactions.o \
+	$(OBJDIR)/caicons.o \
+	$(OBJDIR)/IniFile.o \
+	$(OBJDIR)/StringList.o \
+	$(OBJDIR)/ClassAction_res_embed.o
+
+all: ClassAction
+
+ClassAction: $(OBJDIR) $(OBJS)
+	$(CC) LINK TO ClassAction NOICONS $(OBJS) \
+		LIB LIB:amiga.lib LIB:sc.lib LIB:scm.lib
+
+$(OBJDIR):
+	-makedir $(OBJDIR)
+
+#
+# C++ sources
+#
+$(OBJDIR)/ClassAction.o: ClassAction.cpp ClassAction.h caglobal.h cavers.h \
+		catypes.h IniFile.h stormcompat.h
+	$(CC) $(CXXFLAGS) OBJNAME=$@ ClassAction.cpp
+
+$(OBJDIR)/cagui.o: cagui.cpp cagui.h caglobal.h IniFile.h
+	$(CC) $(CXXFLAGS) OBJNAME=$@ cagui.cpp
+
+$(OBJDIR)/caexec.o: caexec.cpp caexec.h caglobal.h
+	$(CC) $(CXXFLAGS) OBJNAME=$@ caexec.cpp
+
+$(OBJDIR)/careq.o: careq.cpp careq.h caglobal.h
+	$(CC) $(CXXFLAGS) OBJNAME=$@ careq.cpp
+
+$(OBJDIR)/cadisk.o: cadisk.cpp cadisk.h caglobal.h IniFile.h
+	$(CC) $(CXXFLAGS) OBJNAME=$@ cadisk.cpp
+
+$(OBJDIR)/calha.o: calha.cpp calha.h
+	$(CC) $(CXXFLAGS) OBJNAME=$@ calha.cpp
+
+$(OBJDIR)/caccp.o: caccp.cpp caccp.h
+	$(CC) $(CXXFLAGS) OBJNAME=$@ caccp.cpp
+
+$(OBJDIR)/cautils.o: cautils.cpp cautils.h
+	$(CC) $(CXXFLAGS) OBJNAME=$@ cautils.cpp
+
+$(OBJDIR)/capopup.o: capopup.cpp capopup.h
+	$(CC) $(CXXFLAGS) OBJNAME=$@ capopup.cpp
+
+$(OBJDIR)/unCommodities.o: unCommodities.cpp unCommodities.h
+	$(CC) $(CXXFLAGS) OBJNAME=$@ unCommodities.cpp
+
+$(OBJDIR)/unBitmap.o: unBitmap.cpp unBitmap.h
+	$(CC) $(CXXFLAGS) OBJNAME=$@ unBitmap.cpp
+
+$(OBJDIR)/unARexx.o: unARexx.cpp unARexx.h
+	$(CC) $(CXXFLAGS) OBJNAME=$@ unARexx.cpp
+
+$(OBJDIR)/cafiletypes.o: cafiletypes.cpp cafiletypes.h
+	$(CC) $(CXXFLAGS) OBJNAME=$@ cafiletypes.cpp
+
+$(OBJDIR)/capaths.o: capaths.cpp capaths.h
+	$(CC) $(CXXFLAGS) OBJNAME=$@ capaths.cpp
+
+$(OBJDIR)/caactions.o: caactions.cpp caactions.h
+	$(CC) $(CXXFLAGS) OBJNAME=$@ caactions.cpp
+
+$(OBJDIR)/caicons.o: caicons.cpp caicons.h IniFile.h
+	$(CC) $(CXXFLAGS) OBJNAME=$@ caicons.cpp
+
+$(OBJDIR)/IniFile.o: IniFile.cpp IniFile.h StringList.h
+	$(CC) $(CXXFLAGS) OBJNAME=$@ IniFile.cpp
+
+$(OBJDIR)/StringList.o: StringList.cpp StringList.h
+	$(CC) $(CXXFLAGS) OBJNAME=$@ StringList.cpp
+
+#
+# C sources
+#
+$(OBJDIR)/caxfd.o: caxfd.cpp caxfd.h
+	$(CC) $(CXXFLAGS) OBJNAME=$@ caxfd.cpp
+
+$(OBJDIR)/cabutclass.o: cabutclass.c
+	$(CC) $(CFLAGS) OBJNAME=$@ cabutclass.c
+
+#
+# ClassAction_res.o + objects/classactioncd.o are checked in as inputs for
+# embed_rct_res.py -> ClassAction_res_embed.c (SAS/C cannot link the Storm
+# RCT object directly; Error 611 odd-address relocs).
+#
+$(OBJDIR)/ClassAction_res_embed.o: ClassAction_res_embed.c
+	$(CC) $(CFLAGS) OBJNAME=$@ ClassAction_res_embed.c
+
+clean:
+	-$(RM) $(OBJDIR)/#?.o ClassAction

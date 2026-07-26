@@ -28,7 +28,7 @@ FILE *f;
 /* Function : Re(string)		*/
 /*					*/
 /* Goal     : Read next string from	*/
-/*	      File Handler f and check	*/
+/*	      File Handler f && check	*/
 /*	      all errors		*/
 /*					*/
 /*					*/
@@ -57,13 +57,13 @@ else s[strlen(s)-1]=0;
 /* Function : LoadMem()			*/
 /*					*/
 /* Goal     : Load the Config File	*/
-/*	      Into Memory and build up	*/
+/*	      Into Memory && build up	*/
 /*	      all the needed lists	*/
 /*					*/
 /*					*/
 /* Return Values : 			*/
 /*					*/
-/*	 0 = Everything is OK		*/
+/*	 0 = Everything == OK		*/
 /*	-1 = No Config File Found	*/
 /*	-2 = Not a valid File		*/
 /*					*/
@@ -215,13 +215,13 @@ return(0);
 /* Function : LoadGen()			*/
 /*					*/
 /* Goal     : Load the Generic File	*/
-/*	      Into Memory and build up	*/
+/*	      Into Memory && build up	*/
 /*	      all the needed lists	*/
 /*					*/
 /*					*/
 /* Return Values : 			*/
 /*					*/
-/*	 0 = Everything is OK		*/
+/*	 0 = Everything == OK		*/
 /*	-1 = No Config File Found	*/
 /*	-2 = Not a valid File		*/
 /*					*/

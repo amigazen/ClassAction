@@ -1,10 +1,11 @@
+#include "ca_begin.h"
 #include <libraries/commodities.h>
 #include <clib/exec_protos.h>
 #include <clib/commodities_protos.h>
 #include <clib/alib_protos.h>
 #include "unCommodities.h"
 
-int TCommodities::TCommodities(){
+TCommodities::TCommodities(){
   Broker = NULL;
   Port   = NULL;
   NodeCount = 0;
@@ -17,8 +18,8 @@ void TCommodities::Init(){
   if( !(Port = CreateMsgPort()) ) return;
   PortSignal    = 1 << Port->mp_SigBit;
   nb.nb_Version = NB_VERSION;
-  nb.nb_Title   = "MRE ClassAction";
-  nb.nb_Descr   = "© Martin Elsner & Salim Gasmi 2002";
+  nb.nb_Title   = "ClassAction";
+  nb.nb_Descr   = "ï¿½ Martin Elsner & Salim Gasmi 2002";
   nb.nb_Unique  = NBU_UNIQUE | NBU_NOTIFY;
   nb.nb_Flags   = COF_SHOW_HIDE;
   nb.nb_Port    = Port;

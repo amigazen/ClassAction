@@ -1,0 +1,5 @@
+FROM LIB:c.o "objects_sasc/ClassActionPrefs.o"+"objects_sasc/capgui.o"+"objects_sasc/capopt.o"+"objects_sasc/capdisk.o"+"objects_sasc/capreq.o"+"objects_sasc/caplist.o"+"objects_sasc/caplearn.o"+"objects_sasc/capbutclass.o"+"objects_sasc/caparexx.o"+"objects_sasc/IniFile.o"+"objects_sasc/StringList.o"+"objects_sasc/cautils.o"+"objects_sasc/ClassActionPrefs_res_embed.o"
+TO "ClassActionPrefs"
+LIB LIB:amiga.lib LIB:sc.lib LIB:scm.lib LIB:sc.lib LIB:amiga.lib
+NOICONS
+

@@ -2,7 +2,7 @@
 
         Class Action Source
 
-        © 2002 by Martin R. Elsner
+        ï¿½ 2002 by Martin R. Elsner
                & Salim Gasmi
 
         File : capgui.h

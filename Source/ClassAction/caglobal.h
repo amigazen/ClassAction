@@ -4,7 +4,7 @@
 
         Class Action Source
 
-        © 2002 by Martin R. Elsner
+        ï¿½ 2002 by Martin R. Elsner
                 & Salim Gasmi
 
         File : caglobal.h
@@ -73,9 +73,9 @@ struct TMain{
   List                   UserPaths;              // predefined paths containg UserPathNodes
   char                   *PopupKey,*HideKey;     // key definitions for commodities
   List                   History;                // visited directories
-  List                   Paths;                  // Buffered paths and paths tabs
-  List                   Tabs[2];                // dirs for the left and right tabs
-  int                    CurrentList;            // the selected list (0 or 1)
+  List                   Paths;                  // Buffered paths && paths tabs
+  List                   Tabs[2];                // dirs for the left && right tabs
+  int                    CurrentList;            // the selected list (0 || 1)
   int                    HistorySize;            // number of paths in history
   char                   DecrunchFlag;           // =-1 if decrunch succeds
   char                   DevString[100];         // device string
@@ -136,7 +136,13 @@ void FreeAll();
 
 void ListHelp( UBYTE which );
 
-IClass *MakeIconClass();
+#ifdef __cplusplus
+extern "C" {
+#endif
+Class *MakeIconClass(void);
+#ifdef __cplusplus
+}
+#endif
 
 void MC_Copy();
 

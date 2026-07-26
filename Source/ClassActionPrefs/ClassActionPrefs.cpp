@@ -1,3 +1,4 @@
+#include "ca_begin.h"
 #include <clib/alib_protos.h>
 #include <classes/window.h>
 #include <gadgets/chooser.h>
@@ -20,6 +21,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <workbench/icon.h>
+#include <workbench/startup.h>
 
 #define  CATCOMP_NUMBERS
 #define  CATCOMP_STRINGS
@@ -28,6 +30,8 @@
 #include "classactionprefs.h"
 #include "classactionprefs_rev.h"
 
+#include "cadebug.h"
+#include "cautils.h"
 #include "capgui.h"
 #include "caplearn.h"
 #include "capreq.h"
@@ -35,6 +39,7 @@
 #include "capdisk.h"
 #include "caplist.h"
 #include "capbuttclass.h"
+#include "captypes.h"
 
 char Soft[]=VERSTAG;
 
@@ -54,7 +59,7 @@ Library    *AslBase;
 Library    *AmigaguideBase;
 Library    *DataBase;
 Library    *RexxSysBase;
-tPopupMenuBase *PopupMenuBase;
+struct PopupMenuBase *PopupMenuBase;
 
 TMain Main;
 
@@ -118,8 +123,38 @@ void ShowHint( int HintCat,char *Hint ){
 //<
 
 //>"void MenuShowHelp( char *link=LINK main )"
+static char sGuideName[128];
+
+static BOOL CAP_OpenHelp( void )
+{
+  BPTR lock;
+
+  if( Main.GuideHandle ) return TRUE;
+
+  memset( &Main.NewAG, 0, sizeof(Main.NewAG) );
+  strcpy( sGuideName, CA_GUIDEFILE );
+  lock = Lock( sGuideName, ACCESS_READ );
+  if( !lock )
+  {
+    strcpy( sGuideName, "HELP:ClassAction.guide" );
+    lock = Lock( sGuideName, ACCESS_READ );
+  }
+  if( !lock )
+  {
+    CA_D(("CAP_OpenHelp: no guide\n"));
+    return FALSE;
+  }
+  UnLock( lock );
+  Main.NewAG.nag_Name = sGuideName;
+  Main.NewAG.nag_Screen = Main.Scr;
+  Main.GuideHandle = OpenAmigaGuideAsyncA( &Main.NewAG, NULL );
+  CA_D(("CAP_OpenHelp: handle=%ld\n", (long)Main.GuideHandle));
+  return Main.GuideHandle != NULL;
+}
+
 void MenuShowHelp( char *link ){
- if( Main.GuideHandle ) SendAmigaGuideCmd( Main.GuideHandle,link,NULL );
+ if( !CAP_OpenHelp() ) return;
+ SendAmigaGuideCmd( Main.GuideHandle,link,NULL );
 }
 //<
 
@@ -463,46 +498,53 @@ void CreateMenu(){
 
 //>"BOOL OpenLibs()"
 BOOL OpenLibs(){
- if( !(DosBase=OpenLibrary( "dos.library", 39L ))) return(FALSE);
- if( !(IconBase=OpenLibrary( "icon.library", 39L ))) return(FALSE);
- if( !(GadToolsBase=OpenLibrary( "gadtools.library", 39L ))) return(FALSE);
- if( !(ResourceBase=OpenLibrary( "resource.library", 39L ))) return(FALSE);
- if( !(WorkbenchBase=OpenLibrary( "workbench.library", 39L ))) return(FALSE);
- if( !(AslBase=OpenLibrary( "asl.library", 39L ))) return(FALSE);
- if( !(AmigaguideBase=OpenLibrary( "amigaguide.library", 39L ))) return(FALSE);
- if( !(WindowBase = OpenLibrary("window.class", 44))) return(FALSE);
- if( !(LayoutBase = OpenLibrary("gadgets/layout.gadget", 44))) return(FALSE);
- if( !(ListBrowserBase = OpenLibrary("gadgets/listbrowser.gadget", 44))) return(FALSE);
- if( !(ChooserBase = OpenLibrary("gadgets/chooser.gadget", 44))) return(FALSE);
- if( !(ButtonBase = OpenLibrary("gadgets/button.gadget", 44))) return(FALSE);
- if( !(StringBase = OpenLibrary("gadgets/string.gadget", 44))) return(FALSE);
- if( !(SpaceBase = OpenLibrary("gadgets/space.gadget", 44))) return(FALSE);
- if( !(DataBase=OpenLibrary("datatypes.library",0)) ) return(FALSE);
- if( !(RexxSysBase=OpenLibrary("rexxsyslib.library",0)) ) return(FALSE);
- if( !(PopupMenuBase=(tPopupMenuBase*)OpenLibrary("popupmenu.library",0)) ) return(FALSE);
+ CA_D(("OpenLibs: start\n"));
+ if( !(DosBase=OpenLibrary( "dos.library", 39L ))) { CA_D(("OpenLibs: fail dos\n")); return(FALSE); }
+ if( !(IconBase=OpenLibrary( "icon.library", 39L ))) { CA_D(("OpenLibs: fail icon\n")); return(FALSE); }
+ if( !(GadToolsBase=OpenLibrary( "gadtools.library", 39L ))) { CA_D(("OpenLibs: fail gadtools\n")); return(FALSE); }
+ if( !(ResourceBase=OpenLibrary( "resource.library", 39L ))) { CA_D(("OpenLibs: fail resource\n")); return(FALSE); }
+ if( !(WorkbenchBase=OpenLibrary( "workbench.library", 39L ))) { CA_D(("OpenLibs: fail workbench\n")); return(FALSE); }
+ if( !(AslBase=OpenLibrary( "asl.library", 39L ))) { CA_D(("OpenLibs: fail asl\n")); return(FALSE); }
+ if( !(AmigaguideBase=OpenLibrary( "amigaguide.library", 39L ))) { CA_D(("OpenLibs: fail amigaguide\n")); return(FALSE); }
+ if( !(WindowBase = OpenLibrary("window.class", 44))) { CA_D(("OpenLibs: fail window.class\n")); return(FALSE); }
+ if( !(LayoutBase = OpenLibrary("gadgets/layout.gadget", 44))) { CA_D(("OpenLibs: fail layout\n")); return(FALSE); }
+ if( !(ListBrowserBase = OpenLibrary("gadgets/listbrowser.gadget", 44))) { CA_D(("OpenLibs: fail listbrowser\n")); return(FALSE); }
+ if( !(ChooserBase = OpenLibrary("gadgets/chooser.gadget", 44))) { CA_D(("OpenLibs: fail chooser\n")); return(FALSE); }
+ if( !(ButtonBase = OpenLibrary("gadgets/button.gadget", 44))) { CA_D(("OpenLibs: fail button\n")); return(FALSE); }
+ if( !(StringBase = OpenLibrary("gadgets/string.gadget", 44))) { CA_D(("OpenLibs: fail string\n")); return(FALSE); }
+ if( !(SpaceBase = OpenLibrary("gadgets/space.gadget", 44))) { CA_D(("OpenLibs: fail space\n")); return(FALSE); }
+ if( !(DataBase=OpenLibrary("datatypes.library",0)) ) { CA_D(("OpenLibs: fail datatypes\n")); return(FALSE); }
+ if( !(RexxSysBase=OpenLibrary("rexxsyslib.library",0)) ) { CA_D(("OpenLibs: fail rexxsyslib\n")); return(FALSE); }
+ if( !(PopupMenuBase=(struct PopupMenuBase*)OpenLibrary("popupmenu.library",0)) ) { CA_D(("OpenLibs: fail popupmenu\n")); return(FALSE); }
+ CA_D(("OpenLibs: ok\n"));
  return( TRUE );
 }
 //<
 
 //>"void CloseLibs()"
 void CloseLibs(){
- CloseLibrary( (Library*)PopupMenuBase );
- CloseLibrary( RexxSysBase );
- CloseLibrary( DataBase );
- CloseLibrary( SpaceBase );
- CloseLibrary( StringBase );
- CloseLibrary( ButtonBase );
- CloseLibrary( ChooserBase );
- CloseLibrary( ListBrowserBase );
- CloseLibrary( LayoutBase );
- CloseLibrary( WindowBase );
- CloseLibrary( AmigaguideBase );
- CloseLibrary( AslBase );
- CloseLibrary( WorkbenchBase );
- CloseLibrary( ResourceBase );
- CloseLibrary( GadToolsBase );
- CloseLibrary( IconBase );
- CloseLibrary( DosBase );
+ if( PopupMenuBase ) CloseLibrary( (Library*)PopupMenuBase );
+ if( RexxSysBase ) CloseLibrary( RexxSysBase );
+ if( DataBase ) CloseLibrary( DataBase );
+ if( SpaceBase ) CloseLibrary( SpaceBase );
+ if( StringBase ) CloseLibrary( StringBase );
+ if( ButtonBase ) CloseLibrary( ButtonBase );
+ if( ChooserBase ) CloseLibrary( ChooserBase );
+ if( ListBrowserBase ) CloseLibrary( ListBrowserBase );
+ if( LayoutBase ) CloseLibrary( LayoutBase );
+ if( WindowBase ) CloseLibrary( WindowBase );
+ if( AmigaguideBase ) CloseLibrary( AmigaguideBase );
+ if( AslBase ) CloseLibrary( AslBase );
+ if( WorkbenchBase ) CloseLibrary( WorkbenchBase );
+ if( ResourceBase ) CloseLibrary( ResourceBase );
+ if( GadToolsBase ) CloseLibrary( GadToolsBase );
+ if( IconBase ) CloseLibrary( IconBase );
+ if( DosBase ) CloseLibrary( DosBase );
+ PopupMenuBase = NULL;
+ RexxSysBase = DataBase = SpaceBase = StringBase = NULL;
+ ButtonBase = ChooserBase = ListBrowserBase = LayoutBase = NULL;
+ WindowBase = AmigaguideBase = AslBase = WorkbenchBase = NULL;
+ ResourceBase = GadToolsBase = IconBase = DosBase = NULL;
 }
 //<
 
@@ -515,16 +557,27 @@ void CloseLibs(){
 /*                                      */
 /****************************************/
 BOOL InitAll(){
- BPTR lock;
+ BPTR progdir;
  UWORD wpos=WPOS_CENTERSCREEN;
+
+ CA_D(("InitAll: start\n"));
 
  Main.IconClass=NULL;
  Main.Scr=NULL; Main.AppPort=Main.MsgPort=NULL; Main.Resource=NULL;
  Main.Win=Main.LWin=NULL;
  Main.IntuiWin=NULL;
+ Main.Root=Main.Gadgets=Main.LGadgets=NULL;
  Main.Dobj=NULL;
  Main.SelectedClass=NULL;
  Main.SelectedAction=NULL;
+ Main.GuideHandle=NULL;
+ Main.FileReq=NULL;
+ Main.FontReq=NULL;
+ Main.ScrReq=NULL;
+ Main.Menu=NULL;
+ Main.Visualinfo=NULL;
+ Main.Catalog=NULL;
+ Olddir = NULL;
  Main.CommandEnabled=FALSE;
  Main.Ret[0]="[F]";
  Main.Ret[1]="[S]";
@@ -544,15 +597,16 @@ BOOL InitAll(){
  Main.PublicScreen =(char*)malloc( 512 );
  NewList( &Main.Classes );
  Main.ClassCount = 0;
+ memset( &Main.NewAG, 0, sizeof(Main.NewAG) );
 
  if( !OpenLibs() ){
+   CA_D(("InitAll: OpenLibs failed\n"));
    Info( "Not all required libraries have been found." );
    return( FALSE );}
-// if( DosStart ){
-  Olddir = CurrentDir(GetProgramDir());
-// }else{
-//  Olddir = CurrentDir(Oldlock);       // i thought this was right but it seems not to work
-// }
+  progdir = GetProgramDir();
+  CA_D(("InitAll: GetProgramDir=%ld\n", (long)progdir));
+  if( progdir ) Olddir = CurrentDir( progdir );
+  else Olddir = CurrentDir( NULL );
 
  Main.Catalog=OpenCatalog( NULL,"ClassActionPrefs.catalog",OC_BuiltInLanguage,"english",
    OC_Version,CATVERS,TAG_DONE );
@@ -595,6 +649,9 @@ BOOL InitAll(){
 */
  if( !(Main.AppPort=CreateMsgPort()) ) return( FALSE );
  if( !(Main.MsgPort=CreateMsgPort()) ) return( FALSE );
+ CA_D(("InitAll: CA_FixupRCTResource\n"));
+ CA_FixupRCTResource();
+ CA_D(("InitAll: RL_OpenResource\n"));
  if( !(Main.Resource=RL_OpenResource(RCTResource,Main.Scr,Main.Catalog)) ) return( FALSE );
  CreateMenu();
  Main.Visualinfo=GetVisualInfoA( Main.Scr,TAG_DONE );
@@ -631,17 +688,8 @@ BOOL InitAll(){
  LoadCommands( &IniFile );
  ListClasses();
 
+ /* AmigaGuide opened on demand in MenuShowHelp / CAP_OpenHelp. */
  Main.GuideHandle = NULL;
- Main.NewAG.nag_Screen=Main.Scr;
- Main.NewAG.nag_Name="MRE:Doc/ClassAction.guide";
- if( !(lock=Lock(Main.NewAG.nag_Name,ACCESS_READ)) ){
- Main.NewAG.nag_Name="HELP:ClassAction.guide";
-   lock=Lock(Main.NewAG.nag_Name,ACCESS_READ);
- }
- if( lock ){
-  UnLock( lock );
-  Main.GuideHandle = OpenAmigaGuideAsyncA( &Main.NewAG, NULL );
- }
 
  DoMethod( Main.Win, WM_OPEN );
  GetAttr( WINDOW_Window, Main.Win, (ULONG *)&Main.IntuiWin );
@@ -654,6 +702,7 @@ BOOL InitAll(){
  ReqTags[0].ti_Tag  = ASLSM_Screen;
  Main.ScrReq  = (ScreenModeRequester *)AllocAslRequest( ASL_ScreenModeRequest, ReqTags );
 
+ CA_D(("InitAll: ok\n"));
  return( TRUE );
 }
 //<
@@ -667,47 +716,77 @@ BOOL InitAll(){
 /*                                      */
 /****************************************/
 void FreeAll(){
+ CA_D(("FreeAll: start\n"));
  FreeClassList();
- FreeAslRequest( Main.ScrReq );
- FreeAslRequest( Main.FontReq );
- FreeAslRequest( Main.FileReq );
- DoMethod( Main.Win, WM_CLOSE );
- FreeMenus( Main.Menu );
- FreeVisualInfo( Main.Visualinfo );
+ if( Main.ScrReq ) FreeAslRequest( Main.ScrReq );
+ if( Main.FontReq ) FreeAslRequest( Main.FontReq );
+ if( Main.FileReq ) FreeAslRequest( Main.FileReq );
+ Main.ScrReq = NULL;
+ Main.FontReq = NULL;
+ Main.FileReq = NULL;
+ if( Main.Win ) DoMethod( Main.Win, WM_CLOSE );
+ Main.Win = NULL;
+ if( Main.Menu ) FreeMenus( Main.Menu );
+ Main.Menu = NULL;
+ if( Main.Visualinfo ) FreeVisualInfo( Main.Visualinfo );
+ Main.Visualinfo = NULL;
  if( Main.Resource ) RL_CloseResource( Main.Resource );
+ Main.Resource = NULL;
+ Main.LWin = NULL;
  if( Main.MsgPort )  DeleteMsgPort( Main.MsgPort );
  if( Main.AppPort )  DeleteMsgPort( Main.AppPort );
+ Main.MsgPort = NULL;
+ Main.AppPort = NULL;
  if( Main.Scr )      UnlockPubScreen( NULL, Main.Scr );
- CloseCatalog(Main.Catalog);
- if( Main.GuideHandle ) CloseAmigaGuide( Main.GuideHandle );
- if( DosStart ) CurrentDir( Olddir );
- free( Main.PublicScreen );
- free( Main.PrefsFile );
- RemoveIconClass( Main.IconClass );
+ Main.Scr = NULL;
+ if( Main.Catalog ) CloseCatalog(Main.Catalog);
+ Main.Catalog = NULL;
+ if( Main.GuideHandle ){
+   CA_D(("FreeAll: CloseAmigaGuide\n"));
+   CloseAmigaGuide( Main.GuideHandle );
+ }
+ Main.GuideHandle = NULL;
+ memset( &Main.NewAG, 0, sizeof(Main.NewAG) );
+ if( DosStart && Olddir ) CurrentDir( Olddir );
+ if( Main.PublicScreen ) free( Main.PublicScreen );
+ if( Main.PrefsFile ) free( Main.PrefsFile );
+ Main.PublicScreen = Main.PrefsFile = NULL;
+ if( Main.IconClass ) RemoveIconClass( Main.IconClass );
+ Main.IconClass = NULL;
  CloseLibs();
+ CA_D(("FreeAll: done\n"));
 }
 //<
 
 //>"int main()"
-int main(){
+static int CAP_Startup( void ){
+ int Result;
+
  Quot[0]=(char)34; Quot[1]=(char)0;
+ CA_D(("CAP_Startup: begin\n"));
  if( InitAll() ){
   MessageLoop();
   FreeAll();
-  return( 0 );
+  Result = 0;
  }else{
   Info( GetCatalogStr(Main.Catalog,ERR_GENERAL,ERR_GENERAL_STR) );
   FreeAll();
-  return( 20 );
+  Result = 20;
  }
+ CA_D(("CAP_Startup: end %ld\n", (long)Result));
+ return( Result );
+}
+
+int main(){
+ return( CAP_Startup() );
 }
 //<
 
-//>"void wbmain( struct WBStartup *wbmsg )"
+/* SAS/C C++ forbids calling main(); WB startup shares CAP_Startup(). */
 void wbmain( struct WBStartup *wbmsg ){
+ (void)wbmsg;
  DosStart=FALSE;
- Oldlock = wbmsg->sm_ArgList->wa_Lock;
- main();
+ CAP_Startup();
 }
 //<
 

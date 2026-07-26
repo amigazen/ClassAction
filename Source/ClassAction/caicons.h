@@ -4,13 +4,14 @@
 
         Class Action Source
 
-        © 2002 by Martin R. Elsner
+        ï¿½ 2002 by Martin R. Elsner
                 & Salim Gasmi
 
         File : caicons.h
 
 ****************************************/
 
+#include <intuition/classes.h>
 #include "IniFile.h"
 
 class TcaIcons{
@@ -23,8 +24,8 @@ public:
   void LoadCommands( TIniFile *IniFile,Screen *scr,Object *Fuelgauge,Object *UpperLayout,Object *LowerLayout );
   void ShowIconHelp( Window *win,ULONG id );
 private:
-  IClass *IconClass;             // pointer to the icon class
-  List   Icons[3];               // lists for icons and commands. consists of IconNodes
+  Class *IconClass;             // pointer to the icon class
+  List   Icons[3];               // lists for icons && commands. consists of IconNodes
   Object *oFuelgauge,*oUpperLayout,*oLowerLayout;
   void FreeIconList( List *list );
 };

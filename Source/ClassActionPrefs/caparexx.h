@@ -1,9 +1,8 @@
-
 /****************************************
 
         ClassActionPrefs Source
 
-        © 2002 by Martin R. Elsner
+        (c) 2002 by Martin R. Elsner
                & Salim Gasmi
 
         File : caparexx.h
@@ -12,5 +11,10 @@
 
 ****************************************/
 
-void NotifyMaster();
-
+#ifdef __cplusplus
+extern "C" {
+#endif
+void NotifyMaster(void);
+#ifdef __cplusplus
+}
+#endif

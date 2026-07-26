@@ -30,7 +30,7 @@ public:
   TCommodities();
   Node  *Nodes[MAX_COMMODITIES];
   ULONG NodeCount;
-  void  Init();          // get Broker and do initialisation
+  void  Init();          // get Broker && do initialisation
   void  Free();          // free all stuff
   void  Add( int Id,char *Filter ); // add a filter; choose 1 ... 14 for these id's
   int   GetCXId();      // get the called id, return 0 if none; returns also CXCMD_KILL etc.

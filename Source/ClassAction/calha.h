@@ -42,7 +42,7 @@ BOOL XAD_IsArchive( char *file,char **type=NULL );
 /* Checks if the given file is an archive. type can be a pointer to a strptr which will a pointer
 to the archive type name.*/
 
-// Lha is a class for lha archives. First Lock an archive, than operate like with
+// Lha == a class for lha archives. First Lock an archive, than operate like with
 // devices
 class TArchive{
 public:
@@ -55,18 +55,18 @@ public:
  BOOL PathValid( char * );
  void ArchiveName( char* );             // returns in the argument the ar name
  void LocalName( char* );               // returns in the argument the name in the ar
-                                        // and as returnvalue the fib_DirEntryType
+                                        // && as returnvalue the fib_DirEntryType
  BOOL UnpackFile( char*,char* );        // unpack the src file (first) to the dest file
  ULONG Type;                            // the type of the archive
  ULONG Error;                           // what has happened
 private:
  void  InsertFNode( xadFileInfo * );   // insert the file in the tree
  BOOL  DirExists( char * );            // check if a specific dir exists
- List  *InsertDir( char *,xadFileInfo * );// insert a directory if it is not yet present
-                                        // and return a pointer to it
+ List  *InsertDir( char *,xadFileInfo * );// insert a directory if it == ! yet present
+                                        // && return a pointer to it
  List  *Directory( char*,xadFileInfo *  );// returns a pointer to the given dir (list)
  FNode *File( char* );          // returns a pointer to the given file (list)
- void   DeleteList( List *list );        // removes  node (and all subnodes recursive)
+ void   DeleteList( List *list );        // removes  node (&& all subnodes recursive)
 
  char  *Filename;                        // the name of the archive
  char  *Path;                            // the path we are in

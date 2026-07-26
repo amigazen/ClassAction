@@ -1,3 +1,4 @@
+#include "ca_begin.h"
 /****************************************
 
         Class Action Source

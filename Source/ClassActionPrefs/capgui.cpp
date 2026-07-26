@@ -1,8 +1,9 @@
+#include "ca_begin.h"
 /****************************************
 
         Class Action Source
 
-        © 2003 by Martin R. Elsner
+        (c) 2003 by Martin R. Elsner
                & Salim Gasmi
 
         File : capgui.cpp
@@ -12,6 +13,7 @@
 ****************************************/
 
 #include "capgui.h"
+#include "cautils.h"
 
 #include <classes/window.h>
 #include <clib/alib_protos.h>
@@ -64,15 +66,6 @@ TcapGui::TcapGui(){
 
 //>"TcapGui::~TcapGui()"
 TcapGui::~TcapGui(){
-}
-//<
-
-//>"void AdjustPath( char *Path )"
-void AdjustPath( char *Path ){
- if( !Path[0] ) return;
- if( (Path[0]!=0)&&(Path[strlen(Path)-1]!=':')&&(Path[strlen(Path)-1]!='/') ){
-  strcat(Path,"/");
- }
 }
 //<
 
@@ -264,6 +257,7 @@ void LoadAndDeleteTooltypes(){
  }
  BPTR lock=GetProgramDir();
  NameFromLock( lock,dir,256 );
+ if( lock ) UnLock( lock );
  strcpy( tool,dir );
  AddPart( tool,"ClassActionPrefs",400 );
  OptionList.Add( GetCatalogStr(Main.Catalog,TXT_CAPFILE,TXT_CAPFILE_STR),
@@ -1068,9 +1062,9 @@ void AdjustComGadgets(){
                          STRINGA_TextVal,node->help,GA_Disabled,FALSE,TAG_END );
    SetGadgetAttrs( (Gadget*)Main.Gadgets[STRING_CSTACK],Main.IntuiWin,NULL,
      STRINGA_TextVal,node->stack,
-     GA_Disabled,(node->wbrun isnot RUN_CLI) and (node->wbrun isnot RUN_NOCLI),TAG_END );
+     GA_Disabled,(node->wbrun != RUN_CLI) && (node->wbrun != RUN_NOCLI),TAG_END );
    SetGadgetAttrs( (Gadget*)Main.Gadgets[STRING_CDELAY],Main.IntuiWin,NULL,
-     STRINGA_TextVal,node->delay,GA_Disabled,node->wbrun isnot RUN_CLI,TAG_END );
+     STRINGA_TextVal,node->delay,GA_Disabled,node->wbrun != RUN_CLI,TAG_END );
    SetGadgetAttrs( (Gadget*)Main.Gadgets[STRING_COMMAND],Main.IntuiWin,NULL,
                          STRINGA_TextVal,node->exec,GA_Disabled,FALSE,TAG_END );
    SetGadgetAttrs( (Gadget*)Main.Gadgets[GETFILE_ICON],Main.IntuiWin,NULL,
@@ -1263,7 +1257,7 @@ void InsertCom(){
   for( int i=0;i<r;i++ ) chnode=chnode->ln_Succ;
   // and get the text:
   GetChooserNodeAttrs( chnode,CNA_Text,&text,TAG_END );
-  if( text[0] is '.' ) MenuShowHelp( "LINK internalcom" );
+  if( text[0] == '.' ) MenuShowHelp( "LINK internalcom" );
   else{
     strcat( tmp,text );
     strncpy( com->exec,tmp,256 );
@@ -1283,13 +1277,13 @@ void GetIcon(){
  if( !node->icon[0] ){
    SetGadgetAttrs(
      (Gadget*)Main.Gadgets[GETFILE_ICON],Main.IntuiWin,NULL,
-     GETFILE_FullFile,"MRE:Icons/",TAG_END
+     GETFILE_FullFile,"PROGDIR:Images/",TAG_END
    );
  }
  DoMethod( Main.Gadgets[GETFILE_ICON],GFILE_REQUEST,Main.IntuiWin );
  GetAttr( GETFILE_FullFile,Main.Gadgets[GETFILE_ICON],(ULONG*)&str );
  strcpy( purefile,str );
- if( stricmp(purefile,"MRE:Icons/")==0 ) purefile[0]=0;
+ if( stricmp(purefile,"PROGDIR:Images/")==0 ) purefile[0]=0;
  if( strlen(purefile)>5 ){
    str=&purefile[strlen(purefile)-5];
    if( stricmp(str,".info")==0 ) *str=0;
@@ -1386,7 +1380,7 @@ void Preview(){
 
 //>"void OpenIconWindow()"
 void OpenIconWindow(){
-  OpenWorkbenchObject( "MRE:Icons",TAG_END );
+  OpenWorkbenchObject( "PROGDIR:Images",TAG_END );
 }
 //<
 
@@ -1564,7 +1558,7 @@ void LoadClasses( TIniFile *IniFile ){
 
  // Read classes
  IniFile->SeekGroup( "Classes" );
- while( (entryline=IniFile->GetNextGroupEntry()) and entryline[0] ){
+ while( (entryline=IniFile->GetNextGroupEntry()) && entryline[0] ){
   cla = CreateClass( &Main.Classes,entryline );
   if( Main.PrefsVersion>=46 ){
     if( entryline=IniFile->GetNextGroupEntry() ){
@@ -1849,7 +1843,7 @@ void TcapGui::DuplicateClass(){
 //>"void TcapGui::ImportClass()"
 void TcapGui::ImportClass(){
   char File[512];
-  strcpy( File,"MRE:Config/FileTypes/NewClass.txt" );
+  strcpy( File,"PROGDIR:Config/FileTypes/NewClass.txt" );
   if( Freq(File,0,GetCatalogStr(Main.Catalog,MSG_IMPORTCLASS,MSG_IMPORTCLASS_STR)) ){
     TIniFile IniFile;
     if( IniFile.LoadFromFile(File) && (IniFile.ItemCount()>9) ){
@@ -1882,7 +1876,7 @@ void TcapGui::ImportClass(){
 void TcapGui::ExportClass(){
   if( Main.SelectedClass==NULL ) return;
   char File[512];
-  strcpy( File,"MRE:Config/FileTypes/" );
+  strcpy( File,"PROGDIR:Config/FileTypes/" );
   strcat( File,Main.SelectedClass->Name );
   strcat( File,".txt" );
   if( Freq(File,0,GetCatalogStr(Main.Catalog,MSG_EXPORTCLASS,MSG_EXPORTCLASS_STR)) ){
@@ -2084,7 +2078,7 @@ ULONG DeleteAction(){
 
   GetAttr( LISTBROWSER_Selected,Main.Gadgets[LIST_ACTIONS], &sel );
 
-  if( not next->ln_Succ ){
+  if( ! next->ln_Succ ){
     if( Main.SelectedClass->ActionCount>0 ){
       next = (Action*)Main.SelectedClass->Actions.lh_Tail->ln_Pred;
       sel = sel-1;
@@ -2175,7 +2169,7 @@ ULONG Lwa(){
   ULONG i;
 
   GetAttr( LISTBROWSER_Selected,Main.Gadgets[LIST_ACTIONS], (ULONG*)&a );
-  if( a is -1 ){
+  if( a == -1 ){
    SetGadgetAttrs( (Gadget *)Main.Gadgets[CHOOSER_MODE],Main.IntuiWin, NULL,
                    GA_Disabled,TRUE, TAG_DONE );
    SetGadgetAttrs( (Gadget *)Main.Gadgets[CHOOSER_DIR],Main.IntuiWin, NULL,
@@ -2260,11 +2254,11 @@ ULONG Lwa(){
                    GA_Disabled,FALSE,TAG_DONE );
   }
   SetGadgetAttrs( (Gadget*)Main.Gadgets[CHOOSER_AINT],Main.IntuiWin,NULL,
-    GA_Disabled,act->Type isnot RUN_INTERNAL,TAG_END );
+    GA_Disabled,act->Type != RUN_INTERNAL,TAG_END );
   SetGadgetAttrs( (Gadget *)Main.Gadgets[STRING_DELAY],Main.IntuiWin, NULL,
-    GA_Disabled,act->Type isnot RUN_CLI,STRINGA_TextVal,act->Delay, TAG_DONE );
+    GA_Disabled,act->Type != RUN_CLI,STRINGA_TextVal,act->Delay, TAG_DONE );
   SetGadgetAttrs( (Gadget *)Main.Gadgets[STRING_STACK],Main.IntuiWin, NULL,
-    GA_Disabled,(act->Type isnot RUN_CLI) and (act->Type isnot RUN_NOCLI),
+    GA_Disabled,(act->Type != RUN_CLI) && (act->Type != RUN_NOCLI),
     STRINGA_TextVal,act->Stack, TAG_DONE );
   Main.ActionEnabled = TRUE;
   Main.ActionsActive = TRUE;
@@ -2328,7 +2322,7 @@ void ImageFileOnChange(){
 void ImageFileRequest(){
   if( Main.SelectedClass==NULL ) return;
   char sTemp[512];
-  strcpy( sTemp,"MRE:Images/FileTypes/Size16/ext/" );
+  strcpy( sTemp,"PROGDIR:Images/FileTypes/" );
   strcat( sTemp,Main.SelectedClass->ImageFile );
   if( !Freq(sTemp,0,GetCatalogStr(Main.Catalog,TXT_CHOOSEFILE,TXT_CHOOSEFILE_STR)) ) return;
   strncpy( Main.SelectedClass->ImageFile,FilePart(sTemp),108 );
@@ -2567,7 +2561,7 @@ void InsertComA(){
  }
  // and get the text:
  GetChooserNodeAttrs( chnode,CNA_Text,&text,TAG_END );
- if( text[0] is '.' ) MenuShowHelp( "LINK internalcom" );
+ if( text[0] == '.' ) MenuShowHelp( "LINK internalcom" );
  else{
    strcat( tmp,text );
    strncpy( Main.SelectedAction->Exec,tmp,256 );
@@ -2674,7 +2668,7 @@ void LoadPaths( TIniFile *IniFile ){
        strcpy( Buffer,entryline );
        ptr  = strchr( Buffer,'=' );
        ptr2 = strchr( Buffer,',' );
-       if( ptr and ptr2 ){
+       if( ptr && ptr2 ){
          newnode = (TPathNode*)AllocListBrowserNode(2,LBNA_NodeSize,sizeof(TPathNode),TAG_END);
          *ptr2 = 0;
          ptr++; ptr2++;
@@ -2728,7 +2722,7 @@ void AdjustPathGadgets(){
   BOOL sel;
 
   GetAttr( LISTBROWSER_SelectedNode,Main.Gadgets[LIST_PATHS],&node );
-  sel = (node is NULL);
+  sel = (node == NULL);
   SetGadgetAttrs( (Gadget*)Main.Gadgets[BUTTON_PUP],Main.IntuiWin,NULL,
     GA_Disabled,sel,TAG_END );
   SetGadgetAttrs( (Gadget*)Main.Gadgets[BUTTON_PDOWN],Main.IntuiWin,NULL,
@@ -2748,10 +2742,10 @@ void AddPath( char *Path ){
   if( Path ) strcpy( RealPath,Path );
   else strcpy(RealPath,"SYS:");
 
-  if( Path or (Freq(RealPath,1,GetCatalogStr(Main.Catalog,MSG_ENTERPATH,MSG_ENTERPATH_STR))) ){
-    if( RealPath[strlen(RealPath)-1] isnot ':' ) strcpy( Name,FilePart(RealPath) );
+  if( Path || (Freq(RealPath,1,GetCatalogStr(Main.Catalog,MSG_ENTERPATH,MSG_ENTERPATH_STR))) ){
+    if( RealPath[strlen(RealPath)-1] != ':' ) strcpy( Name,FilePart(RealPath) );
     else strcpy( Name,RealPath );
-    if( Path or GetText(Name,255,GetCatalogStr(Main.Catalog,MSG_ENTERPATHTITLE,MSG_ENTERPATHTITLE_STR)) ){
+    if( Path || GetText(Name,255,GetCatalogStr(Main.Catalog,MSG_ENTERPATHTITLE,MSG_ENTERPATHTITLE_STR)) ){
       GetAttr( LISTBROWSER_Selected,Main.Gadgets[LIST_PATHS],&newsel );
       GetAttr( LISTBROWSER_SelectedNode,Main.Gadgets[LIST_PATHS],(ULONG*)&selnode );
       GetAttr( LISTBROWSER_Labels,Main.Gadgets[LIST_PATHS],(ULONG*)&LBL );
@@ -2807,10 +2801,10 @@ void PathListDblClick(){
 
   GetAttr( LISTBROWSER_RelColumn,Main.Gadgets[LIST_PATHS],&col );
   GetAttr( LISTBROWSER_SelectedNode,Main.Gadgets[LIST_PATHS],(ULONG*)&nd );
-  if( nd is NULL ) return;
+  if( nd == NULL ) return;
   GetAttr( LISTBROWSER_Labels,Main.Gadgets[LIST_PATHS],(ULONG*)&LBL );
 
-  if( col is 0 ){
+  if( col == 0 ){
     strcpy( Name,nd->Name );
     if( GetText(Name,255,GetCatalogStr(Main.Catalog,MSG_ENTERPATHTITLE,MSG_ENTERPATHTITLE_STR)) ){
       SetGadgetAttrs( (Gadget*)Main.Gadgets[LIST_PATHS],Main.IntuiWin,NULL,
@@ -2849,7 +2843,7 @@ void MovePathUp(){
   GetAttr( LISTBROWSER_Labels,Main.Gadgets[LIST_PATHS],(ULONG*)&LBL );
   GetAttr( LISTBROWSER_SelectedNode,Main.Gadgets[LIST_PATHS],(ULONG*)&com );
   GetAttr( LISTBROWSER_Selected,Main.Gadgets[LIST_PATHS],(ULONG*)&sel );
-  if( com is NULL ) return;        // no node selected!
+  if( com == NULL ) return;        // no node selected!
 
   pre=com->ln_Pred->ln_Pred;
   if( pre==NULL ) return;       // we are on the top!
@@ -2932,7 +2926,7 @@ void SavePaths( TIniFile *IniFile ){
 /****************************************/
 void Save(){
   SetAttrs( Main.Win,WA_BusyPointer,TRUE,TAG_END );
-  if( capGui.SavePrefs( TPREFSFILE ) and capGui.SavePrefs( PREFSFILE ) ){
+  if( capGui.SavePrefs( TPREFSFILE ) && capGui.SavePrefs( PREFSFILE ) ){
     Main.Leave=TRUE;
     SetAttrs( Main.Win,WA_BusyPointer,FALSE,TAG_END );
     NotifyMaster();

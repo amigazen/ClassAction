@@ -1,3 +1,5 @@
+#include "ca_begin.h"
+#include "stormcompat.h"
 
 #include <intuition/intuition.h>
 #include <intuition/classusr.h>
@@ -15,7 +17,6 @@
 #include <clib/utility_protos.h>
 #include <clib/dos_protos.h>
 
-#define REG(reg,arg)    register __##reg arg
 #define G(x)            ((struct Gadget *)x)
 
 #ifndef GA_BackFill
@@ -39,6 +40,7 @@ struct InstanceData {
   struct Hook             *backfill;
   Object                  *parent;
 };
+typedef struct InstanceData InstanceData;
 
 /****************************************************************************/
 
@@ -249,7 +251,7 @@ ULONG butclass_DOMAIN( Class *cl, Object *o, struct gpDomain *gpd ){
 
 /****************************************************************************/
 
-ULONG butclass_DISPATCH( REG( a0, Class *cl ), REG( a2, Object *o ), REG( a1, Msg msg ) ){
+ULONG __asm butclass_DISPATCH( register __a0 Class *cl , register __a2 Object *o , register __a1 Msg msg ){
   ULONG ret = 0L;
 
   switch( msg->MethodID ){
@@ -279,8 +281,8 @@ ULONG butclass_DISPATCH( REG( a0, Class *cl ), REG( a2, Object *o ), REG( a1, Ms
 
 /****************************************************************************/
 
-IClass *MakeIconClass(){
-  IClass   *cl;
+Class *MakeIconClass(){
+  Class   *cl;
 
   if( cl = MakeClass( NULL, "gadgetclass", NULL, sizeof( struct InstanceData ), 0L ) )
     cl->cl_Dispatcher.h_Entry = (HOOKFUNC) butclass_DISPATCH;
@@ -289,7 +291,7 @@ IClass *MakeIconClass(){
 
 /****************************************************************************/
 
-BOOL RemoveIconClass( IClass *cl ){
+BOOL RemoveIconClass( Class *cl ){
   if( cl ) return FreeClass(cl);
   else return FALSE;
 }

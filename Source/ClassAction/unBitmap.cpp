@@ -1,3 +1,4 @@
+#include "ca_begin.h"
 #include "unBitmap.h"
 
 #include <clib/intuition_protos.h>

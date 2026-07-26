@@ -2,7 +2,7 @@
 
         ClassActionPrefs Source
 
-        © 2002 by Martin R. Elsner
+        (c) 2002 by Martin R. Elsner
                & Salim Gasmi
 
         File : capbuttclass.h
@@ -11,6 +11,11 @@
 
 ****************************************/
 
-IClass *MakeIconClass();
-BOOL   RemoveIconClass( IClass *cl );
-
+#ifdef __cplusplus
+extern "C" {
+#endif
+Class *MakeIconClass(void);
+BOOL   RemoveIconClass( Class *cl );
+#ifdef __cplusplus
+}
+#endif

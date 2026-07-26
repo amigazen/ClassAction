@@ -163,7 +163,7 @@ TXT_LNOTHING (357//)
 Nothing found.
 ;
 TXT_COPYRIGHT (360//)
-   %s\n\n© 2002 by Martin R. Elsner & Salim Gasmi\n\nYou can contact me at :\n\nMartin R. Elsner\nMuesener Strasse 46\n57223 Kreuztal\nGermany\n\nEmail: email@martin-elsner.de\nWeb: http://www.martin-elsner.de
+   %s\n\nï¿½ 2002 by Martin R. Elsner & Salim Gasmi\n\nYou can contact me at :\n\nMartin R. Elsner\nMuesener Strasse 46\n57223 Kreuztal\nGermany\n\nEmail: email@martin-elsner.de\nWeb: http://www.martin-elsner.de
 ;
 TXT_OPTIONS (362//)
 Options
@@ -550,7 +550,7 @@ MSG_SUPPORTEDARCHIVES (594//)
 Supported archives
 ;
 MSG_BUTTOPENICONS (595//)
-Open MRE:Icons
+Open Images
 ;
 MSG_ASYNC (599//)
 Async

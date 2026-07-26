@@ -1,10 +1,31 @@
+#include "ca_begin.h"
 #include <string.h>
 #include <ctype.h>
 #include <exec/types.h>
 #include <clib/dos_protos.h>
 #include <clib/exec_protos.h>
 #include <dos/dos.h>
+#include <dos/dosextens.h>
 #include "cautils.h"
+
+/* StormC runtime provided this; SAS/C does not. */
+BPTR GetProgramDir( void )
+{
+  struct Process *pr;
+  BPTR lock;
+
+  pr = (struct Process *)FindTask( NULL );
+  if( pr->pr_HomeDir )
+  {
+    lock = DupLock( pr->pr_HomeDir );
+    if( lock ) return lock;
+  }
+  lock = Lock( "PROGDIR:", ACCESS_READ );
+  if( lock ) return lock;
+  if( pr->pr_CurrentDir )
+    return DupLock( pr->pr_CurrentDir );
+  return NULL;
+}
 
 //>"void AdjustPath( char *Path )"
 void AdjustPath( char *Path ){
@@ -16,7 +37,7 @@ void AdjustPath( char *Path ){
 //<
 
 //>"int CheckPath( char *path,char *existing )"
-/* function to check if path exisits or if it contains an existing file */
+/* function to check if path exisits || if it contains an existing file */
 int CheckPath( char *path,char *existing ){
   int Result=-1;
   EnableRequesters( FALSE );
@@ -76,7 +97,8 @@ void EnableRequesters( BOOL Allow ){
 #include <utility/hooks.h>
 void InitHook( Hook *h,ULONG (*func)(), void *data ){
  if(h){
-  h->h_Entry=func;
+  /* Avoid SAS/C C++ __stdargs mismatch on Hook.h_Entry vs plain C function ptr. */
+  *(void **)&h->h_Entry = (void *)func;
   h->h_SubEntry=NULL;
   h->h_Data=data;
  }

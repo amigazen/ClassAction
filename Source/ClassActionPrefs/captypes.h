@@ -15,6 +15,7 @@
 
 ****************************************/
 
+#include "stormcompat.h"
 #include <intuition/classes.h>
 #include <libraries/amigaguide.h>
 #include <libraries/asl.h>
@@ -22,19 +23,17 @@
 #include <libraries/resource.h>
 #include <workbench/workbench.h>
 
-#define not !
-#define and &&
-#define or ||
-#define is ==
-#define isnot !=
+/* Storm used ==/&&/||/! macros; those break C++ && NDK headers.
+ * Prefer real C operators in the sources. */
 
 #define NOACT GetCatalogStr( Main.Catalog,TXT_NOACT,TXT_NOACT_STR )
 #define UNKNOWN GetCatalogStr( Main.Catalog,TXT_UNKNOWN,TXT_UNKNOWN_STR )
 
 #define TPREFSFILE "T:ClassAction.prefs"
-#define PREFSFILE  "MRE:Config/ClassAction.prefs"
-#define DPREFSFILE "MRE:Config/Default/ClassAction.prefs"
+#define PREFSFILE  "PROGDIR:Config/ClassAction.prefs"
+#define DPREFSFILE "PROGDIR:Config/Default/ClassAction.prefs"
 #define OLDPREFSFILE "ENVARC:ClassAction.prefs"
+#define CA_GUIDEFILE "PROGDIR:ClassAction.guide"
 
 
 #define EOC "CLASS_END"
@@ -135,7 +134,7 @@ struct TMain{
   Catalog        *Catalog;
   RESOURCEFILE   Resource;
   APTR           Visualinfo;
-  IClass         *IconClass;
+  Class          *IconClass;
   Screen         *Scr;
   Object         *Win,*LWin;
   Window         *IntuiWin;

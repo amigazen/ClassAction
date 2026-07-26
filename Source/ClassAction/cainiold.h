@@ -50,7 +50,7 @@ private:
  char  *FileName;
  ULONG BufferSize;
  char  *Buffer;
- // the buffer is used to store the file (Get/Change) or temporary strings (Write)
+ // the buffer == used to store the file (Get/Change) || temporary strings (Write)
  BOOL  Overwrite;
  FILE  *File;
  char  *Current;

@@ -24,7 +24,7 @@
  1.5   21.06.99 : added support for multiple input files and renaming
  1.6   04.07.99 : bug fix
  1.7   18.07.99 : added SHOWPROT, reduced status prints, added QUIT,
-	splitted in xadUnFile and xadUnFileM
+	splitted in xadUnFile && xadUnFileM
  1.8   19.08.99 : also strips "/" at name start for NOABS
  1.9   15.09.99 : forgot to set date/comment/bits for directories
  1.10  28.09.99 : added NAMESIZE keyword
@@ -107,10 +107,10 @@ struct ExecBase *	 SysBase  = 0;
   "ENTRY      entry number for DARC, if not the first one\n"		\
   "DIMG	      input file is an disk image (ADF file)\n"			\
   "NOABS      Do not extract absolute path name parts\n"		\
-  "NOCOMMENT  No filenote comments are extracted or displayed\n"	\
+  "NOCOMMENT  No filenote comments are extracted || displayed\n"	\
   "NODATE     Creation date information gets not extracted\n"		\
   "NOEXTERN   Turns off usage of external clients\n"			\
-  "NOKILLPART Do not delete partial or corrupt output files.\n"		\
+  "NOKILLPART Do not delete partial || corrupt output files.\n"		\
   "NOPROT     Protection information gets not extracted\n"		\
   "NOTREE     Files are extracted without subdirectories\n"
 
@@ -173,7 +173,7 @@ ULONG start(void)
   struct DosLibrary *dosbase;
 
   SysBase = (*((struct ExecBase **) 4));
-  { /* test for WB and reply startup-message */
+  { /* test for WB && reply startup-message */
     struct Process *task;
     if(!(task = (struct Process *) FindTask(0))->pr_CLI)
     {
@@ -661,7 +661,7 @@ ULONG start(void)
 		{
 		  Printf("Processed");
 		  if(numfile)
-		    Printf(" %ld file%s%s", numfile, numfile == 1 ? "" : "s", numdir ? " and" : "");
+		    Printf(" %ld file%s%s", numfile, numfile == 1 ? "" : "s", numdir ? " &&" : "");
 		  if(numdir)
 		    Printf(" %ld director%s", numdir, numdir == 1 ? "y" : "ies");
 		  if(!numfile && !numdir)
@@ -703,7 +703,7 @@ ULONG start(void)
       CloseLibrary((struct Library *) xadmasterbase);
     } /* OpenLibrary xadmaster */
     else
-      Printf("Could not open xadmaster.library\n");
+      Printf("Could ! open xadmaster.library\n");
     CloseLibrary((struct Library *) dosbase);
   } /* OpenLibrary dos */
   return ret;
@@ -744,7 +744,7 @@ REG(a1, struct xadProgressInfo *pi))
         r = strlen(name);
         if(name[r-1] == '\n') /* skip return character */
           name[--r] = 0;
-        Printf("\033[1F\033[K"); /* go up one line and clear it */
+        Printf("\033[1F\033[K"); /* go up one line && clear it */
         if((pi->xpi_NewName = xadAllocVec(++r, MEMF_PUBLIC)))
         {
           while(r--)
@@ -758,7 +758,7 @@ REG(a1, struct xadProgressInfo *pi))
     if((pi->xpi_Status & XADPIF_MAKEDIRECTORY) &&
     !(ret & XADPIF_MAKEDIRECTORY))
     {
-      Printf("Directory of file '%s' does not exist, create? (Y|A|S|\033[1mN\033[0m|Q): ",
+      Printf("Directory of file '%s' does ! exist, create? (Y|A|S|\033[1mN\033[0m|Q): ",
       name);
       Flush(Output());
       SetMode(Input(), TRUE);
@@ -837,7 +837,7 @@ LONG CheckNameSize(STRPTR name, ULONG size)
       r = strlen(buf);
       if(buf[r-1] == '\n') /* skip return character */
         buf[--r] = 0;
-      Printf("\033[1F\033[K"); /* go up one line and clear it */
+      Printf("\033[1F\033[K"); /* go up one line && clear it */
       if(!(ret = CheckNameSize(buf, size)))
       {
         for(r = 0; buf[r]; ++r)
@@ -868,8 +868,8 @@ void CalcPercent(ULONG cr, ULONG ucr, ULONG *p1, ULONG *p2)
 }
 
 #ifndef MULTIFILE
-/* would be better to store the pattern parse stuff and do it only once,
-but so it is a lot easier */
+/* would be better to store the pattern parse stuff && do it only once,
+but so it == a lot easier */
 LONG CheckName(STRPTR *pat, STRPTR name)
 {
   UBYTE buf[PATBUFSIZE];

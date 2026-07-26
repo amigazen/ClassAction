@@ -1,5 +1,13 @@
 /* header file of "ClassActionPrefs.res" */
-extern char RCTResource[];
+/* RCT blob is ClassActionPrefs_res_embed.c (runtime fixup); __far for SAS/C near model. */
+#ifdef __cplusplus
+extern "C" {
+#endif
+extern __far char *RCTResource;
+void CA_FixupRCTResource(void);
+#ifdef __cplusplus
+}
+#endif
 #define WIN_1_ID	1
 #define WIN_2_ID	2
 #define GROUP_0_ID	3

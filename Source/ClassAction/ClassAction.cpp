@@ -1,5 +1,6 @@
+#include "ca_begin.h"
 #include <classes/window.h>
-#include <clib/alib_protos.h>
+#include <proto/alib.h>
 #include <exec/libraries.h>
 #include <gadgets/fuelgauge.h>
 #include <gadgets/layout.h>
@@ -21,6 +22,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <workbench/icon.h>
+#include <workbench/startup.h>
 
 #include "caglobal.h"
 #include "calha.h"
@@ -33,6 +35,7 @@
 #include "cautils.h"
 #include "careq.h"
 #include "cadisk.h"
+#include "cadebug.h"
 #include "newmouse.h"
 #define CATCOMP_NUMBERS
 #define CATCOMP_STRINGS
@@ -62,7 +65,7 @@ Library    *RexxSysBase;
 Library    *KeymapBase;
 Library    *CxBase;
 #include <libraries/pm.h>
-tPopupMenuBase *PopupMenuBase;
+struct PopupMenuBase *PopupMenuBase;
 
 TMain *Main;
 char Soft[]=VERSTAG;
@@ -88,13 +91,49 @@ TagItem ReqTags[]={
  {ASLFR_RejectIcons, TRUE },
 };
 
-#ifndef NDEBUG
-ofstream DebOut;
-#endif
-
 //>"void ShowHelp( char *link=LINK main )"
+/* Open AmigaGuide lazily. NewAmigaGuide must be fully zeroed (nag_Client
+ * MUST be NULL); opening Async at InitAll with a garbage struct crashes the
+ * amigaguide.library process and then CloseAmigaGuide hangs on exit. */
+static char sGuideName[128];
+
+static BOOL CA_OpenHelp( void )
+{
+  BPTR lock;
+
+  if( Main->HelpOpen && Main->GuideHandle ) return TRUE;
+
+  memset( &Main->NewAG, 0, sizeof(Main->NewAG) );
+
+  strcpy( sGuideName, CA_GUIDEFILE );
+  lock = Lock( sGuideName, ACCESS_READ );
+  if( !lock )
+  {
+    strcpy( sGuideName, "HELP:ClassAction.guide" );
+    lock = Lock( sGuideName, ACCESS_READ );
+  }
+  if( !lock )
+  {
+    CA_D(("CA_OpenHelp: no guide file\n"));
+    Main->HelpOpen = FALSE;
+    Main->GuideHandle = NULL;
+    return FALSE;
+  }
+  UnLock( lock );
+
+  Main->NewAG.nag_Name = sGuideName;
+  Main->NewAG.nag_Screen = Main->Scr;
+
+  CA_D(("CA_OpenHelp: OpenAmigaGuideAsyncA '%s'\n", sGuideName));
+  Main->GuideHandle = OpenAmigaGuideAsyncA( &Main->NewAG, NULL );
+  Main->HelpOpen = (Main->GuideHandle != NULL);
+  CA_D(("CA_OpenHelp: handle=%ld\n", (long)Main->GuideHandle));
+  return Main->HelpOpen;
+}
+
 void ShowHelp( char *link="LINK main" ){
- if( Main->HelpOpen ) SendAmigaGuideCmd( Main->GuideHandle,link,NULL );
+ if( !CA_OpenHelp() ) return;
+ SendAmigaGuideCmd( Main->GuideHandle, link, NULL );
 }
 //<
 
@@ -153,7 +192,7 @@ void ListHelp( UBYTE which ){
  Object *list=GetListBrowser(which);
  GetAttr( LISTBROWSER_TotalNodes,list,&files );
  GetAttr( LISTBROWSER_NumSelected,list,&selfiles );
- if( which is Main->CurrentList )
+ if( which == Main->CurrentList )
   strcpy( help,GetCatalogStr(Main->Catalog,TXT_BUTTDIR,TXT_BUTTDIR_STR) );
  else strcpy( help,GetCatalogStr(Main->Catalog,TXT_BUTTDIR2,TXT_BUTTDIR2_STR) );
  strcat( help,": " );
@@ -170,9 +209,9 @@ void ListHelp( UBYTE which ){
 }
 //<
 
-//>"ULONG __saveds IDCMPHandler( Hook *h, void *o, void *msg )"
-ULONG __saveds IDCMPHandler( register __a0 Hook *h,
-                             register __a2 void *o,
+/* Hook entry: raw __asm/__saveds/register — ca_begin empties NDK macros. */
+ULONG __asm __saveds IDCMPHandler( register __a0 Hook *h ,
+                             register __a2 void *o ,
                              register __a1 void *msg ){
  memcpy( &((TIDCMPEvent*)h->h_Data)->Msg, msg,sizeof(IntuiMessage) );
  return(1);
@@ -227,7 +266,7 @@ void HandleRawKey( IntuiMessage *msg ){
   Shift = ( msg->Qualifier & (IEQUALIFIER_LSHIFT + IEQUALIFIER_RSHIFT) );
   Alt   = ( msg->Qualifier & (IEQUALIFIER_LALT + IEQUALIFIER_RALT) );
   Ctrl  = ( msg->Qualifier & IEQUALIFIER_CONTROL );
-  Alone = not (Shift or Alt or Ctrl);
+  Alone = ! (Shift || Alt || Ctrl);
   switch( p ){
    case 64: if( Alone ) ActivatePathGadget( Main->CurrentList ); break;      // SPACE
    case 66: if( Alone ) ActivateBrowser( 1-Main->CurrentList ); break;       // TAB
@@ -266,7 +305,7 @@ void HandleRawKey( IntuiMessage *msg ){
 //<
 
 //>"void Drag{int X, int Y )"
-/* Puts X and Y in global variables and set Pressed, or set Unpressed */
+/* Puts X && Y in global variables and set Pressed, || set Unpressed */
 void Drag( int X, int Y ){
   DragDrop.SLeft = X;
   DragDrop.STop  = Y;
@@ -334,7 +373,7 @@ cout << "Entering message loop" << endl;
         case CXCMD_KILL:        Main->Leave=TRUE; break;
         case CXCMD_SHOW:
         case CXCMD_APPEAR:{
-          if( not Main->IntuiWin ) UnIconifyWindow();
+          if( ! Main->IntuiWin ) UnIconifyWindow();
           else{
             WindowToFront(  Main->IntuiWin );
             ActivateWindow( Main->IntuiWin );
@@ -368,9 +407,9 @@ cout << "Entering message loop" << endl;
          case STR_PATH_L:         PathHelp(0);   break;
          case STR_PATH_R:         PathHelp(1);   break;
          case BUTTON_ABORT:       SetHString(TXT_BUTTABORT,TXT_BUTTABORT_STR);    break;
-         case BUTTON_ACTIVE_L:    if( Main->CurrentList is 0 ) SetHString(TXT_BUTTDEACTIVATE,TXT_BUTTDEACTIVATE_STR);
+         case BUTTON_ACTIVE_L:    if( Main->CurrentList == 0 ) SetHString(TXT_BUTTDEACTIVATE,TXT_BUTTDEACTIVATE_STR);
                                   else SetHString(TXT_BUTTACTIVATE,TXT_BUTTACTIVATE_STR); break;
-         case BUTTON_ACTIVE_R:    if( Main->CurrentList is 1 ) SetHString(TXT_BUTTDEACTIVATE,TXT_BUTTDEACTIVATE_STR);
+         case BUTTON_ACTIVE_R:    if( Main->CurrentList == 1 ) SetHString(TXT_BUTTDEACTIVATE,TXT_BUTTDEACTIVATE_STR);
                                   else SetHString(TXT_BUTTACTIVATE,TXT_BUTTACTIVATE_STR); break;
          case BUTTON_REFRESH_L:
          case BUTTON_REFRESH_R:   SetHString(TXT_BUTTREFRESH,TXT_BUTTREFRESH_STR); break;
@@ -449,18 +488,18 @@ cout << "Entering message loop" << endl;
     case IDCMP_DISKINSERTED:
     case IDCMP_DISKREMOVED:{
 #ifdef BOBERG_TEST
- DebOut << "diskremove erkannt" << endl;
+ CA_D(("diskremove erkannt\n"));
 #endif
       if( Main->PathNotify ) HandleDiskNotify( Main->IDCMPEvent.Msg.Class );
       break;
     }
     case IDCMP_MOUSEBUTTONS:{
-     if( Main->IDCMPEvent.Msg.Code is SELECTDOWN ){
+     if( Main->IDCMPEvent.Msg.Code == SELECTDOWN ){
        if( CoordsInGadget( Main->IDCMPEvent.Msg.MouseX,Main->IDCMPEvent.Msg.MouseY,
                           (Gadget*)Main->Gadgets[FUELGAUGE] ) ){
          RearrangeBrowserSize();
        }else Drag( Main->IDCMPEvent.Msg.MouseX,Main->IDCMPEvent.Msg.MouseY );
-     }else if( Main->IDCMPEvent.Msg.Code is MENUDOWN ){
+     }else if( Main->IDCMPEvent.Msg.Code == MENUDOWN ){
       if( CoordsInGadget( Main->IDCMPEvent.Msg.MouseX,Main->IDCMPEvent.Msg.MouseY,
                           (Gadget*)GetListBrowser(0) ) ){
        ActivateBrowser(0);PopupOnCurrentFiles();
@@ -502,29 +541,31 @@ cout << "Entering message loop" << endl;
 
 //>"BOOL OpenLibs()"
 BOOL OpenLibs(){
- if( !(DosBase=OpenLibrary( "dos.library", 39L ))) return(FALSE);
- if( !(DiskfontBase=OpenLibrary( "diskfont.library", 39L ))) return(FALSE);
- if( !(IFFParseBase=OpenLibrary( "iffparse.library", 39L ))) return(FALSE);
- if( !(IconBase=OpenLibrary( "icon.library", 39L ))) return(FALSE);
- if( !(GadToolsBase=OpenLibrary( "gadtools.library", 39L ))) return(FALSE);
- if( !(ResourceBase=OpenLibrary( "resource.library", 39L ))) return(FALSE);
- if( !(WorkbenchBase=OpenLibrary( "workbench.library", 39L ))) return(FALSE);
- if( !(AslBase=OpenLibrary( "asl.library", 39L ))) return(FALSE);
- if( !(AmigaguideBase=OpenLibrary( "amigaguide.library", 39L ))) return(FALSE);
- if( !(LayoutBase = OpenLibrary("gadgets/layout.gadget", 44))) return(FALSE);
- if( !(ListBrowserBase = OpenLibrary("gadgets/listbrowser.gadget", 44))) return(FALSE);
- if( !(WindowBase = OpenLibrary("window.class", 44))) return(FALSE);
- if( !(ButtonBase = OpenLibrary("gadgets/button.gadget", 44))) return(FALSE);
- if( !(SpaceBase = OpenLibrary("gadgets/space.gadget", 44))) return(FALSE);
- if( !(StringBase = OpenLibrary("gadgets/string.gadget", 44))) return(FALSE);
- if( !(LabelBase = OpenLibrary("images/label.image", 44))) return(FALSE);
- if( !(BitMapBase = OpenLibrary("images/bitmap.image", 44))) return(FALSE);
- if( !(CheckBoxBase = OpenLibrary("gadgets/checkbox.gadget", 44))) return(FALSE);
- if( !(DataBase=OpenLibrary("datatypes.library",0)) ) return(FALSE);
- if( !(RexxSysBase=OpenLibrary("rexxsyslib.library",0)) ) return(FALSE);
- if( !(KeymapBase=OpenLibrary("keymap.library",0)) ) return(FALSE);
- if( !(CxBase=OpenLibrary("commodities.library",0)) ) return(FALSE);
- if( !(PopupMenuBase=(tPopupMenuBase*)OpenLibrary(POPUPMENU_NAME,0)) ) return(FALSE);
+ CA_D(("OpenLibs: start\n"));
+ if( !(DosBase=OpenLibrary( "dos.library", 39L ))) { CA_D(("OpenLibs: fail dos.library\n")); return(FALSE); }
+ if( !(DiskfontBase=OpenLibrary( "diskfont.library", 39L ))) { CA_D(("OpenLibs: fail diskfont.library\n")); return(FALSE); }
+ if( !(IFFParseBase=OpenLibrary( "iffparse.library", 39L ))) { CA_D(("OpenLibs: fail iffparse.library\n")); return(FALSE); }
+ if( !(IconBase=OpenLibrary( "icon.library", 39L ))) { CA_D(("OpenLibs: fail icon.library\n")); return(FALSE); }
+ if( !(GadToolsBase=OpenLibrary( "gadtools.library", 39L ))) { CA_D(("OpenLibs: fail gadtools.library\n")); return(FALSE); }
+ if( !(ResourceBase=OpenLibrary( "resource.library", 39L ))) { CA_D(("OpenLibs: fail resource.library\n")); return(FALSE); }
+ if( !(WorkbenchBase=OpenLibrary( "workbench.library", 39L ))) { CA_D(("OpenLibs: fail workbench.library\n")); return(FALSE); }
+ if( !(AslBase=OpenLibrary( "asl.library", 39L ))) { CA_D(("OpenLibs: fail asl.library\n")); return(FALSE); }
+ if( !(AmigaguideBase=OpenLibrary( "amigaguide.library", 39L ))) { CA_D(("OpenLibs: fail amigaguide.library\n")); return(FALSE); }
+ if( !(LayoutBase = OpenLibrary("gadgets/layout.gadget", 44))) { CA_D(("OpenLibs: fail layout.gadget\n")); return(FALSE); }
+ if( !(ListBrowserBase = OpenLibrary("gadgets/listbrowser.gadget", 44))) { CA_D(("OpenLibs: fail listbrowser.gadget\n")); return(FALSE); }
+ if( !(WindowBase = OpenLibrary("window.class", 44))) { CA_D(("OpenLibs: fail window.class\n")); return(FALSE); }
+ if( !(ButtonBase = OpenLibrary("gadgets/button.gadget", 44))) { CA_D(("OpenLibs: fail button.gadget\n")); return(FALSE); }
+ if( !(SpaceBase = OpenLibrary("gadgets/space.gadget", 44))) { CA_D(("OpenLibs: fail space.gadget\n")); return(FALSE); }
+ if( !(StringBase = OpenLibrary("gadgets/string.gadget", 44))) { CA_D(("OpenLibs: fail string.gadget\n")); return(FALSE); }
+ if( !(LabelBase = OpenLibrary("images/label.image", 44))) { CA_D(("OpenLibs: fail label.image\n")); return(FALSE); }
+ if( !(BitMapBase = OpenLibrary("images/bitmap.image", 44))) { CA_D(("OpenLibs: fail bitmap.image\n")); return(FALSE); }
+ if( !(CheckBoxBase = OpenLibrary("gadgets/checkbox.gadget", 44))) { CA_D(("OpenLibs: fail checkbox.gadget\n")); return(FALSE); }
+ if( !(DataBase=OpenLibrary("datatypes.library",0)) ) { CA_D(("OpenLibs: fail datatypes.library\n")); return(FALSE); }
+ if( !(RexxSysBase=OpenLibrary("rexxsyslib.library",0)) ) { CA_D(("OpenLibs: fail rexxsyslib.library\n")); return(FALSE); }
+ if( !(KeymapBase=OpenLibrary("keymap.library",0)) ) { CA_D(("OpenLibs: fail keymap.library\n")); return(FALSE); }
+ if( !(CxBase=OpenLibrary("commodities.library",0)) ) { CA_D(("OpenLibs: fail commodities.library\n")); return(FALSE); }
+ if( !(PopupMenuBase=(struct PopupMenuBase*)OpenLibrary(POPUPMENU_NAME,0)) ) { CA_D(("OpenLibs: fail popupmenu.library\n")); return(FALSE); }
+ CA_D(("OpenLibs: ok\n"));
  return( TRUE );
 }
 //<
@@ -624,14 +665,14 @@ void BuildMenu( Class *SelectedClass ){
  Main->Menu.AddItem( GetCatalogStr(Main->Catalog,TXT_DELETE,TXT_DELETE_STR),
                         NULL,NM_ITEM,Delete );
  // Actions
- if( SelectedClass isnot NULL ){
+ if( SelectedClass != NULL ){
   BOOL AtLeastOneAction = FALSE;
   Main->Menu.AddItem( SelectedClass->name,NULL,NM_TITLE,NULL );
   for( Action *act=SelectedClass->action;act;act=act->next ){
    AtLeastOneAction = TRUE;
    Main->Menu.AddItem( act->name,NULL,NM_ITEM,act );
   }
-  if( (SelectedClass isnot &Main->Generic) and (SelectedClass isnot &Main->Directory) ){
+  if( (SelectedClass != &Main->Generic) && (SelectedClass != &Main->Directory) ){
    if( AtLeastOneAction ) Main->Menu.AddItem( NM_BARLABEL,NULL,NM_ITEM,NULL );
    for( Action *act=Main->Generic.action;act;act=act->next ){
     Main->Menu.AddItem( act->name,NULL,NM_ITEM,act );
@@ -741,7 +782,7 @@ void ARX_AppIconify( char* arg ){
 
 //>"void ARX_Use( char* arg )"
 void ARX_Use( char* arg ){
- Main->Leave = Main->Restart = True;
+ Main->Leave = Main->Restart = TRUE;
 }
 //<
 
@@ -919,7 +960,7 @@ BOOL GetNextFile( char *Files,char *NextFile,BOOL start=FALSE ){
   return( TRUE );
  }else{
   strcpy( NextFile,Store );
-  Store += strlen( Store ); // so it is on the ending 0
+  Store += strlen( Store ); // so it == on the ending 0
   return( TRUE );
  }
 }
@@ -966,7 +1007,7 @@ void MC_Paste(){
  char *lhafile=new char[512];
 
  found = GetNextFile( ClipFiles,NextFile,TRUE );
- while( (not Abort) && found && (not CheckAbort())  ){
+ while( (! Abort) && found && (! CheckAbort())  ){
   sprintf( fuelstring,"%s %s ...",fuelstr,NextFile );
   SetGadgetAttrs( (Gadget *)Main->Gadgets[FUELGAUGE],Main->IntuiWin, NULL,
                   FUELGAUGE_Level,Main->Transfer.Count,
@@ -986,22 +1027,23 @@ void MC_Paste(){
    if( tn->LhaActive ) Archive.UnLock();
    else UnLock( lock );
    if( Main->ConfirmReplace ){
-    if( (Main->Transfer.RequesterResult is 0) or (Main->Transfer.RequesterResult is 1) ){    // we must ask the user
+    if( (Main->Transfer.RequesterResult == 0) || (Main->Transfer.RequesterResult == 1) ){    // we must ask the user
       Main->Transfer.RequesterResult=AskReplace( NextFile,good,Main->Transfer.ReplaceText );
     }
-    if( (Main->Transfer.RequesterResult is 0) or (Main->Transfer.RequesterResult is 3) ) ok=FALSE;
+    if( (Main->Transfer.RequesterResult == 0) || (Main->Transfer.RequesterResult == 3) ) ok=FALSE;
    }
   }
   if( ok ){
-   if( tn->LhaActive or caFileTypes->ContainsArchive(dest,lhafile) ){
+   if( tn->LhaActive || caFileTypes->ContainsArchive(dest,lhafile) ){
      success = CopyArchiveFile( NextFile,good );
    }else{
      n       = MRECopy( NextFile,good,Main->Gadgets[FUELGAUGE] );
-     Abort   = n is -1;
-     success = n is 0;
+     Abort   = n == -1;
+     success = n == 0;
    }
-   if( success )
-   else{
+   if( success ){
+    /* copy ok */
+   }else{
     sprintf( fuelstring,GetCatalogStr(Main->Catalog,ERR_NOCOPY,ERR_NOCOPY_STR),NextFile );
     Info( fuelstring );
    }
@@ -1028,9 +1070,7 @@ void MC_Paste(){
 
 //>"BOOL PreInit()"
 BOOL PreInit(){
-#ifndef NDEBUG
-  DebOut.open("CON:0/0/640/100/ClassAction_Debug_Window");
-#endif
+ CA_D(("PreInit: start\n"));
   Main->SrcStartPath=(char*)malloc( 256 );
   Main->SrcStartPath[0]=0;
   Main->DstStartPath=(char*)malloc( 256 );
@@ -1047,6 +1087,7 @@ BOOL PreInit(){
   NewList( &Main->Tabs[1] );
   NewList( &Main->Paths );
   NewList( &Main->History );
+  CA_D(("PreInit: ok\n"));
   return( TRUE );
 }
 //<
@@ -1064,9 +1105,6 @@ void PostClear(){
   free( Main->WindowTitle );
   free( Main->SrcStartPath );
   free( Main->DstStartPath );
-#ifndef NDEBUG
-  DebOut.close();
-#endif
 }
 //<
 
@@ -1079,9 +1117,11 @@ void PostClear(){
 /*                                      */
 /****************************************/
 BOOL InitAll(){
- long lock;
  TIniFile IniFile;
  char *ptr;
+ char *prefsused;
+
+ CA_D(("InitAll: start\n"));
 
  Main->LhaPossible=TRUE;
 
@@ -1089,30 +1129,47 @@ BOOL InitAll(){
  Main->Win=Main->ReqWin=NULL;
  Main->IntuiWin=NULL;
  Main->Dobj=NULL;
+ Main->FileReq=NULL;
+ Main->GuideHandle=NULL;
+ Main->HelpOpen=FALSE;
+ Main->MainPopup=NULL;
+ Main->DirMenu=NULL;
+ Main->VolumeMenu=NULL;
+ Main->MenuFont=NULL;
+ Main->ListerFont=NULL;
  NewList( &Main->UserPaths );
 
  Main->ShowDrawersFirst = TRUE;
  Main->IsIcon      = FALSE;
  Main->OwnScreenOpen = FALSE;
 
- if( !IniFile.LoadFromFile(TPREFSFILE) )
-   if( !IniFile.LoadFromFile(PREFSFILE) )
-     if( !IniFile.LoadFromFile(DPREFSFILE) ){
-       Info( GetCatalogStr(Main->Catalog,TXT_NOCONFIG,TXT_NOCONFIG_STR) );
-       return( FALSE );
-     }
- Main->PrefsVersion = IniFile.GetInt( "INFO","VERSION",0 );
- if( Main->PrefsVersion!=PREFSVERS ){
-   Info( GetCatalogStr(Main->Catalog,ERR_WRONGPREFS,ERR_WRONGPREFS_STR) );
-   return( FALSE );
+ prefsused = NULL;
+ if( IniFile.LoadFromFile(TPREFSFILE) ) prefsused = TPREFSFILE;
+ else if( IniFile.LoadFromFile(PREFSFILE) ) prefsused = PREFSFILE;
+ else if( IniFile.LoadFromFile(DPREFSFILE) ) prefsused = DPREFSFILE;
+
+ if( prefsused == NULL ){
+   CA_D(("InitAll: no prefs (tried T:/PROGDIR Config); using built-in defaults\n"));
+   Info( GetCatalogStr(Main->Catalog,TXT_NOCONFIG,TXT_NOCONFIG_STR) );
+   Main->PrefsVersion = PREFSVERS;
+ }else{
+   CA_D(("InitAll: loaded prefs '%s'\n", prefsused));
+   Main->PrefsVersion = IniFile.GetInt( "INFO","VERSION",0 );
+   if( Main->PrefsVersion!=PREFSVERS ){
+     CA_D(("InitAll: prefs version %ld != %ld\n", (long)Main->PrefsVersion, (long)PREFSVERS));
+     Info( GetCatalogStr(Main->Catalog,ERR_WRONGPREFS,ERR_WRONGPREFS_STR) );
+     return( FALSE );
+   }
  }
  LoadOptions( &IniFile );
  caFileTypes->LittleImages = Main->LittleImages;
  LoadPaths( &IniFile );
  LoadClasses( &IniFile );
+ CA_D(("InitAll: options/paths/classes loaded\n"));
 
  // we get the appicon
- if( !(Main->Dobj=GetIconTags( "MRE:Executables/ClassAction", ICONGETA_FailIfUnavailable, FALSE, TAG_END)) ){
+ if( !(Main->Dobj=GetIconTags( CA_ICONFILE, ICONGETA_FailIfUnavailable, FALSE, TAG_END)) ){
+  CA_D(("InitAll: no icon at %s\n", CA_ICONFILE));
   Info( GetCatalogStr(Main->Catalog,ERR_NOICON,ERR_NOICON_STR) );
  }else{
   if( Main->AppX!=-1 ) Main->Dobj->do_CurrentX=Main->AppX;
@@ -1136,14 +1193,18 @@ BOOL InitAll(){
 //     SA_Overscan,overscan,
 //     SA_AutoScroll,scroll,
      TAG_END );
-   Main->OwnScreenOpen = Main->Scr isnot NULL;
+   Main->OwnScreenOpen = Main->Scr != NULL;
    if( Main->OwnScreenOpen ) PubScreenStatus( Main->Scr,0 );
  }
- if( (!Main->OwnScreenOpen) or (!Main->OwnScreen[0]) ){
+ if( (!Main->OwnScreenOpen) || (!Main->OwnScreen[0]) ){
    ptr=Main->PublicScreen;
    if( ptr[0]==0 ) ptr=NULL;
+   CA_D(("InitAll: LockPubScreen '%s'\n", ptr ? ptr : (char *)"(default)"));
    if( !(Main->Scr=LockPubScreen(ptr)) ){
-    if( !(Main->Scr=LockPubScreen(NULL)) ) return( FALSE );
+    if( !(Main->Scr=LockPubScreen(NULL)) ){
+      CA_D(("InitAll: LockPubScreen failed\n"));
+      return( FALSE );
+    }
    }
  }
 
@@ -1154,8 +1215,17 @@ BOOL InitAll(){
 
  if( !((Main->AppPort=CreateMsgPort())&&
      (Main->NotifyPort=CreateMsgPort())&&
-     (Main->MsgPort=CreateMsgPort())) ) return( FALSE );
- if( !(Main->Resource=RL_OpenResource(RCTResource,Main->Scr,Main->Catalog)) ) return( FALSE );
+     (Main->MsgPort=CreateMsgPort())) ){
+   CA_D(("InitAll: CreateMsgPort failed\n"));
+   return( FALSE );
+ }
+ CA_D(("InitAll: CA_FixupRCTResource\n"));
+ CA_FixupRCTResource();
+ CA_D(("InitAll: RL_OpenResource\n"));
+ if( !(Main->Resource=RL_OpenResource(RCTResource,Main->Scr,Main->Catalog)) ){
+   CA_D(("InitAll: RL_OpenResource failed\n"));
+   return( FALSE );
+ }
 
 // Main->Visualinfo=GetVisualInfoA( Main->Scr,TAG_DONE );
 
@@ -1167,9 +1237,10 @@ BOOL InitAll(){
 
  ptr = Main->ARexx.Name();
  strcpy( Main->WindowTitle,GetCatalogStr(Main->Catalog,TXT_PROG,TXT_PROG_STR) );
- if( ptr[strlen(ptr)-1] isnot '1' )
+ if( ptr[strlen(ptr)-1] != '1' )
    sprintf( Main->WindowTitle+strlen(Main->WindowTitle)," (%c)",ptr[strlen(ptr)-1] );
 
+ CA_D(("InitAll: RL_NewObject WIN_1\n"));
  if( !(Main->Win=RL_NewObject( Main->Resource,WIN_1_ID,
    WA_Title,Main->WindowTitle,
    WA_PubScreen,Main->Scr,
@@ -1187,10 +1258,16 @@ BOOL InitAll(){
    WINDOW_Icon,Main->Dobj,
    Main->BackgroundPattern[0] ? WINDOW_BackFillName : TAG_IGNORE,Main->BackgroundPattern,
    TAG_END)) )
+ {
+   CA_D(("InitAll: WIN_1 failed\n"));
    return( FALSE );
+ }
  if( !(Main->ReqWin=RL_NewObject( Main->Resource,WIN_3_ID,
                                  WINDOW_SharedPort,Main->MsgPort,
-                                 TAG_END)) ) return( FALSE );
+                                 TAG_END)) ){
+   CA_D(("InitAll: WIN_3 failed\n"));
+   return( FALSE );
+ }
 
 
  Main->Gadgets=RL_GetObjectArray( Main->Resource, Main->Win, GROUP_ROOT );
@@ -1229,20 +1306,21 @@ BOOL InitAll(){
  BuildDirMenu();
 
  if( Main->LittleImages ){
-  Main->AssignImage.LoadFromFile( "MRE:images/filetypes/Size11/std/Assign.iff",Main->Scr );
-  Main->DirImage.LoadFromFile( "MRE:images/filetypes/Size11/std/Drawer.iff",Main->Scr );
-  Main->FileImage.LoadFromFile( "MRE:images/filetypes/Size11/std/File.iff",Main->Scr );
-  Main->FileLinkImage.LoadFromFile( "MRE:images/filetypes/Size11/std/FileLink.iff",Main->Scr );
-  Main->VolumeImage.LoadFromFile( "MRE:images/filetypes/Size11/std/Volume.iff",Main->Scr );
-  Main->DeviceImage.LoadFromFile( "MRE:images/filetypes/Size11/std/Device.iff",Main->Scr );
+  Main->AssignImage.LoadFromFile( CA_IMG_LISTER11 "Assign10x11",Main->Scr );
+  Main->DirImage.LoadFromFile( CA_IMG_LISTER11 "Drawer10x11",Main->Scr );
+  Main->FileImage.LoadFromFile( CA_IMG_LISTER11 "File10x11",Main->Scr );
+  Main->FileLinkImage.LoadFromFile( CA_IMG_LISTER11 "FileLink10x11",Main->Scr );
+  Main->VolumeImage.LoadFromFile( CA_IMG_LISTER11 "Volume10x11",Main->Scr );
+  Main->DeviceImage.LoadFromFile( CA_IMG_LISTER11 "HardDrive10x11",Main->Scr );
  }else{
-  Main->AssignImage.LoadFromFile( "MRE:images/filetypes/Size16/std/Assign.iff",Main->Scr );
-  Main->DirImage.LoadFromFile( "MRE:images/filetypes/Size16/std/Drawer.iff",Main->Scr );
-  Main->FileImage.LoadFromFile( "MRE:images/filetypes/Size16/std/File.iff",Main->Scr );
-  Main->FileLinkImage.LoadFromFile( "MRE:images/filetypes/Size16/std/FileLink.iff",Main->Scr );
-  Main->VolumeImage.LoadFromFile( "MRE:images/filetypes/Size16/std/Volume.iff",Main->Scr );
-  Main->DeviceImage.LoadFromFile( "MRE:images/filetypes/Size16/std/Device.iff",Main->Scr );
+  Main->AssignImage.LoadFromFile( CA_IMG_LISTER16 "Assign16x16",Main->Scr );
+  Main->DirImage.LoadFromFile( CA_IMG_LISTER16 "Drawer16x16",Main->Scr );
+  Main->FileImage.LoadFromFile( CA_IMG_LISTER16 "File16x16",Main->Scr );
+  Main->FileLinkImage.LoadFromFile( CA_IMG_LISTER16 "FileLink16x16",Main->Scr );
+  Main->VolumeImage.LoadFromFile( CA_IMG_LISTER16 "Volume16x16",Main->Scr );
+  Main->DeviceImage.LoadFromFile( CA_IMG_LISTER16 "HardDrive16x16",Main->Scr );
  }
+ CA_D(("InitAll: lister images loaded (little=%ld)\n", (long)Main->LittleImages));
 
  // menu font:
  char font[40];
@@ -1250,7 +1328,7 @@ BOOL InitAll(){
   strcpy( font,Main->sMenuFont );
   ptr = strchr( font,',' );
   if( ptr ){
-   *ptr = 0; // cut comma and size
+   *ptr = 0; // cut comma && size
    Main->MenuAttr.ta_YSize = atoi( ptr+1 ); // compute size
   }else Main->MenuAttr.ta_YSize = 8;
   Main->MenuAttr.ta_Name = font;
@@ -1260,7 +1338,7 @@ BOOL InitAll(){
  if( Main->sListerFont[0] ){
   ptr = strchr( Main->sListerFont,',' );
   if( ptr ){
-   *ptr = 0; // cut comma and size
+   *ptr = 0; // cut comma && size
    Main->ListerAttr.ta_YSize = atoi( ptr+1 ); // compute size
   }else Main->ListerAttr.ta_YSize = 8;
   Main->ListerAttr.ta_Name  = Main->sListerFont;
@@ -1271,7 +1349,7 @@ BOOL InitAll(){
   SetGadgetAttrs( (Gadget*)Main->Gadgets[LST_DIR_R],NULL,NULL,GA_TextAttr,&Main->ListerAttr,TAG_END );
  }else Main->ListerFont = NULL;
 
- // Tabs and Paths:
+ // Tabs && Paths:
  InitPaths();
  if( Main->IconStart ){
   DoMethod( Main->Win, WM_ICONIFY );
@@ -1285,18 +1363,9 @@ BOOL InitAll(){
  ReqTags[0].ti_Data=(ULONG)Main->Scr;
  Main->FileReq=(FileRequester *)AllocAslRequest( ASL_FileRequest, ReqTags );
 
- // help file:
- Main->NewAG.nag_Screen=Main->Scr;
- Main->NewAG.nag_Name="MRE:Doc/ClassAction.guide";
- if( !(lock=Lock(Main->NewAG.nag_Name,ACCESS_READ)) ){
-   Main->NewAG.nag_Name="HELP:ClassAction.guide";
-   lock=Lock(Main->NewAG.nag_Name,ACCESS_READ);
- }
- if( lock ){
-  UnLock( lock );
-  if( Main->GuideHandle=OpenAmigaGuideAsyncA(&Main->NewAG, NULL) ) Main->HelpOpen=TRUE;
-  else Main->HelpOpen=FALSE;
- }else Main->HelpOpen=FALSE;
+ /* AmigaGuide opened on demand in ShowHelp() — see CA_OpenHelp(). */
+ Main->HelpOpen = FALSE;
+ Main->GuideHandle = NULL;
 
  // Commodityport
  Main->CX.Init();
@@ -1313,6 +1382,7 @@ BOOL InitAll(){
   SetGadgetAttrs( CurrentTab[1]->Gadget,Main->IntuiWin,NULL,GA_Selected,TRUE,TAG_DONE );
  }
  DragDrop.Pressed = FALSE;
+ CA_D(("InitAll: ok\n"));
  return( TRUE );
 }
 //<
@@ -1326,19 +1396,32 @@ BOOL InitAll(){
 /*                                      */
 /****************************************/
 void FreeAll(){
-  // for restart: store dirs!
-  strcpy( Main->SrcStartPath,GetPath(0) );
-  strcpy( Main->DstStartPath,GetPath(1) );
+  CA_D(("FreeAll: start\n"));
+  /* Only touch path strings if tabs were initialised (InitPaths ran). */
+  if( Main->Tabs[0].lh_Head && Main->Tabs[0].lh_Head->ln_Succ )
+    strcpy( Main->SrcStartPath,GetPath(0) );
+  if( Main->Tabs[1].lh_Head && Main->Tabs[1].lh_Head->ln_Succ )
+    strcpy( Main->DstStartPath,GetPath(1) );
   Main->CX.Free();
   FreeMenu();
   FreeDirMenu();
-  FreeAslRequest( Main->FileReq );
+  if( Main->FileReq ) FreeAslRequest( Main->FileReq );
+  Main->FileReq = NULL;
   ClearPaths();
   ClearUserPaths();
   caFileTypes->Clear();
-  if( Main->HelpOpen ) CloseAmigaGuide( Main->GuideHandle );
-  DoMethod( Main->Win, WM_CLOSE );
+  if( Main->HelpOpen && Main->GuideHandle ){
+    CA_D(("FreeAll: CloseAmigaGuide\n"));
+    CloseAmigaGuide( Main->GuideHandle );
+  }
+  Main->GuideHandle = NULL;
+  Main->HelpOpen = FALSE;
+  memset( &Main->NewAG, 0, sizeof(Main->NewAG) );
+  if( Main->Win ) DoMethod( Main->Win, WM_CLOSE );
+  Main->Win = NULL;
   if( Main->Resource ) RL_CloseResource( Main->Resource );
+  Main->Resource = NULL;
+  Main->ReqWin = NULL;
   Main->AssignImage.Free();
   Main->DirImage.Free();
   Main->FileImage.Free();
@@ -1349,27 +1432,38 @@ void FreeAll(){
   if( Main->MsgPort )  DeleteMsgPort( Main->MsgPort );
   if( Main->NotifyPort ) DeleteMsgPort( Main->NotifyPort );
   if( Main->AppPort )  DeleteMsgPort( Main->AppPort );
+  Main->MsgPort = Main->NotifyPort = Main->AppPort = NULL;
   if( Main->OwnScreenOpen ){
-    while( not CloseScreen(Main->Scr) ){
+    while( ! CloseScreen(Main->Scr) ){
       Delay(150);
       Info(GetCatalogStr(Main->Catalog,MSG_CLOSEWINDOW,MSG_CLOSEWINDOW_STR));
     }
   }else if( Main->Scr )  UnlockPubScreen( NULL, Main->Scr );
+  Main->Scr = NULL;
+  Main->OwnScreenOpen = FALSE;
   if( Main->MenuFont )   CloseFont( Main->MenuFont );
   if( Main->ListerFont ) CloseFont( Main->ListerFont );
+  Main->MenuFont = Main->ListerFont = NULL;
+  CA_D(("FreeAll: done\n"));
 }
 //<
 
 //>"int main()"
-int main(){
+static int CA_Startup( void ){
   int Result = 0;
   BOOL ret;
+  BPTR progdir;
 
+  CA_D(("CA_Startup: begin\n"));
   Main = new TMain;
 
-  if( !OpenLibs() ) Main->Restart = False;
-  else Main->Restart = True;
-  Olddir = CurrentDir( GetProgramDir() );
+  if( !OpenLibs() ) Main->Restart = FALSE;
+  else Main->Restart = TRUE;
+
+  progdir = GetProgramDir();
+  CA_D(("CA_Startup: GetProgramDir=%ld\n", (long)progdir));
+  if( progdir ) Olddir = CurrentDir( progdir );
+  else Olddir = CurrentDir( NULL );
 
   ArchiveList = new TArchiveList;
   ClipBoard   = new TClipBoard;
@@ -1382,8 +1476,10 @@ int main(){
     OC_Version,CATVERS,TAG_DONE
   );
   Main->Locale=OpenLocale( NULL );
+  CA_D(("CA_Startup: catalog=%ld locale=%ld\n", (long)Main->Catalog, (long)Main->Locale));
 
   if( !(Main->ARexx.Init("CLASSACTION")) ){
+    CA_D(("CA_Startup: ARexx.Init failed\n"));
     Info( GetCatalogStr(Main->Catalog,ERR_NOAREXX,ERR_NOAREXX_STR) );
     return( FALSE );
   }
@@ -1405,8 +1501,10 @@ int main(){
 
   if( PreInit() ){
     while( Main->Restart ){
-      Main->Restart = False;
+      Main->Restart = FALSE;
+      CA_D(("CA_Startup: calling InitAll\n"));
       ret = InitAll();
+      CA_D(("CA_Startup: InitAll -> %ld\n", (long)ret));
 
       if( ret ) MessageLoop();
       else Result = 20;
@@ -1433,13 +1531,19 @@ int main(){
   CloseLibs();
 
   delete Main;
+  CA_D(("CA_Startup: end result=%ld\n", (long)Result));
 
   return( Result );
 }
+
+int main(){
+  return( CA_Startup() );
+}
 //<
 
-//>"void wbmain( WBStartup *wbmsg )"
+/* SAS/C C++ forbids calling main(); WB startup shares CA_Startup(). */
 void wbmain( WBStartup *wbmsg ){
- main();
+ (void)wbmsg;
+ CA_Startup();
 }
 //<

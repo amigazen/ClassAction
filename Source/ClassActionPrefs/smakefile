@@ -1,0 +1,113 @@
+#
+# ClassActionPrefs 4.6 - SAS/C smakefile
+#
+# Mirrors ClassAction/smakefile. Build on Amiga with SAS/C 6.5x + NDK.
+# Needs resource.library, ReAction classes, popupmenu.library, amigaguide.
+#
+# Shared from ../ClassAction: ca_begin.h, stormcompat.h, cadebug.h,
+# IniFile/StringList, cautils (GetProgramDir).
+#
+# Storm ClassActionPrefs_res.o has odd-address RELOC32 (Error 611); embed via
+# embed_rct_res.py -> ClassActionPrefs_res_embed.c.
+# Hybrid capdisk.c renamed to .cpp.
+#
+# Usage:  smake
+#         smake clean
+#
+
+CC       = sc
+RM       = delete quiet force
+CPU      = 68020
+OBJDIR   = objects_sasc
+CA       = /ClassAction
+
+# DEF=CA_DEBUG enables Printf() init tracing (cadebug.h). Omit for release.
+# CODE=FAR: prefs + RCT make the image too large for 16-bit near code relocs
+# (Error 502). DATA stays near except the RCT embed rule below.
+CFLAGS   = CPU=$(CPU) IDLEN=100 NOICONS CODE=FAR DEF=CA_DEBUG \
+	INCLUDEDIR=. \
+	INCLUDEDIR=$(CA) \
+	INCLUDEDIR=include: INCLUDEDIR=SDK:Include_H \
+	INCLUDEDIR=///github/resource/SDK/Include_H \
+	INCLUDEDIR=///github/popupmenu.library/SDK/Include_H
+
+CXXFLAGS = $(CFLAGS)
+
+OBJS = \
+	$(OBJDIR)/ClassActionPrefs.o \
+	$(OBJDIR)/capgui.o \
+	$(OBJDIR)/capopt.o \
+	$(OBJDIR)/capdisk.o \
+	$(OBJDIR)/capreq.o \
+	$(OBJDIR)/caplist.o \
+	$(OBJDIR)/caplearn.o \
+	$(OBJDIR)/capbutclass.o \
+	$(OBJDIR)/caparexx.o \
+	$(OBJDIR)/IniFile.o \
+	$(OBJDIR)/StringList.o \
+	$(OBJDIR)/cautils.o \
+	$(OBJDIR)/ClassActionPrefs_res_embed.o
+
+all: ClassActionPrefs
+
+ClassActionPrefs: $(OBJDIR) $(OBJS)
+	$(CC) LINK TO ClassActionPrefs NOICONS $(OBJS) \
+		LIB LIB:amiga.lib LIB:sc.lib LIB:scm.lib
+
+$(OBJDIR):
+	-makedir $(OBJDIR)
+
+#
+# Prefs C++ sources
+#
+$(OBJDIR)/ClassActionPrefs.o: ClassActionPrefs.cpp ClassActionPrefs.h captypes.h \
+		$(CA)/stormcompat.h $(CA)/cadebug.h $(CA)/cautils.h
+	$(CC) $(CXXFLAGS) OBJNAME=$@ ClassActionPrefs.cpp
+
+$(OBJDIR)/capgui.o: capgui.cpp capgui.h captypes.h
+	$(CC) $(CXXFLAGS) OBJNAME=$@ capgui.cpp
+
+$(OBJDIR)/capopt.o: capopt.cpp capopt.h
+	$(CC) $(CXXFLAGS) OBJNAME=$@ capopt.cpp
+
+$(OBJDIR)/capdisk.o: capdisk.cpp capdisk.h captypes.h $(CA)/IniFile.h
+	$(CC) $(CXXFLAGS) OBJNAME=$@ capdisk.cpp
+
+#
+# Prefs C sources
+#
+$(OBJDIR)/capreq.o: capreq.cpp capreq.h
+	$(CC) $(CXXFLAGS) OBJNAME=$@ capreq.cpp
+
+$(OBJDIR)/caplist.o: caplist.cpp caplist.h
+	$(CC) $(CXXFLAGS) OBJNAME=$@ caplist.cpp
+
+$(OBJDIR)/caplearn.o: caplearn.cpp caplearn.h
+	$(CC) $(CXXFLAGS) OBJNAME=$@ caplearn.cpp
+
+$(OBJDIR)/capbutclass.o: capbutclass.c capbuttclass.h $(CA)/ca_begin.h
+	$(CC) $(CFLAGS) OBJNAME=$@ capbutclass.c
+
+$(OBJDIR)/caparexx.o: caparexx.c
+	$(CC) $(CFLAGS) OBJNAME=$@ caparexx.c
+
+#
+# Shared from ClassAction
+#
+$(OBJDIR)/IniFile.o: $(CA)/IniFile.cpp $(CA)/IniFile.h $(CA)/StringList.h
+	$(CC) $(CXXFLAGS) OBJNAME=$@ $(CA)/IniFile.cpp
+
+$(OBJDIR)/StringList.o: $(CA)/StringList.cpp $(CA)/StringList.h
+	$(CC) $(CXXFLAGS) OBJNAME=$@ $(CA)/StringList.cpp
+
+$(OBJDIR)/cautils.o: $(CA)/cautils.cpp $(CA)/cautils.h
+	$(CC) $(CXXFLAGS) OBJNAME=$@ $(CA)/cautils.cpp
+
+#
+# RCT embed (inputs: ClassActionPrefs_res.o + objects/ClassActionPrefsCD.o)
+#
+$(OBJDIR)/ClassActionPrefs_res_embed.o: ClassActionPrefs_res_embed.c
+	$(CC) $(CFLAGS) DATA=FAR OBJNAME=$@ ClassActionPrefs_res_embed.c
+
+clean:
+	-$(RM) $(OBJDIR)/#?.o ClassActionPrefs

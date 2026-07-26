@@ -1,0 +1,5 @@
+FROM LIB:c.o "objects_sasc/ClassAction.o"+"objects_sasc/cagui.o"+"objects_sasc/caexec.o"+"objects_sasc/careq.o"+"objects_sasc/cadisk.o"+"objects_sasc/caxfd.o"+"objects_sasc/calha.o"+"objects_sasc/cabutclass.o"+"objects_sasc/caccp.o"+"objects_sasc/cautils.o"+"objects_sasc/capopup.o"+"objects_sasc/unCommodities.o"+"objects_sasc/unBitmap.o"+"objects_sasc/unARexx.o"+"objects_sasc/cafiletypes.o"+"objects_sasc/capaths.o"+"objects_sasc/caactions.o"+"objects_sasc/caicons.o"+"objects_sasc/IniFile.o"+"objects_sasc/StringList.o"+"objects_sasc/ClassAction_res_embed.o"
+TO "ClassAction"
+LIB LIB:amiga.lib LIB:sc.lib LIB:scm.lib LIB:sc.lib LIB:amiga.lib
+NOICONS
+

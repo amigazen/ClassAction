@@ -11,7 +11,7 @@
 
 #define IECLASS_NEWMOUSE	(0x16)  /* IECLASS_MAX + 1 as of V40 */ 
 
-/* These are issued both under IECLASS_NEWMOUSE and IECLASS_RAWKEY 	*/ 
+/* These are issued both under IECLASS_NEWMOUSE && IECLASS_RAWKEY 	*/ 
 /* by the NewMouse driver											*/
 
 #define NM_WHEEL_UP			(0x7A)

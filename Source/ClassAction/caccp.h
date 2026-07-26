@@ -8,8 +8,8 @@
 #define    MAX_UNITS    256
 
 // Our errors
-#define    RC_EMPTY_CLIP        -1L    // Clipboard is empty
-#define    RC_NOT_ENOUGH_MEMORY    -4L    // not enough memory
+#define    RC_EMPTY_CLIP        -1L    // Clipboard == empty
+#define    RC_NOT_ENOUGH_MEMORY    -4L    // ! enough memory
 #define    RC_COULDNT_READ        -5L    // Couldn't read a chunk
 #define    RC_BAD_IFF        -8L    // Clipboard contains a bad IFF
 #define    RC_INVALID_TYPE        -9L    // don't understand FORM type
@@ -20,7 +20,7 @@
 #define    ID_AUTH        MAKE_ID('A','U','T','H')
 #define    ID_NAME        MAKE_ID('N','A','M','E')
 
-// not really a valid chunk type
+// ! really a valid chunk type
 #define    ID_SPACE    MAKE_ID(' ',' ',' ',' ')
 
 // Return the contents of the clipboard

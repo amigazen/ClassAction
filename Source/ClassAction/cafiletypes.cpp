@@ -1,8 +1,9 @@
+#include "ca_begin.h"
 /****************************************
 
         Class Action Source
 
-        © 2002 by Martin R. Elsner & Salim Gasmi
+        ï¿½ 2002 by Martin R. Elsner & Salim Gasmi
 
         File: filetypes.cpp
 
@@ -28,6 +29,7 @@
 #include "calha.h"
 #include "unBitmap.h"
 #include "cafiletypes.h"
+#include "catypes.h"
 #include "cautils.h"
 
 TcaFileTypes *caFileTypes;
@@ -42,17 +44,15 @@ TcaFileTypes *caFileTypes;
 /* Return Values : NONE                 */
 /*                                      */
 /****************************************/
-int TcaFileTypes::TcaFileTypes(){
+TcaFileTypes::TcaFileTypes(){
   NewList( &FileTypes );
   Count = 0;
-  return(0);
 }
 //<
 
-//>"void TcaFileTypes::~TcaFileTypes()"
-int TcaFileTypes::~TcaFileTypes(){
+//>"TcaFileTypes::~TcaFileTypes()"
+TcaFileTypes::~TcaFileTypes(){
   Clear();
-  return(0);
 }
 //<
 
@@ -133,7 +133,7 @@ void TcaFileTypes::LoadSuffixTypes( Screen *s,BOOL LittleImages ){
   char FileName[512];
   char *ptr,*fptr;
   ClearSuffixTypes();
-  strcpy( FileName,"MRE:images/FileTypes" );
+  strcpy( FileName,CA_IMG_FILETYPES );
   if( LittleImages ) strcat( FileName,"/Size11/ext" );
   else strcat( FileName,"/Size16/ext" );
   if( lock=Lock(FileName,ACCESS_READ) ){
@@ -302,9 +302,9 @@ int CheckBufferOffset(struct TFileType *ft,char *buff,int buflen){
 /*                                      */
 /* Return Values:                       */
 /*                                      */
-/*      1: File is ASCII                */
-/*      0: File is not ASCII            */
-/*     -1: File not found               */
+/*      1: File == ASCII                */
+/*      0: File == ! ASCII            */
+/*     -1: File ! found               */
 /*     -3: GetDatatype Failed           */
 /*                                      */
 /****************************************/
@@ -344,7 +344,7 @@ int IsAscii(char *file){
 /* Aim:       Determine the Class of    */
 /*            the file 'fullname'       */
 /*            with local name 'name'.   */
-/*            If the file is Crunched   */
+/*            If the file == Crunched   */
 /*            we try to decrunch it.    */
 /* Input:     full = full name of file  */
 /*            name = name of file       */
@@ -370,7 +370,7 @@ TFileType *TcaFileTypes::GetFileType( char *full,char *name,BOOL simple,BOOL dec
  FirstFileType = ft;
  while( ft->ln_Succ ){
   if( ft->ParsedPattern[0] ){
-   if( MatchPatternNoCase(ft->ParsedPattern,name) ) return(ft);
+   if( MatchPatternNoCase((UBYTE *)ft->ParsedPattern,name) ) return(ft);
   }
   ft = (TFileType*)ft->ln_Succ;
  }
@@ -391,9 +391,23 @@ TFileType *TcaFileTypes::GetFileType( char *full,char *name,BOOL simple,BOOL dec
  Close( han );
  if( maxoffsetsfound>0 ) return( maxft );
 
- /* se search with offsets and decrunching */
+ /* se search with offsets && decrunching */
 
  if( decrunch ){
+  FileInfoBlock *fib;
+  BPTR flock;
+
+  len = 0;
+  flock = Lock( full,ACCESS_READ );
+  if( flock ){
+   fib = (FileInfoBlock *)AllocDosObject( DOS_FIB,NULL );
+   if( fib ){
+    if( Examine( flock,fib ) ) len = fib->fib_Size;
+    FreeDosObject( DOS_FIB,fib );
+   }
+   UnLock( flock );
+  }
+
   han=Open(full,MODE_OLDFILE);
 
   buff=(char *)AllocVec( len,MEMF_CLEAR );
@@ -461,12 +475,12 @@ BOOL TcaFileTypes::ContainsArchive( char *path,char *archive ){
 /* Input:     file = full name of file  */
 /*            cls  = pointer to class   */
 /*                                      */
-/* Output:    True = right class        */
+/* Output:    TRUE = right class        */
 /*                                      */
 /****************************************/
 BOOL TcaFileTypes::BelongsToFileType( char *FileName,TFileType *ft ){
   if( ft->ParsedPattern[0] ){
-    if( MatchPatternNoCase(ft->ParsedPattern,FilePart(FileName)) ) return(TRUE);
+    if( MatchPatternNoCase((UBYTE *)ft->ParsedPattern,FilePart(FileName)) ) return(TRUE);
     else return(FALSE);
   }else return(FALSE);
 }
@@ -484,9 +498,7 @@ Image *TcaFileTypes::GetFileTypeImage( char *FileName,Screen *scr,BOOL simple ){
     ftn->ImageStatus = IMAGE_NOTAVAILABLE;
   }
 
-  strcpy( Buffer,"MRE:images/FileTypes" );
-  if( LittleImages ) strcat( Buffer,"/Size11/ext/" );
-  else strcat( Buffer,"/Size16/ext/" );
+  strcpy( Buffer,CA_IMG_FILETYPES );
   strcat( Buffer,ftn->ImageFile );
 
   ftn->ListerImage = new MREBitmap;
@@ -530,7 +542,7 @@ BOOL TcaFileTypes::AddSuffix( char *FileName,TFileType *ft ){
     ptr++;
   }
   if( !Suffix[0] ) return( FALSE );
-  // now get FileSuffix and compare:
+  // now get FileSuffix && compare:
   end=FALSE;
   for( ptr=FileName+strlen(FileName)-1;(ptr>FileName) && (!end);ptr-- ){
     switch( *ptr ){
